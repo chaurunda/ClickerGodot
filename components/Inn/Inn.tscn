@@ -1,0 +1,95 @@
+[gd_scene load_steps=6 format=3 uid="uid://bweh7y0m744yq"]
+
+[ext_resource type="Script" path="res://components/Inn/Inn.gd" id="1_rr6sd"]
+[ext_resource type="Texture2D" uid="uid://eug3v4kyaqf5" path="res://assets/inn.png" id="1_xtswb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_33ije"]
+size = Vector2(222, 162)
+
+[sub_resource type="Gradient" id="Gradient_i0stv"]
+colors = PackedColorArray(0.462745, 0.462745, 0.462745, 1, 0.462745, 0.462745, 0.462745, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_brmlc"]
+gradient = SubResource("Gradient_i0stv")
+
+[node name="Inn" type="Area2D"]
+position = Vector2(-8, 36)
+script = ExtResource("1_rr6sd")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xtswb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_33ije")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="UpgradeButton" type="Button" parent="."]
+offset_left = -111.0
+offset_top = -122.0
+offset_right = 111.0
+offset_bottom = -91.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Upgrade"
+icon_alignment = 1
+
+[node name="AmountofGoldLabel" type="Label" parent="."]
+offset_left = -108.0
+offset_top = -78.0
+offset_right = -62.0
+offset_bottom = -55.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "60000
+"
+
+[node name="UpgradeUI" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="UpgradeUI"]
+scale = Vector2(3.46875, 2.53125)
+texture = SubResource("GradientTexture2D_brmlc")
+
+[node name="TimerLabel" type="Label" parent="UpgradeUI"]
+offset_left = -24.0
+offset_top = -76.0
+offset_right = 21.0
+offset_bottom = -53.0
+text = "Timer"
+
+[node name="TimerUpgradeButton" type="Button" parent="UpgradeUI"]
+offset_left = -101.0
+offset_top = -49.0
+offset_right = 101.0
+offset_bottom = -18.0
+text = "Level 1 Upgrade 50"
+
+[node name="AmountLabel" type="Label" parent="UpgradeUI"]
+offset_left = -30.0
+offset_top = 4.0
+offset_right = 33.0
+offset_bottom = 27.0
+text = "Amount
+"
+
+[node name="AmountUpgradeButton" type="Button" parent="UpgradeUI"]
+offset_left = -102.0
+offset_top = 29.0
+offset_right = 101.0
+offset_bottom = 60.0
+text = "Level 1 Upgrade 50"
+
+[node name="CloseButton" type="Button" parent="UpgradeUI"]
+offset_left = 93.0
+offset_top = -81.0
+offset_right = 111.0
+offset_bottom = -50.0
+text = "X"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="UpgradeButton" to="." method="_on_upgrade_button_pressed"]
+[connection signal="pressed" from="UpgradeUI/TimerUpgradeButton" to="." method="_on_timer_upgrade_button_pressed"]
+[connection signal="pressed" from="UpgradeUI/AmountUpgradeButton" to="." method="_on_amount_upgrade_button_pressed"]
+[connection signal="pressed" from="UpgradeUI/CloseButton" to="." method="_on_close_button_pressed"]

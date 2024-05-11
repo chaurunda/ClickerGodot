@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7bptkit42fmh"]
+
+[ext_resource type="PackedScene" uid="uid://mpjb207mcr1l" path="res://components/MoneyHUD/MoneyHUD.tscn" id="1_tlptr"]
+[ext_resource type="PackedScene" uid="uid://dgg84yc4fwguy" path="res://components/Farm/farm.tscn" id="2_gidqr"]
+[ext_resource type="PackedScene" uid="uid://bweh7y0m744yq" path="res://components/Inn/Inn.tscn" id="3_to1qg"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Money_HUD" parent="." instance=ExtResource("1_tlptr")]
+unique_name_in_owner = true
+
+[node name="Farm" parent="." instance=ExtResource("2_gidqr")]
+
+[node name="Inn" parent="." instance=ExtResource("3_to1qg")]
+position = Vector2(144, 557)
