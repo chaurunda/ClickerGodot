@@ -29,14 +29,14 @@ func _on_timer_timeout():
 	GameState.increaseMoney(amountOfGold)
 
 func _on_timer_upgrade_button_pressed():
-	var hasUpgrade = timerInnBuilding.upgradeBuilding(timerUpgradeCount)
+	var hasUpgrade = timerInnBuilding.upgradeBuilding()
 	if hasUpgrade:
 		timerUpgradeCount += timerUpgradeCount
 		setTimer()
 		setTimerButtonLabel()
 
 func _on_amount_upgrade_button_pressed():
-	var hasUpgrade = amountInnBuilding.upgradeBuilding(amountUpgradeCount)
+	var hasUpgrade = amountInnBuilding.upgradeBuilding()
 	if hasUpgrade:
 		amountUpgradeCount += amountUpgradeCount
 		setAmountButtonLabel()
@@ -55,10 +55,10 @@ func setAmountOfGoldLabel():
 	amountOfGoldLabel.text = str(amountOfGold)
 
 func setTimerButtonLabel():
-	timerUpgradeButton.text = "Level %d Upgrade %d " % [timerInnBuilding.buildingLevel + 1, timerUpgradeCount]
+	timerUpgradeButton.text = "Level %d Upgrade %d " % [timerInnBuilding.buildingLevel + 1, timerInnBuilding.getCostPerLevel()]
 
 func setAmountButtonLabel():
-	amountUpgradeButton.text = "Level %d Upgrade %d " % [amountInnBuilding.buildingLevel, amountUpgradeCount]
+	amountUpgradeButton.text = "Level %d Upgrade %d " % [amountInnBuilding.buildingLevel, amountInnBuilding.getCostPerLevel()]
 
 func setAmountOfGold():
 	amountOfGold = baseAmount * amountInnBuilding.buildingLevel

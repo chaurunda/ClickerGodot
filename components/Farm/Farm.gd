@@ -4,15 +4,15 @@ class_name Farm
 
 @onready var farmSprite = $FarmSprite as Sprite2D
 @onready var currentMultiplierLabel = $CurrentMultiplier
-@onready var updagrateButton = $UpgradeButton
+@onready var upgradeButton = $UpgradeButton
 
-var building = Building.new("farm", 1)
+var farmBuilding = Building.new("farm", 1)
 var multiplier = 3
 const arrayOfLevelUp = [1,300,1000,2000,6000,10000]
 
-var currentLevelUp = arrayOfLevelUp[building.buildingLevel - 1] :
+var currentLevelUp = arrayOfLevelUp[farmBuilding.buildingLevel - 1] :
 	get:
-		return arrayOfLevelUp[building.buildingLevel - 1]
+		return arrayOfLevelUp[farmBuilding.buildingLevel - 1]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,11 +32,10 @@ func on_click():
 	GameState.increaseMoney(multiplier)
 
 func _on_upgrade_button_pressed():
-	var hasUpgrade = building.upgradeBuilding(currentLevelUp)
+	var hasUpgrade = farmBuilding.upgradeBuilding()
 	if(hasUpgrade):
 		multiplier = 6
 		updateButtonLabel()
 
 func updateButtonLabel():
-	updagrateButton.text = "Upgrade : $ %d" % currentLevelUp
-
+	upgradeButton.text = "Level %d Upgrade $ %d" % [farmBuilding.buildingLevel, farmBuilding.getCostPerLevel()]

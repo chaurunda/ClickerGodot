@@ -1,6 +1,10 @@
 class_name Stats
 
-var life: int = 0
-var atk: int = 0
-var def: int = 0
+var health: int = 0
+var attack: int = 0
+var armor: int = 0
 
+func _init(healthStats, attackStats, armorStats):
+  health = healthStats
+  attack = attackStats
+  armor = armorStats
