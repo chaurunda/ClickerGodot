@@ -10,10 +10,10 @@ var currentStats: Dictionary = {
 }
 
 var item: Dictionary = {
-	"weapon": null,
-	"chest": null,
-	"legs": null,
-	"helmet": null,
+	Item.ITEMS.WEAPON: null,
+	Item.ITEMS.CHEST: null,
+	Item.ITEMS.LEGS: null,
+	Item.ITEMS.HELMET: null,
 }
 
 func _init(newName: String, newLevel: int, newStats: Stats):
@@ -26,10 +26,10 @@ func computeStats():
 	currentStats.health = baseStats.health
 	currentStats.attack = baseStats.attack
 	currentStats.armor = baseStats.armor
-	if item.weapon != null:
-		currentStats.attack += item.weapon.stat.attack
+	if item[Item.ITEMS.WEAPON] != null:
+		currentStats.attack += item[Item.ITEMS.WEAPON].stat.attack
 
-func equipItem(itemType: String, newItem: Item):
+func equipItem(itemType: Item.ITEMS, newItem: Item):
 	item[itemType] = newItem
 	computeStats()
 

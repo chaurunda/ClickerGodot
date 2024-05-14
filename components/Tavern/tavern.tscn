@@ -30,6 +30,7 @@ offset_bottom = -95.0
 text = "Manage"
 
 [node name="UI" type="Node2D" parent="."]
+visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="UI"]
 position = Vector2(-0.499999, 1)

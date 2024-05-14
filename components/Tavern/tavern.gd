@@ -12,7 +12,7 @@ func addHero():
 	var newHero = Hero.new("hero1", 1, Stats.new(20, 10, 5))
 	var newStuff = Item.new("sword", 1, Stats.new(0, 10, 0))
 
-	newHero.equipItem("weapon", newStuff)
+	newHero.equipItem(Item.ITEMS.WEAPON, newStuff)
 	GameState.setObtainedHeroes(newHero)
 
 func _ready():
