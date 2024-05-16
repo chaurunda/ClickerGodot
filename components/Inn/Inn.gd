@@ -26,7 +26,7 @@ func _ready():
 	upgradeUI.visible = false
 
 func _on_timer_timeout():
-	GameState.increaseMoney(amountOfGold)
+	timerInnBuilding.increaseMoney(amountOfGold)
 
 func _on_timer_upgrade_button_pressed():
 	var hasUpgrade = timerInnBuilding.upgradeBuilding()

@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://mpjb207mcr1l"]
 
-[ext_resource type="Script" path="res://components/MoneyHUD/MoneyHUD.gd" id="1_m4lqt"]
+[ext_resource type="Script" path="res://components/HUD/HUD.gd" id="1_m4lqt"]
 
-[node name="Money_HUD" type="Node"]
+[node name="HUD" type="Node"]
 script = ExtResource("1_m4lqt")
 
 [node name="MoneyLabel" type="Label" parent="."]

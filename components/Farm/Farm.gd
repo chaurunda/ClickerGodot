@@ -8,11 +8,6 @@ class_name Farm
 
 var farmBuilding = Building.new("farm", 1)
 var multiplier = 3
-const arrayOfLevelUp = [1,300,1000,2000,6000,10000]
-
-var currentLevelUp = arrayOfLevelUp[farmBuilding.buildingLevel - 1] :
-	get:
-		return arrayOfLevelUp[farmBuilding.buildingLevel - 1]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -29,7 +24,7 @@ func _input_event(_viewport, event, _shape_idx):
 		self.on_click()
 
 func on_click():
-	GameState.increaseMoney(multiplier)
+	farmBuilding.increaseMoney(multiplier)
 
 func _on_upgrade_button_pressed():
 	var hasUpgrade = farmBuilding.upgradeBuilding()

@@ -1,10 +1,10 @@
 extends Node
 
-class_name MoneyHUD
+class_name HUD
 
 @onready var moneyLabel = $MoneyLabel
 
-func _process(delta):
+func _process(_delta):
 	updateDisplay()
 
 func updateDisplay():

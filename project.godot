@@ -17,4 +17,11 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GameState="*res://scripts/GameState.gd"
+GlobalEventBus="*res://scripts/autoloads/GlobalEventBus.gd"
+GameState="*res://scripts/autoloads/GameState.gd"
+
+[file_customization]
+
+folder_colors={
+"res://scripts/autoloads/": "purple"
+}

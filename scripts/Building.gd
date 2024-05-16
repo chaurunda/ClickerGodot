@@ -2,6 +2,8 @@ class_name Building
 
 var buildingLevel: int
 var buildingName: String
+var moneyManager := MoneyManager.new()
+
 
 
 func _init(newName: String, level: int):
@@ -12,10 +14,13 @@ func upgradeBuilding() -> bool:
 	var cost = getCostPerLevel()
 	var canUpgrade = GameState.currentMoney >= cost
 	if canUpgrade:
-		GameState.decreaseMoney(cost)
+		moneyManager.decreaseMoney(cost)
 		buildingLevel += 1
 
 	return canUpgrade
+
+func increaseMoney(cost: int):
+	moneyManager.increaseMoney(cost)
 
 func getCostPerLevel():
 	var flo = floor(buildingLevel / 10) * (50 * floor(buildingLevel / 10)) * 10

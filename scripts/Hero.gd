@@ -16,6 +16,8 @@ var item: Dictionary = {
 	Item.ITEMS.HELMET: null,
 }
 
+var heroManager = HeroManager.new()
+
 func _init(newName: String, newLevel: int, newStats: Stats):
 	heroName = newName
 	level = newLevel
@@ -41,3 +43,9 @@ func unequipItem(itemType: String):
 func getCost():
 	var flo = floor(level / 10) * (50 * floor(level / 10)) * 10
 	return (50 * (floor((level/10) + 1)) * (level % 10 + 1)) + flo
+
+func create():
+	var newStuff = Item.new("sword", 1, Stats.new(0, 10, 0))
+
+	equipItem(Item.ITEMS.WEAPON, newStuff)
+	heroManager.setObtainedHeroes(self)
