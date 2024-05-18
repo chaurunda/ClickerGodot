@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dy0q1jcldfc2u"]
+[gd_scene load_steps=6 format=3 uid="uid://dy0q1jcldfc2u"]
 
 [ext_resource type="Script" path="res://components/Heroes/Heroes.gd" id="1_n2tcv"]
 
@@ -8,6 +8,12 @@ colors = PackedColorArray(0.4, 0.4, 0.4, 1, 0.4, 0.4, 0.4, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_odenv"]
 gradient = SubResource("Gradient_ho6t5")
 
+[sub_resource type="Gradient" id="Gradient_2frg1"]
+colors = PackedColorArray(0.321728, 0.321728, 0.321728, 1, 0.321569, 0.321569, 0.321569, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_t8mri"]
+gradient = SubResource("Gradient_2frg1")
+
 [node name="Heroes" type="Node2D"]
 script = ExtResource("1_n2tcv")
 
@@ -15,12 +21,13 @@ script = ExtResource("1_n2tcv")
 position = Vector2(576, 322)
 scale = Vector2(17.9688, 10.0938)
 texture = SubResource("GradientTexture2D_odenv")
+metadata/_edit_lock_ = true
 
 [node name="ListOfHeroesLabel" type="Label" parent="."]
-offset_left = 71.0
-offset_top = 509.0
-offset_right = 178.0
-offset_bottom = 532.0
+offset_left = 66.0
+offset_top = 512.0
+offset_right = 173.0
+offset_bottom = 535.0
 text = "List of Heroes
 "
 
@@ -30,3 +37,25 @@ offset_top = 69.0
 offset_right = 220.0
 offset_bottom = 92.0
 text = "Current Hero stats"
+
+[node name="NameLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 520.0
+offset_top = 73.0
+offset_right = 607.0
+offset_bottom = 96.0
+grow_horizontal = 2
+text = "Name Lvl 1
+"
+
+[node name="ListOfHeroZone" type="Node2D" parent="."]
+position = Vector2(64, 543)
+scale = Vector2(2.045, 2.045)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ListOfHeroZone"]
+position = Vector2(251.834, 22.4939)
+scale = Vector2(7.86553, 0.691015)
+texture = SubResource("GradientTexture2D_t8mri")

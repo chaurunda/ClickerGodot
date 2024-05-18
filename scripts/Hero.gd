@@ -3,11 +3,13 @@ class_name Hero
 var heroName: String
 var level: int
 var baseStats: Stats
+var uuid: String
 var currentStats: Dictionary = {
 	"health": null,
 	"attack": null,
 	"armor": null
 }
+const uuid_util = preload("res://addons/uuid.gd")
 
 var item: Dictionary = {
 	Item.ITEMS.WEAPON: null,
@@ -16,12 +18,11 @@ var item: Dictionary = {
 	Item.ITEMS.HELMET: null,
 }
 
-var heroManager = HeroManager.new()
-
 func _init(newName: String, newLevel: int, newStats: Stats):
 	heroName = newName
 	level = newLevel
 	baseStats = newStats
+	uuid = uuid_util.v4()
 	computeStats()
 
 func computeStats():
@@ -48,4 +49,4 @@ func create():
 	var newStuff = Item.new("sword", 1, Stats.new(0, 10, 0))
 
 	equipItem(Item.ITEMS.WEAPON, newStuff)
-	heroManager.setObtainedHeroes(self)
+	HeroManager.setObtainedHeroes(self)
