@@ -18,8 +18,16 @@ var item: Dictionary = {
 	Item.ITEMS.HELMET: null,
 }
 
-func _init(newName: String, newLevel: int, newStats: Stats):
-	heroName = newName
+const listOfFirstName = ["John", "Jane", "Doe", "Alice", "Bob", "Charlie", "David", "Eve", "Frank", "Grace", "Heidi"]
+const listOfLastName = ["Smith", "Johnson", "Williams", "Jones", "Brown", "Davis", "Miller", "Wilson", "Moore", "Taylor", "Anderson"]
+
+func computeFullName() -> String :
+	var firstName = listOfFirstName[randi() % listOfFirstName.size()]
+	var lastName = listOfLastName[randi() % listOfLastName.size()]
+	return firstName + " " + lastName
+
+func _init(newLevel: int, newStats: Stats):
+	heroName = computeFullName()
 	level = newLevel
 	baseStats = newStats
 	uuid = uuid_util.v4()

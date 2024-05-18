@@ -6,26 +6,27 @@ extends Node2D
 @onready var listOfHeroZone = $ListOfHeroZone
 
 @onready var heroes = HeroManager.getListOfHeroes()
-var heroButton = preload("res://components/HeroButton/HeroButton.tscn").instantiate()
-var node2d = Node2D.new()
 
 func _on_display_heroes_button_pressed():
 	self.visible = true
+	var i = 0
 
 	for hero in GameState.obtainedHeroes:
+		var node2d = Node2D.new()
+		var heroButton = preload("res://components/HeroButton/HeroButton.tscn").instantiate()
 		heroButton.currentHeroId = hero.uuid
 		heroButton.text = hero.heroName
+		heroButton.position = Vector2(node2d.position.x + (heroButton.position.x + heroButton.get_size().x * i ), node2d.position.y + (heroButton.position.y + heroButton.get_size().y * i ))
 		node2d.add_child(heroButton)
+		i += 1
+		add_child(node2d)
 
-	add_child(node2d)
 
 func _ready():
 	GlobalEventBus.connect("newHeroObtained", displayHeroes)
 
-	if(heroes.size() > 0):
-		displayHeroes()
-		setCurrentHeroSelected(heroes[0])
-
+func _process(_delta):
+	displaySelectedHero()
 
 func displayHeroes():
 	var listOfHeros = HeroManager.getListOfHeroes()
@@ -34,13 +35,16 @@ func displayHeroes():
 	setCurrentHeroSelected(listOfHeros[0])
 
 func setCurrentHeroSelected(hero: Hero):
-	HeroManager.setCurrentHeroSelected(hero)
-	updateHeroNameLabel(hero)
-	updateHeroStatsLabel(hero)
+	HeroManager.setCurrentHeroSelected(hero.uuid)
+
+func displaySelectedHero():
+	var currentHero = HeroManager.getCurrentHeroSelected()
+	if currentHero:
+		updateHeroNameLabel(currentHero)
+		updateHeroStatsLabel(currentHero)
 
 func updateHeroNameLabel(currentHero: Hero):
 	nameLabel.text = "%s level %s" % [currentHero.heroName, currentHero.level]
 
 func updateHeroStatsLabel(currentHero: Hero):
 	currentHeroStatsLabel.text = "Health: %s\nAttack: %s\nArmor: %s" % [currentHero.currentStats.health, currentHero.currentStats.attack, currentHero.currentStats.armor]
-

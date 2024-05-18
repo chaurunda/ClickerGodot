@@ -26,7 +26,7 @@ func _on_upgrade_button_pressed():
 
 
 func _on_get_new_hero_button_pressed():
-	var newHero = Hero.new("farmer", 1, Stats.new(20,10,0))
+	var newHero = Hero.new(1, Stats.new(20,10,0))
 	newHero.create()
 
 func _on_close_button_pressed():
