@@ -18,8 +18,8 @@ gradient = SubResource("Gradient_2frg1")
 script = ExtResource("1_n2tcv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(576, 322)
-scale = Vector2(17.9688, 10.0938)
+position = Vector2(960.499, 542.499)
+scale = Vector2(29.9844, 16.9844)
 texture = SubResource("GradientTexture2D_odenv")
 metadata/_edit_lock_ = true
 
@@ -39,12 +39,9 @@ offset_bottom = 92.0
 text = "Current Hero stats"
 
 [node name="NameLabel" type="Label" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
 offset_left = 520.0
 offset_top = 73.0
-offset_right = 607.0
+offset_right = 606.0
 offset_bottom = 96.0
 grow_horizontal = 2
 text = "Name Lvl 1
@@ -56,6 +53,16 @@ scale = Vector2(2.045, 2.045)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="ListOfHeroZone"]
+visible = false
 position = Vector2(251.834, 22.4939)
 scale = Vector2(7.86553, 0.691015)
 texture = SubResource("GradientTexture2D_t8mri")
+
+[node name="CloseButton" type="Button" parent="."]
+offset_left = 1883.0
+offset_top = 27.0
+offset_right = 1901.0
+offset_bottom = 58.0
+text = "X"
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]

@@ -21,6 +21,11 @@ GlobalEventBus="*res://scripts/autoloads/GlobalEventBus.gd"
 GameState="*res://scripts/autoloads/GameState.gd"
 HeroManager="*res://scripts/manager/HeroManager.gd"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
 [file_customization]
 
 folder_colors={

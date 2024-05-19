@@ -3,6 +3,8 @@
 [ext_resource type="Script" path="res://components/HeroButton/HeroButton.gd" id="1_0pbdj"]
 
 [node name="HeroButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
 script = ExtResource("1_0pbdj")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

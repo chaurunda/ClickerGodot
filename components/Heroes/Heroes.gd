@@ -7,19 +7,22 @@ extends Node2D
 
 @onready var heroes = HeroManager.getListOfHeroes()
 
+var margin = 10
+
 func _on_display_heroes_button_pressed():
 	self.visible = true
-	var i = 0
+	var i = 1
 
 	for hero in GameState.obtainedHeroes:
 		var node2d = Node2D.new()
 		var heroButton = preload("res://components/HeroButton/HeroButton.tscn").instantiate()
 		heroButton.currentHeroId = hero.uuid
 		heroButton.text = hero.heroName
-		heroButton.position = Vector2(node2d.position.x + (heroButton.position.x + heroButton.get_size().x * i ), node2d.position.y + (heroButton.position.y + heroButton.get_size().y * i ))
+		var newPosition = Vector2( margin +((node2d.position.x + heroButton.get_size().x )* i ), margin +(node2d.position.y + heroButton.get_size().y + margin ))
+		heroButton.position = newPosition
 		node2d.add_child(heroButton)
 		i += 1
-		add_child(node2d)
+		listOfHeroZone.add_child(node2d)
 
 
 func _ready():
@@ -48,3 +51,10 @@ func updateHeroNameLabel(currentHero: Hero):
 
 func updateHeroStatsLabel(currentHero: Hero):
 	currentHeroStatsLabel.text = "Health: %s\nAttack: %s\nArmor: %s" % [currentHero.currentStats.health, currentHero.currentStats.attack, currentHero.currentStats.armor]
+
+
+func _on_close_button_pressed():
+	self.visible = false
+	for child in listOfHeroZone.get_children():
+		if child is HeroButton:
+			child.queue_free()
