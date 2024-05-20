@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://dy0q1jcldfc2u"]
+
+[ext_resource type="Script" path="res://components/HeroesScreen/HeroesScreen.gd" id="1_n2tcv"]
+
+[sub_resource type="Gradient" id="Gradient_ho6t5"]
+colors = PackedColorArray(0.4, 0.4, 0.4, 1, 0.4, 0.4, 0.4, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_odenv"]
+gradient = SubResource("Gradient_ho6t5")
+
+[node name="Heroes" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_n2tcv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960.499, 542.499)
+scale = Vector2(29.9844, 16.9844)
+texture = SubResource("GradientTexture2D_odenv")
+metadata/_edit_lock_ = true
+
+[node name="CurrentHeroStatLabel" type="Label" parent="."]
+offset_left = 76.0
+offset_top = 69.0
+offset_right = 220.0
+offset_bottom = 92.0
+text = "Current Hero stats"
+
+[node name="NameLabel" type="Label" parent="."]
+offset_left = 520.0
+offset_top = 73.0
+offset_right = 606.0
+offset_bottom = 96.0
+grow_horizontal = 2
+text = "Name Lvl 1
+"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="ListOfHeroZone" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="CloseButton" type="Button" parent="."]
+offset_left = 1860.0
+offset_top = 87.0
+offset_right = 1878.0
+offset_bottom = 118.0
+text = "X"
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]

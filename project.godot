@@ -19,7 +19,8 @@ config/icon="res://icon.svg"
 
 GlobalEventBus="*res://scripts/autoloads/GlobalEventBus.gd"
 GameState="*res://scripts/autoloads/GameState.gd"
-HeroManager="*res://scripts/manager/HeroManager.gd"
+HeroManager="*res://scripts/autoloads/HeroManager.gd"
+MoneyManager="*res://scripts/autoloads/MoneyManager.gd"
 
 [display]
 

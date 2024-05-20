@@ -48,13 +48,12 @@ func unequipItem(itemType: String):
 	item[itemType] = null
 	computeStats()
 
-
-func getCost():
-	var flo = floor(level / 10) * (50 * floor(level / 10)) * 10
-	return (50 * (floor((level/10) + 1)) * (level % 10 + 1)) + flo
-
 func create():
 	var newStuff = Item.new("sword", 1, Stats.new(0, 10, 0))
 
 	equipItem(Item.ITEMS.WEAPON, newStuff)
 	HeroManager.setObtainedHeroes(self)
+
+func _to_string():
+	return "weapons: %d" % item[Item.ITEMS.WEAPON]
+	# return "currentStats : \nArmor : %d\nHealth : %d\nAttack : %d" % [currentStats.armor, currentStats.health, currentStats.attack]

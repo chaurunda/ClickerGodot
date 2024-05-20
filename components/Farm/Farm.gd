@@ -33,4 +33,6 @@ func _on_upgrade_button_pressed():
 		updateButtonLabel()
 
 func updateButtonLabel():
+	print(farmBuilding.getCostPerLevel())
+	print(farmBuilding.buildingLevel)
 	upgradeButton.text = "Level %d Upgrade $ %d" % [farmBuilding.buildingLevel, farmBuilding.getCostPerLevel()]

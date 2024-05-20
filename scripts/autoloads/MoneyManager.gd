@@ -1,4 +1,4 @@
-class_name MoneyManager
+extends Node
 
 func increaseMoney(value: int):
 	GameState.currentMoney += value
