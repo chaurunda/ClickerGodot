@@ -26,7 +26,6 @@ func _process(_delta):
 
 func displayHeroes():
 	var listOfHeros = HeroManager.getListOfHeroes()
-	print(listOfHeros[0])
 	setCurrentHeroSelected(listOfHeros[0])
 
 func setCurrentHeroSelected(hero: Hero):

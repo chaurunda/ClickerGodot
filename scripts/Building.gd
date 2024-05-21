@@ -4,7 +4,6 @@ var buildingLevel: int
 var buildingName: String
 @export var costBase = 4
 @export var growth = 1.07
-@export var productionBase = 1.67
 
 func _init(newName: String, level: int):
 	buildingLevel = level

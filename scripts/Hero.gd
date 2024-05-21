@@ -55,5 +55,6 @@ func create():
 	HeroManager.setObtainedHeroes(self)
 
 func _to_string():
-	return "weapons: %d" % item[Item.ITEMS.WEAPON]
-	# return "currentStats : \nArmor : %d\nHealth : %d\nAttack : %d" % [currentStats.armor, currentStats.health, currentStats.attack]
+	# return "weapons: %d" % item[Item.ITEMS.WEAPON]
+	return "currentStats : \nArmor : %d\nHealth : %d\nAttack : %d" % [currentStats.armor, currentStats.health, currentStats.attack]
+

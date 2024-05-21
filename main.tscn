@@ -12,13 +12,13 @@
 unique_name_in_owner = true
 
 [node name="Farm" parent="." instance=ExtResource("2_gidqr")]
-position = Vector2(1497, 952)
+position = Vector2(1480, 928)
 
 [node name="Inn" parent="." instance=ExtResource("3_to1qg")]
 position = Vector2(255, 928)
 
 [node name="Tavern" parent="." instance=ExtResource("4_dcpi4")]
-position = Vector2(1452, 196)
+position = Vector2(1480, 208)
 
 [node name="DisplayHeroesButton" type="Button" parent="."]
 offset_left = 1765.0
