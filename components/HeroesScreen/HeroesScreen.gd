@@ -1,6 +1,5 @@
 extends Control
 
-@onready var listOfHeroLabel = $ListOfHeroesLabel
 @onready var nameLabel = $NameLabel
 @onready var currentHeroStatsLabel = $CurrentHeroStatLabel
 @onready var listOfHeroZone = $MarginContainer/ListOfHeroZone

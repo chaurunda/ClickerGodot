@@ -2,7 +2,6 @@ extends Area2D
 
 class_name Farm
 
-@onready var farmSprite = $FarmSprite as Sprite2D
 @onready var currentMultiplierLabel = $CurrentMultiplier
 @onready var upgradeButton = $UpgradeButton
 
