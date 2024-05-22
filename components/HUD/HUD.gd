@@ -8,4 +8,4 @@ func _process(_delta):
 	updateDisplay()
 
 func updateDisplay():
-	moneyLabel.text = "$ %d" % GameState.currentMoney
+	moneyLabel.text = "$ %d" % MoneyManager.getCurrentMoney()

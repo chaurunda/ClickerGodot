@@ -11,7 +11,7 @@ func _init(newName: String, level: int):
 
 func upgradeBuilding() -> bool:
 	var cost = getCostPerLevel()
-	var canUpgrade = GameState.currentMoney >= cost
+	var canUpgrade = MoneyManager.getCurrentMoney() >= cost
 	if canUpgrade:
 		MoneyManager.decreaseMoney(cost)
 		buildingLevel += 1
