@@ -18,9 +18,10 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalEventBus="*res://scripts/autoloads/GlobalEventBus.gd"
+MoneyHandler="*res://scripts/autoloads/MoneyManager.gd"
 GameState="*res://scripts/autoloads/GameState.gd"
 HeroManager="*res://scripts/autoloads/HeroManager.gd"
-MoneyManager="*res://scripts/autoloads/MoneyManager.gd"
+ItemManager="*res://scripts/autoloads/ItemManager.gd"
 
 [display]
 

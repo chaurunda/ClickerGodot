@@ -8,4 +8,4 @@ func _process(_delta):
 	updateDisplay()
 
 func updateDisplay():
-	moneyLabel.text = "$ %d" % MoneyManager.getCurrentMoney()
+	moneyLabel.text = "$ %d" % MoneyHandler.getCurrentMoney()

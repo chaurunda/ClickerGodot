@@ -41,7 +41,7 @@ func computeStats():
 		currentStats.attack += item[Item.ITEMS.WEAPON].stat.attack
 
 func equipItem(itemType: Item.ITEMS, newItem: Item):
-	item[itemType] = newItem
+	item[itemType] = newItem.id
 	computeStats()
 
 func unequipItem(itemType: String):
@@ -49,9 +49,6 @@ func unequipItem(itemType: String):
 	computeStats()
 
 func create():
-	var newStuff = Item.new("sword", 1, Stats.new(0, 10, 0))
-
-	equipItem(Item.ITEMS.WEAPON, newStuff)
 	HeroManager.setObtainedHeroes(self)
 
 func _to_string():

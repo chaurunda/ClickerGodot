@@ -26,8 +26,8 @@ func _on_upgrade_button_pressed():
 		setUpgradeButtonLabel()
 
 func _on_get_new_hero_button_pressed():
-	if MoneyManager.getCurrentMoney() >= getCostPerLevel():
-		MoneyManager.decreaseMoney(getCostPerLevel())
+	if MoneyHandler.getCurrentMoney() >= getCostPerLevel():
+		MoneyHandler.decreaseMoney(getCostPerLevel())
 		var newHero = Hero.new(tavernBuilding.buildingLevel, Stats.new(20*tavernBuilding.buildingLevel,10*tavernBuilding.buildingLevel,0 + tavernBuilding.buildingLevel))
 		newHero.create()
 		setNewHeroButtonLabel()

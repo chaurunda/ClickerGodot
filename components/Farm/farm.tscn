@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://components/Farm/Farm.gd" id="1_hnx63"]
 [ext_resource type="Texture2D" uid="uid://btffgb772lte" path="res://assets/Serene_Village_48x48.png" id="2_yywe3"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u75l4"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_42l1t"]
 texture = ExtResource("2_yywe3")
 texture_region_size = Vector2i(48, 48)
 3:0/0 = 0
@@ -739,10 +739,14 @@ texture_region_size = Vector2i(48, 48)
 13:44/0 = 0
 14:44/0 = 0
 15:44/0 = 0
+7:10/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_cg58y"]
+[sub_resource type="TileSet" id="TileSet_yv2cu"]
 tile_size = Vector2i(48, 48)
-sources/0 = SubResource("TileSetAtlasSource_u75l4")
+sources/0 = SubResource("TileSetAtlasSource_42l1t")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5cfrn"]
 size = Vector2(213, 168)
@@ -752,10 +756,11 @@ position = Vector2(973, 563)
 script = ExtResource("1_hnx63")
 metadata/_edit_group_ = true
 
-[node name="IdleTileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_cg58y")
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_yv2cu")
 format = 2
-layer_0/tile_data = PackedInt32Array(-65538, 0, 25, -2, 0, 26, 65534, 0, 27, 131070, 0, 28, -65537, 65536, 25, -1, 65536, 26, 65535, 65536, 27, 131071, 65536, 28, -131072, 131072, 25, -65536, 131072, 26, 0, 131072, 27, 65536, 131072, 28, -131071, 196608, 25, -65535, 196608, 26, 1, 196608, 27, 65537, 196608, 28, -131070, 262144, 25, -65534, 262144, 26, 2, 262144, 27, 65538, 262144, 28)
+layer_0/tile_data = PackedInt32Array(-65538, 327680, 25, -2, 327680, 26, 65534, 327680, 27, 131070, 327680, 28, -65537, 393216, 25, -1, 393216, 26, 65535, 393216, 27, 131071, 393216, 28, -131072, 458752, 25, -65536, 458752, 26, 0, 458752, 27, 65536, 458752, 28, -131071, 524288, 25, -65535, 524288, 26, 1, 524288, 27, 65537, 524288, 28, -131070, 589824, 25, -65534, 589824, 26, 2, 589824, 27, 65538, 589824, 28)
+layer_1/tile_data = PackedInt32Array(65537, 458752, 11)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(21.5, 0)
