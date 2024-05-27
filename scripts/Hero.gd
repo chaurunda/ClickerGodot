@@ -1,5 +1,7 @@
 class_name Hero
 
+const uuid_util = preload("res://addons/uuid.gd")
+
 var heroName: String
 var level: int
 var baseStats: Stats
@@ -9,7 +11,8 @@ var currentStats: Dictionary = {
 	"attack": null,
 	"armor": null
 }
-const uuid_util = preload("res://addons/uuid.gd")
+var thumbmailPath: String
+var imagePath: String = "res://assets/Hero_placeholder.png"
 
 var item: Dictionary = {
 	Item.ITEMS.WEAPON: null,

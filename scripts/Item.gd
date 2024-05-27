@@ -6,6 +6,7 @@ var stuffname: String
 var id: String
 var level: int
 var stat: Stats
+var thumbmailPath: String
 
 enum ITEMS {
   WEAPON,
