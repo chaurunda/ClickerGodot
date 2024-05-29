@@ -782,4 +782,5 @@ text = "Upgrade : $ 300"
 offset_right = 40.0
 offset_bottom = 23.0
 
+[connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="pressed" from="UpgradeButton" to="." method="_on_upgrade_button_pressed"]

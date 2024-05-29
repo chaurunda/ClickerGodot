@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfumev4iwfdn"]
+
+[ext_resource type="Script" path="res://components/Blacksmith/blacksmith.gd" id="1_bwl0m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s88h7"]
+size = Vector2(192, 192)
+
+[node name="Blacksmith" type="Area2D"]
+script = ExtResource("1_bwl0m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 97.5)
+shape = SubResource("RectangleShape2D_s88h7")
+
+[node name="UpgradeButton" type="Button" parent="."]
+offset_left = -111.0
+offset_top = -31.0
+offset_right = 111.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "upgrade"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="pressed" from="UpgradeButton" to="." method="_on_button_pressed"]

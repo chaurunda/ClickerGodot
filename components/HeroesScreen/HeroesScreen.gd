@@ -3,6 +3,7 @@ extends Control
 @onready var nameLabel = $NameLabel
 @onready var currentHeroStatsLabel = $CurrentHeroStatLabel
 @onready var listOfHeroZone = $MarginContainer/ListOfHeroZone
+@onready var obtainedHeroesSprite = $ObtainedHeroesSprite
 
 @onready var heroes = HeroManager.getListOfHeroes()
 
@@ -35,6 +36,7 @@ func displaySelectedHero():
 	if currentHero:
 		updateHeroNameLabel(currentHero)
 		updateHeroStatsLabel(currentHero)
+		updateHeroImage(currentHero.imagePath)
 
 func updateHeroNameLabel(currentHero: Hero):
 	nameLabel.text = "%s level %s" % [currentHero.heroName, currentHero.level]
@@ -47,3 +49,6 @@ func _on_close_button_pressed():
 	for child in listOfHeroZone.get_children():
 		if child is HeroButton:
 			child.queue_free()
+
+func updateHeroImage(imagePath: String):
+	obtainedHeroesSprite.texture = load(imagePath)

@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dy0q1jcldfc2u"]
+[gd_scene load_steps=4 format=3 uid="uid://dy0q1jcldfc2u"]
 
 [ext_resource type="Script" path="res://components/HeroesScreen/HeroesScreen.gd" id="1_n2tcv"]
-[ext_resource type="Texture2D" uid="uid://mravxg6tv6kt" path="res://assets/Hero_placeholder.png" id="2_7dnrm"]
 
 [sub_resource type="Gradient" id="Gradient_ho6t5"]
 colors = PackedColorArray(0.4, 0.4, 0.4, 1, 0.4, 0.4, 0.4, 1)
@@ -22,7 +21,6 @@ metadata/_edit_lock_ = true
 
 [node name="ObtainedHeroesSprite" type="Sprite2D" parent="."]
 position = Vector2(981, 405)
-texture = ExtResource("2_7dnrm")
 
 [node name="CurrentHeroStatLabel" type="Label" parent="."]
 layout_mode = 0

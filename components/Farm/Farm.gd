@@ -16,7 +16,7 @@ func _ready():
 func _process(_delta):
 	currentMultiplierLabel.text = str(multiplier)
 
-func _input_event(_viewport, event, _shape_idx):
+func _input_event(_viewport:Viewport, event:InputEvent, _shape_idx:int):
 	if event is InputEventMouseButton \
 	and event.button_index == MOUSE_BUTTON_LEFT \
 	and event.is_pressed():
@@ -32,4 +32,11 @@ func _on_upgrade_button_pressed():
 		updateButtonLabel()
 
 func updateButtonLabel():
-	upgradeButton.text = "Level %d Upgrade $ %d" % [farmBuilding.buildingLevel, farmBuilding.getCostPerLevel()]
+	upgradeButton.text = "Level %d Upgrade $ %d" % [farmBuilding.buildingLevel+1, farmBuilding.getCostPerLevel()]
+
+func _on_input_event(_viewport:Node, event:InputEvent, _shape_idx:int):
+	if event is InputEventMouseButton:
+		if event.is_pressed():
+			pass
+		if event.is_released():
+			pass

@@ -13,3 +13,7 @@ func findAllItemByType(type: Item.ITEMS) -> Array[Item] :
 
 func setObtainItem(item: Item) :
 	GameState.obtainedItems.push_back(item)
+
+func generateNewItem():
+	pass
+
