@@ -4,7 +4,7 @@ extends Area2D
 @onready var upgradeButton = $UI/UpgradeButton
 @onready var getNewHeroButton = $UI/GetNewHeroButton
 @export var heroBaseCost := 200
-@export var growth = 1.07
+@export var growth := 1.07
 
 var tavernBuilding = Building.new("tavern", 1)
 var tavernUpgradeCost = tavernBuilding.getCostPerLevel()
@@ -28,9 +28,10 @@ func _on_upgrade_button_pressed():
 func _on_get_new_hero_button_pressed():
 	if MoneyHandler.getCurrentMoney() >= getCostPerLevel():
 		MoneyHandler.decreaseMoney(getCostPerLevel())
-		var newHero = Hero.new(tavernBuilding.buildingLevel, Stats.new(20*tavernBuilding.buildingLevel,10*tavernBuilding.buildingLevel,0 + tavernBuilding.buildingLevel))
-		newHero.create()
-		setNewHeroButtonLabel()
+		if Heroes.listOfHeroes.size() > GameState.obtainedHeroes.size():
+			var newHero = Heroes.listOfHeroes[GameState.obtainedHeroes.size() - 1]
+			newHero.create()
+			setNewHeroButtonLabel()
 
 func _on_close_button_pressed():
 	UINode.visible = false

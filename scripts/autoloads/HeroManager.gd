@@ -9,14 +9,30 @@ func setObtainedHeroes(newHero: Hero):
 func getListOfHeroes():
 	return GameState.obtainedHeroes
 
-func setCurrentHeroSelected(id: String):
+func setCurrentHeroSelected(id: Hero.HEROID):
 	currentSelectedHero = getHero(id)
 
 func getCurrentHeroSelected():
 	return currentSelectedHero
 
-func getHero(id: String):
+func getHero(id: Hero.HEROID):
 	for hero in GameState.obtainedHeroes:
 		if hero.uuid == id:
 			return hero
 	return null
+
+func saveObtainedHeroes():
+	var obtainedHeroes = HeroManager.getListOfHeroes()
+	var obtainedHeroesData = []
+	for hero in obtainedHeroes:
+		var heroData = {
+			"level": hero.level,
+			"id": hero.uuid,
+			"health": hero.currentStats.health,
+			"attack": hero.currentStats.attack,
+			"armor": hero.currentStats.armor,
+		}
+		obtainedHeroesData.append(heroData)
+
+		pass
+	return obtainedHeroesData

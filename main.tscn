@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://c7bptkit42fmh"]
+[gd_scene load_steps=17 format=3 uid="uid://c7bptkit42fmh"]
 
+[ext_resource type="Script" path="res://main.gd" id="1_8hxnj"]
 [ext_resource type="Texture2D" uid="uid://btffgb772lte" path="res://assets/Serene_Village_48x48.png" id="1_dq5rb"]
 [ext_resource type="PackedScene" uid="uid://mpjb207mcr1l" path="res://components/HUD/HUD.tscn" id="1_tlptr"]
 [ext_resource type="PackedScene" uid="uid://dgg84yc4fwguy" path="res://components/Farm/farm.tscn" id="2_gidqr"]
@@ -779,7 +780,7 @@ animations = [{
 }]
 
 [node name="Main" type="Node2D"]
-position = Vector2(-21, 12)
+script = ExtResource("1_8hxnj")
 metadata/_edit_group_ = true
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -820,10 +821,27 @@ offset_right = 1838.0
 offset_bottom = 1001.0
 icon = ExtResource("6_1lwwe")
 
-[node name="Heroes" parent="." instance=ExtResource("5_8ge2w")]
-visible = false
-
 [node name="Blacksmith" parent="." instance=ExtResource("12_kq423")]
 position = Vector2(564, 86)
 
+[node name="Heroes" parent="." instance=ExtResource("5_8ge2w")]
+visible = false
+
+[node name="SaveButton" type="Button" parent="."]
+offset_left = 422.0
+offset_top = 267.0
+offset_right = 820.0
+offset_bottom = 465.0
+text = "SAUVEGARDER
+"
+
+[node name="LoadButton" type="Button" parent="."]
+offset_left = 1000.0
+offset_top = 275.0
+offset_right = 1365.0
+offset_bottom = 462.0
+text = "CHARGER"
+
 [connection signal="pressed" from="DisplayHeroesButton" to="Heroes" method="_on_display_heroes_button_pressed"]
+[connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="LoadButton" to="." method="_on_load_button_pressed"]

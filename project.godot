@@ -22,6 +22,8 @@ MoneyHandler="*res://scripts/autoloads/MoneyManager.gd"
 GameState="*res://scripts/autoloads/GameState.gd"
 HeroManager="*res://scripts/autoloads/HeroManager.gd"
 ItemManager="*res://scripts/autoloads/ItemManager.gd"
+Heroes="*res://scripts/Heroes.gd"
+SaveManager="*res://scripts/autoloads/SaveManager.gd"
 
 [display]
 

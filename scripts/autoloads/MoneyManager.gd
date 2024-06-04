@@ -8,3 +8,6 @@ func decreaseMoney(value: int):
 
 func getCurrentMoney():
 	return GameState.currentMoney
+
+func setCurrentMoney(money: int):
+	GameState.currentMoney = money

@@ -1,7 +1,7 @@
 extends Node
 
 #####  MONEY #####
-var currentMoney = 10000
+var currentMoney = 0
 
 
 ##### HEROES #####

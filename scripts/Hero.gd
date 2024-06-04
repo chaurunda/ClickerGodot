@@ -1,18 +1,15 @@
 class_name Hero
 
-const uuid_util = preload("res://addons/uuid.gd")
-
 var heroName: String
 var level: int
 var baseStats: Stats
-var uuid: String
+var uuid: HEROID
 var currentStats: Dictionary = {
 	"health": null,
 	"attack": null,
 	"armor": null
 }
 var thumbmailPath: String
-var imagePath: String = "res://assets/Hero_placeholder.png"
 
 var item: Dictionary = {
 	Item.ITEMS.WEAPON: null,
@@ -21,19 +18,25 @@ var item: Dictionary = {
 	Item.ITEMS.HELMET: null,
 }
 
-const listOfFirstName = ["John", "Jane", "Doe", "Alice", "Bob", "Charlie", "David", "Eve", "Frank", "Grace", "Heidi"]
-const listOfLastName = ["Smith", "Johnson", "Williams", "Jones", "Brown", "Davis", "Miller", "Wilson", "Moore", "Taylor", "Anderson"]
+var heroId: Dictionary = {
+	1: "Seraphine Wildheart",
+	2: "Roderic Bloodclaw",
+	3: "Sylx Shadowcloak",
+	4: "Alaric Gloomgazer",
+}
 
-func computeFullName() -> String :
-	var firstName = listOfFirstName[randi() % listOfFirstName.size()]
-	var lastName = listOfLastName[randi() % listOfLastName.size()]
-	return firstName + " " + lastName
+enum HEROID {
+	SERAPHINE_WILDHEART = 1,
+	RODERIC_BLOODCLAW = 2,
+	SYLX_SHADOWCLOAK = 3,
+	ALARIC_GLOOMGAZER = 4,
+}
 
-func _init(newLevel: int, newStats: Stats):
-	heroName = computeFullName()
+func _init(id: HEROID, newLevel: int, newStats: Stats):
+	heroName = computeName(id)
 	level = newLevel
 	baseStats = newStats
-	uuid = uuid_util.v4()
+	uuid = id
 	computeStats()
 
 func computeStats():
@@ -42,6 +45,9 @@ func computeStats():
 	currentStats.armor = baseStats.armor
 	if item[Item.ITEMS.WEAPON] != null:
 		currentStats.attack += item[Item.ITEMS.WEAPON].stat.attack
+
+func computeName(heroID: HEROID):
+	return heroId[heroID]
 
 func equipItem(itemType: Item.ITEMS, newItem: Item):
 	item[itemType] = newItem.id
@@ -53,8 +59,3 @@ func unequipItem(itemType: String):
 
 func create():
 	HeroManager.setObtainedHeroes(self)
-
-func _to_string():
-	# return "weapons: %d" % item[Item.ITEMS.WEAPON]
-	return "currentStats : \nArmor : %d\nHealth : %d\nAttack : %d" % [currentStats.armor, currentStats.health, currentStats.attack]
-

@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dy0q1jcldfc2u"]
+[gd_scene load_steps=5 format=3 uid="uid://dy0q1jcldfc2u"]
 
 [ext_resource type="Script" path="res://components/HeroesScreen/HeroesScreen.gd" id="1_n2tcv"]
+[ext_resource type="PackedScene" uid="uid://ci3arpucf8bhi" path="res://components/HeroButton/HeroButton.tscn" id="2_ldtpp"]
 
 [sub_resource type="Gradient" id="Gradient_ho6t5"]
 colors = PackedColorArray(0.4, 0.4, 0.4, 1, 0.4, 0.4, 0.4, 1)
@@ -12,15 +13,27 @@ gradient = SubResource("Gradient_ho6t5")
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_n2tcv")
+heroButtonPackedScene = ExtResource("2_ldtpp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(960.499, 542.499)
-scale = Vector2(29.9844, 16.9844)
+position = Vector2(960, 540)
+scale = Vector2(30, 16.875)
 texture = SubResource("GradientTexture2D_odenv")
-metadata/_edit_lock_ = true
 
-[node name="ObtainedHeroesSprite" type="Sprite2D" parent="."]
-position = Vector2(981, 405)
+[node name="ObtainedHeroesSprite" type="Control" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 984.0
+offset_top = 577.0
+offset_right = 984.0
+offset_bottom = 577.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="CurrentHeroStatLabel" type="Label" parent="."]
 layout_mode = 0

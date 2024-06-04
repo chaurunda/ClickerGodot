@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://b8lw18u2w7yjh"]
+
+[ext_resource type="Texture2D" uid="uid://wy66yrqyfytv" path="res://assets/HuntressIdle.png" id="1_qijaq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbvuc"]
+atlas = ExtResource("1_qijaq")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mx0po"]
+atlas = ExtResource("1_qijaq")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3qaa"]
+atlas = ExtResource("1_qijaq")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5e2bl"]
+atlas = ExtResource("1_qijaq")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1afy"]
+atlas = ExtResource("1_qijaq")
+region = Rect2(600, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrw84"]
+atlas = ExtResource("1_qijaq")
+region = Rect2(750, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpnnl"]
+atlas = ExtResource("1_qijaq")
+region = Rect2(900, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sykr1"]
+atlas = ExtResource("1_qijaq")
+region = Rect2(1050, 0, 150, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g81ms"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbvuc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mx0po")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3qaa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5e2bl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1afy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrw84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpnnl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sykr1")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 8.0
+}]
+
+[node name="SeraphineAnimatedSprite" type="AnimatedSprite2D"]
+texture_filter = 1
+position = Vector2(0, 1)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_g81ms")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.737432

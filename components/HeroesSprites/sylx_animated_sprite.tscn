@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://bi7vailsedmqk"]
+
+[ext_resource type="Texture2D" uid="uid://dsdfodtwkiw5h" path="res://assets/MartialHeroIdle.png" id="1_njuc1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hknls"]
+atlas = ExtResource("1_njuc1")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_au7ls"]
+atlas = ExtResource("1_njuc1")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owa72"]
+atlas = ExtResource("1_njuc1")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sl0g5"]
+atlas = ExtResource("1_njuc1")
+region = Rect2(600, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_70yja"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hknls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_au7ls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_owa72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sl0g5")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 4.0
+}]
+
+[node name="SylxAnimatedSprite" type="AnimatedSprite2D"]
+texture_filter = 1
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_70yja")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.684868
