@@ -36,5 +36,6 @@ func load():
 			newHero.create()
 			pass
 
-
+func hasSave():
+	return FileAccess.file_exists("user://clicker.save")
 

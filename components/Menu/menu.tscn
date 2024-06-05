@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5tmfg2fcnxj2"]
+
+[ext_resource type="Script" path="res://components/Menu/menu.gd" id="1_l51c7"]
+
+[sub_resource type="Gradient" id="Gradient_bjhqg"]
+colors = PackedColorArray(0.4, 0.4, 0.4, 1, 0.4, 0.4, 0.4, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bdggo"]
+gradient = SubResource("Gradient_bjhqg")
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_l51c7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(959.5, 540)
+scale = Vector2(30.0156, 16.875)
+texture = SubResource("GradientTexture2D_bdggo")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_direction = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 907.0
+offset_top = 528.0
+offset_right = 1029.0
+offset_bottom = 594.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+
+[node name="NewGameButton" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "NEW GAME"
+
+[node name="SaveButton" type="Button" parent="GridContainer"]
+visible = false
+layout_mode = 2
+text = "SAVE
+"
+
+[node name="LoadButton" type="Button" parent="GridContainer"]
+visible = false
+layout_mode = 2
+text = "LOAD"
+
+[node name="QuitButton" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "QUIT"
+
+[connection signal="pressed" from="GridContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="GridContainer/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="GridContainer/LoadButton" to="." method="_on_load_button_pressed"]
+[connection signal="pressed" from="GridContainer/QuitButton" to="." method="_on_quit_button_pressed"]
