@@ -40,3 +40,11 @@ func _on_input_event(_viewport:Node, event:InputEvent, _shape_idx:int):
 			pass
 		if event.is_released():
 			pass
+
+func save():
+	var saveData = {
+		"buildingLevel": farmBuilding.buildingLevel,
+		"filename" : get_scene_file_path(),
+		"parent" : get_parent().get_path(),
+	}
+	return saveData

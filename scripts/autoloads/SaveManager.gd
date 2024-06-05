@@ -4,8 +4,24 @@ func save():
 	var save_game = FileAccess.open("user://clicker.save", FileAccess.WRITE)
 	var saveState = {
 		"money": MoneyHandler.getCurrentMoney(),
-		"obtainedHeroes": HeroManager.saveObtainedHeroes(),
+		"obtainedHeroes": HeroManager.saveObtainedHeroes()
 	}
+	var buildingSave = []
+
+	var save_nodes = get_tree().get_nodes_in_group("Savable")
+	for node in save_nodes:
+		if node.scene_file_path.is_empty():
+			print("persistent node '%s' is not an instanced scene, skipped" % node.name)
+			continue
+
+		# Check the node has a save function.
+		if !node.has_method("save"):
+			print("persistent node '%s' is missing a save() function, skipped" % node.name)
+			continue
+
+		buildingSave.append(node.call("save"))
+
+	saveState["buildings"] = buildingSave
 	var json = JSON.stringify(saveState)
 	save_game.store_string(json)
 	save_game.close()

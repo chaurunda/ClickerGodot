@@ -63,3 +63,12 @@ func setAmountButtonLabel():
 func setAmountOfGold():
 	amountOfGold = baseAmount * amountInnBuilding.buildingLevel
 	setAmountOfGoldLabel()
+
+func save():
+	var saveData = {
+		"buildingLevel": timerInnBuilding.buildingLevel,
+		"amountInnBuildingLevel": amountInnBuilding.buildingLevel,
+		"filename" : get_scene_file_path(),
+		"parent" : get_parent().get_path(),
+	}
+	return saveData

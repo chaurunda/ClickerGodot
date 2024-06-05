@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s88h7"]
 size = Vector2(192, 192)
 
-[node name="Blacksmith" type="Area2D"]
+[node name="Blacksmith" type="Area2D" groups=["Savable"]]
 script = ExtResource("1_bwl0m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

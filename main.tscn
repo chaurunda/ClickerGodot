@@ -804,13 +804,13 @@ frame_progress = 0.160145
 [node name="HUD" parent="." instance=ExtResource("1_tlptr")]
 unique_name_in_owner = true
 
-[node name="Farm" parent="." instance=ExtResource("2_gidqr")]
+[node name="Farm" parent="." groups=["Savable"] instance=ExtResource("2_gidqr")]
 position = Vector2(1536, 720)
 
-[node name="Inn" parent="." instance=ExtResource("3_to1qg")]
+[node name="Inn" parent="." groups=["Savable"] instance=ExtResource("3_to1qg")]
 position = Vector2(243, 672)
 
-[node name="Tavern" parent="." instance=ExtResource("4_dcpi4")]
+[node name="Tavern" parent="." groups=["Savable"] instance=ExtResource("4_dcpi4")]
 position = Vector2(1439, 191)
 
 [node name="DisplayHeroesButton" type="Button" parent="."]

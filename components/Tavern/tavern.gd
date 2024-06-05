@@ -44,3 +44,11 @@ func setNewHeroButtonLabel():
 
 func getCostPerLevel():
 	return heroBaseCost * (growth ** GameState.obtainedHeroes.size())
+
+func save():
+	var saveData = {
+		"buildingLevel": tavernBuilding.buildingLevel,
+		"filename" : get_scene_file_path(),
+		"parent" : get_parent().get_path(),
+	}
+	return saveData
