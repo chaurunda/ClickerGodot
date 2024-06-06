@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2k34445t2qkx"]
+[gd_scene load_steps=6 format=3 uid="uid://c2k34445t2qkx"]
 
 [ext_resource type="Script" path="res://components/Tavern/tavern.gd" id="1_8hpd2"]
+[ext_resource type="PackedScene" uid="uid://bwh5nrneuow1c" path="res://components/HeroModal/modal.tscn" id="2_grum0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bc4gl"]
 size = Vector2(208, 178)
@@ -26,43 +27,36 @@ offset_bottom = -113.0
 text = "Manage"
 
 [node name="UI" type="Node2D" parent="."]
-visible = false
+position = Vector2(24, -10)
 
 [node name="Sprite2D" type="Sprite2D" parent="UI"]
 position = Vector2(-0.499999, 1)
 scale = Vector2(3.48438, 2.5625)
 texture = SubResource("GradientTexture2D_nk3dj")
 
-[node name="Label" type="Label" parent="UI"]
-offset_left = -26.0
-offset_top = -78.0
-offset_right = 28.0
-offset_bottom = -55.0
+[node name="GridContainer" type="GridContainer" parent="UI"]
+offset_left = -84.0
+offset_top = -47.0
+offset_right = 84.0
+offset_bottom = 73.0
+
+[node name="Label" type="Label" parent="UI/GridContainer"]
+layout_mode = 2
 text = "Tavern
 "
 
-[node name="UpgradeButton" type="Button" parent="UI"]
-offset_left = -83.0
-offset_top = -51.0
-offset_right = 85.0
-offset_bottom = -20.0
+[node name="UpgradeButton" type="Button" parent="UI/GridContainer"]
+layout_mode = 2
 text = "Level 1 Upgrade $ 50"
 
-[node name="GetHeroLabel" type="Label" parent="UI"]
-offset_left = -20.0
-offset_top = -12.0
-offset_right = 20.0
-offset_bottom = 11.0
+[node name="GetHeroLabel" type="Label" parent="UI/GridContainer"]
+layout_mode = 2
 text = "Hero
 "
 
-[node name="GetNewHeroButton" type="Button" parent="UI"]
-offset_left = -80.0
-offset_top = 28.0
-offset_right = 79.0
-offset_bottom = 59.0
-text = "Get new Hero $ 200
-"
+[node name="GetNewHero" type="Button" parent="UI/GridContainer"]
+layout_mode = 2
+text = "Get new Hero"
 
 [node name="CloseButton" type="Button" parent="UI"]
 offset_left = 90.0
@@ -71,7 +65,9 @@ offset_right = 107.0
 offset_bottom = -46.0
 text = "x"
 
+[node name="Modal" parent="." instance=ExtResource("2_grum0")]
+
 [connection signal="pressed" from="ManageButton" to="." method="_on_manage_button_pressed"]
-[connection signal="pressed" from="UI/UpgradeButton" to="." method="_on_upgrade_button_pressed"]
-[connection signal="pressed" from="UI/GetNewHeroButton" to="." method="_on_get_new_hero_button_pressed"]
+[connection signal="pressed" from="UI/GridContainer/UpgradeButton" to="." method="_on_upgrade_button_pressed"]
+[connection signal="pressed" from="UI/GridContainer/GetNewHero" to="." method="_on_get_new_hero_pressed"]
 [connection signal="pressed" from="UI/CloseButton" to="." method="_on_close_button_pressed"]

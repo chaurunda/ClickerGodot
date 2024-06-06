@@ -41,7 +41,6 @@ text = "SAVE
 "
 
 [node name="LoadButton" type="Button" parent="GridContainer"]
-visible = false
 layout_mode = 2
 text = "LOAD"
 

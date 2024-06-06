@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwh5nrneuow1c"]
+
+[ext_resource type="Script" path="res://components/HeroModal/modal.gd" id="1_bxhp4"]
+[ext_resource type="PackedScene" uid="uid://741wlsb1lem4" path="res://components/NewHeroButton/newHeroButton.tscn" id="2_q6wh3"]
+
+[sub_resource type="Gradient" id="Gradient_sax4q"]
+colors = PackedColorArray(0.2, 0.117647, 0.105882, 1, 0.2, 0.117647, 0.105882, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rq6l8"]
+gradient = SubResource("Gradient_sax4q")
+
+[node name="Modal" type="Node2D"]
+script = ExtResource("1_bxhp4")
+heroButtonPackedScene = ExtResource("2_q6wh3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_rq6l8")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 5

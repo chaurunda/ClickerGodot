@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://741wlsb1lem4"]
+
+[ext_resource type="Script" path="res://components/NewHeroButton/newHeroButton.gd" id="1_mb1gh"]
+
+[node name="NewHero" type="Button"]
+script = ExtResource("1_mb1gh")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

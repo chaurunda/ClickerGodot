@@ -2,6 +2,84 @@ extends Node
 
 var currentSelectedHero: Hero = null
 
+const listOfHeroName = [
+	{
+		"name": "Seraphine Wildheart",
+		"cost": 200,
+		"id": Hero.HEROID.SERAPHINE_WILDHEART,
+	},
+	{
+		"name": "Roderic Bloodclaw",
+		"cost": 200,
+		"id": Hero.HEROID.RODERIC_BLOODCLAW,
+	},
+	{
+		"name": "Sylx Shadowcloak",
+		"cost": 200,
+		"id": Hero.HEROID.SYLX_SHADOWCLOAK,
+	},
+	{
+		"name":"Alaric Gloomgazer",
+		"cost": 200,
+		"id": Hero.HEROID.ALARIC_GLOOMGAZER,
+	},
+	{
+		"name":"Valara Windwhisper",
+		"cost": 200,
+		"id": Hero.HEROID.VALARA_WINDWHISPER,
+	},
+	{
+		"name":"Lyrianelm",
+		"cost": 200,
+		"id": Hero.HEROID.LYRIANELM,
+	},
+	{
+		"name":"Aeris Windwhisper",
+		"cost": 200,
+		"id": Hero.HEROID.AERIS_WINDWHISPER,
+	},
+	{
+		"name":"Teyrion Leafwhisper",
+		"cost": 200,
+		"id": Hero.HEROID.TEYRION_LEAFWHISPER,
+	},
+	{
+		"name":"Narielis",
+		"cost": 600,
+		"id": Hero.HEROID.NARIELIS,
+	},
+	{
+		"name":"Finnian Stormborn",
+		"cost": 600,
+		"id": Hero.HEROID.FINNIAN_STORMBORN,
+	},
+	{
+		"name":"Vaelen Frostbane",
+		"cost": 600,
+		"id": Hero.HEROID.VAELEN_FROSTBANE,
+	},
+	{
+		"name":"Aldric Stormrage",
+		"cost": 600,
+		"id": Hero.HEROID.ALDRIC_STORMRAGE,
+	},
+	{
+		"name":"Draekos",
+		"cost": 1500,
+		"id": Hero.HEROID.DRAEKOS,
+	},
+	{
+		"name":"Zephyrath Drakemoon",
+		"cost": 1500,
+		"id": Hero.HEROID.ZEPHYRATH_DRAKEMOON,
+	},
+	{
+		"name":"Grulmok",
+		"cost": 10000,
+		"id": Hero.HEROID.GRULMOK,
+	},
+]
+
 func setObtainedHeroes(newHero: Hero):
 	GameState.obtainedHeroes.push_back(newHero)
 	GlobalEventBus.newHeroObtained.emit()
