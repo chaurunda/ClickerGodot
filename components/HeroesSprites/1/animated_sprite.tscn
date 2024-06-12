@@ -1,37 +1,37 @@
 [gd_scene load_steps=11 format=3 uid="uid://b8lw18u2w7yjh"]
 
-[ext_resource type="Texture2D" uid="uid://wy66yrqyfytv" path="res://assets/HuntressIdle.png" id="1_qijaq"]
+[ext_resource type="Texture2D" uid="uid://wy66yrqyfytv" path="res://assets/HuntressIdle.png" id="1_s0gpf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dbvuc"]
-atlas = ExtResource("1_qijaq")
+atlas = ExtResource("1_s0gpf")
 region = Rect2(0, 0, 150, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mx0po"]
-atlas = ExtResource("1_qijaq")
+atlas = ExtResource("1_s0gpf")
 region = Rect2(150, 0, 150, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j3qaa"]
-atlas = ExtResource("1_qijaq")
+atlas = ExtResource("1_s0gpf")
 region = Rect2(300, 0, 150, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5e2bl"]
-atlas = ExtResource("1_qijaq")
+atlas = ExtResource("1_s0gpf")
 region = Rect2(450, 0, 150, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u1afy"]
-atlas = ExtResource("1_qijaq")
+atlas = ExtResource("1_s0gpf")
 region = Rect2(600, 0, 150, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xrw84"]
-atlas = ExtResource("1_qijaq")
+atlas = ExtResource("1_s0gpf")
 region = Rect2(750, 0, 150, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fpnnl"]
-atlas = ExtResource("1_qijaq")
+atlas = ExtResource("1_s0gpf")
 region = Rect2(900, 0, 150, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sykr1"]
-atlas = ExtResource("1_qijaq")
+atlas = ExtResource("1_s0gpf")
 region = Rect2(1050, 0, 150, 150)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g81ms"]

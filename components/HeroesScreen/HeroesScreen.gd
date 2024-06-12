@@ -59,17 +59,8 @@ func _on_close_button_pressed():
 func updateHeroImage():
 	removeCurrentHeroSprite()
 	var currentHero = HeroManager.getCurrentHeroSelected()
-	var heroAnimatedSprite = null
-	match currentHero.uuid:
-		Hero.HEROID.RODERIC_BLOODCLAW:
-			heroAnimatedSprite = preload("res://components/HeroesSprites/roderic_animated_sprite.tscn").instantiate()
-		Hero.HEROID.SERAPHINE_WILDHEART:
-			heroAnimatedSprite = preload("res://components/HeroesSprites/seraphine_animated_sprite.tscn").instantiate()
-		Hero.HEROID.SYLX_SHADOWCLOAK:
-			heroAnimatedSprite = preload("res://components/HeroesSprites/sylx_animated_sprite.tscn").instantiate()
-		Hero.HEROID.ALARIC_GLOOMGAZER:
-			heroAnimatedSprite = preload("res://components/HeroesSprites/alaric_animated_sprite.tscn").instantiate()
-
+	print(currentHero.spritePath + "/animated_sprite.tscn")
+	var heroAnimatedSprite = load(currentHero.spritePath + "/animated_sprite.tscn").instantiate()
 	obtainedHeroesSprite.add_child(heroAnimatedSprite)
 
 func removeCurrentHeroSprite():

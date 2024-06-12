@@ -10,6 +10,7 @@ var currentStats: Dictionary = {
 	"armor": null
 }
 var thumbmailPath: String
+var spritePath: String
 
 var item: Dictionary = {
 	Item.ITEMS.WEAPON: null,
@@ -60,6 +61,7 @@ func _init(id: HEROID, newLevel: int, newStats: Stats):
 	baseStats = newStats
 	uuid = id
 	computeStats()
+	spritePath = 'res://components/HeroesSprites/' + str(id)
 
 func computeStats():
 	currentStats.health = baseStats.health

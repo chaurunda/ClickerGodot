@@ -3,7 +3,7 @@ extends Node2D
 @export var heroButtonPackedScene: PackedScene
 @onready var grid = $GridContainer
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	var listOfHerosName = HeroManager.listOfHeroName
 	for hero in listOfHerosName:

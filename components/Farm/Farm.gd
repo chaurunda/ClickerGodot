@@ -6,7 +6,7 @@ class_name Farm
 @onready var upgradeButton = $UpgradeButton
 
 var farmBuilding = Building.new("farm", 1)
-var multiplier = 3
+var multiplier = 300
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
