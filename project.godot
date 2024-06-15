@@ -24,6 +24,7 @@ HeroManager="*res://scripts/autoloads/HeroManager.gd"
 ItemManager="*res://scripts/autoloads/ItemManager.gd"
 Heroes="*res://scripts/Heroes.gd"
 SaveManager="*res://scripts/autoloads/SaveManager.gd"
+DbManager="*res://scripts/autoloads/DBManager.gd"
 
 [display]
 

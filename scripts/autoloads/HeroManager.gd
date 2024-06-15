@@ -5,81 +5,106 @@ var currentSelectedHero: Hero = null
 var database = SQLite.new()
 const uuid_util = preload('res://addons/uuid.gd')
 
+enum RARITY {
+	COMMON,
+	UNCOMMON,
+	RARE,
+	LEGENDARY,
+}
+
+enum HEROID {
+	SERAPHINE_WILDHEART = 1,
+	RODERIC_BLOODCLAW = 2,
+	SYLX_SHADOWCLOAK = 3,
+	ALARIC_GLOOMGAZER = 4,
+	VALARA_WINDWHISPER = 5,
+	LYRIANELM = 6,
+	AERIS_WINDWHISPER = 7,
+	TEYRION_LEAFWHISPER = 8,
+	NARIELIS = 9,
+	FINNIAN_STORMBORN = 10,
+	VAELEN_FROSTBANE = 11,
+	ALDRIC_STORMRAGE = 12,
+	DRAEKOS = 13,
+	ZEPHYRATH_DRAKEMOON = 14,
+	GRULMOK = 15,
+}
+
 const listOfHeroName = [
 	{
 		"name": "Seraphine Wildheart",
-		"cost": 200,
-		"id": Hero.HEROID.SERAPHINE_WILDHEART,
+		"rarity": RARITY.COMMON,
+		"id": HEROID.SERAPHINE_WILDHEART,
 	},
 	{
 		"name": "Roderic Bloodclaw",
-		"cost": 200,
-		"id": Hero.HEROID.RODERIC_BLOODCLAW,
+		"rarity": RARITY.COMMON,
+		"id": HEROID.RODERIC_BLOODCLAW,
 	},
 	{
 		"name": "Sylx Shadowcloak",
-		"cost": 200,
-		"id": Hero.HEROID.SYLX_SHADOWCLOAK,
+		"rarity": RARITY.COMMON,
+		"id": HEROID.SYLX_SHADOWCLOAK,
 	},
 	{
 		"name":"Alaric Gloomgazer",
-		"cost": 200,
-		"id": Hero.HEROID.ALARIC_GLOOMGAZER,
+		"rarity": RARITY.COMMON,
+		"id": HEROID.ALARIC_GLOOMGAZER,
 	},
 	{
 		"name":"Valara Windwhisper",
-		"cost": 200,
-		"id": Hero.HEROID.VALARA_WINDWHISPER,
+		"rarity": RARITY.COMMON,
+		"id": HEROID.VALARA_WINDWHISPER,
 	},
 	{
 		"name":"Lyrianelm",
-		"cost": 200,
-		"id": Hero.HEROID.LYRIANELM,
+		"rarity": RARITY.COMMON,
+		"id": HEROID.LYRIANELM,
 	},
 	{
 		"name":"Aeris Windwhisper",
-		"cost": 200,
-		"id": Hero.HEROID.AERIS_WINDWHISPER,
+		"rarity": RARITY.COMMON,
+		"id": HEROID.AERIS_WINDWHISPER,
 	},
 	{
 		"name":"Teyrion Leafwhisper",
-		"cost": 200,
-		"id": Hero.HEROID.TEYRION_LEAFWHISPER,
+		"rarity": RARITY.COMMON,
+		"id": HEROID.TEYRION_LEAFWHISPER,
 	},
 	{
 		"name":"Narielis",
-		"cost": 600,
-		"id": Hero.HEROID.NARIELIS,
+		"rarity": RARITY.UNCOMMON,
+		"id": HEROID.NARIELIS,
 	},
 	{
 		"name":"Finnian Stormborn",
-		"cost": 600,
-		"id": Hero.HEROID.FINNIAN_STORMBORN,
+		"rarity": RARITY.UNCOMMON,
+		"id": HEROID.FINNIAN_STORMBORN,
 	},
 	{
 		"name":"Vaelen Frostbane",
-		"cost": 600,
-		"id": Hero.HEROID.VAELEN_FROSTBANE,
+		"rarity": RARITY.UNCOMMON,
+		"id": HEROID.VAELEN_FROSTBANE,
 	},
 	{
 		"name":"Aldric Stormrage",
-		"cost": 600,
-		"id": Hero.HEROID.ALDRIC_STORMRAGE,
+		"rarity": RARITY.UNCOMMON,
+		"id": HEROID.ALDRIC_STORMRAGE,
 	},
 	{
 		"name":"Draekos",
-		"cost": 1500,
-		"id": Hero.HEROID.DRAEKOS,
+		"rarity": RARITY.RARE,
+		"id": HEROID.DRAEKOS,
 	},
 	{
 		"name":"Zephyrath Drakemoon",
-		"cost": 1500,
-		"id": Hero.HEROID.ZEPHYRATH_DRAKEMOON,
+		"rarity": RARITY.RARE,
+		"id": HEROID.ZEPHYRATH_DRAKEMOON,
 	},
 	{
 		"name":"Grulmok",
-		"cost": 10000,
-		"id": Hero.HEROID.GRULMOK,
+		"rarity": RARITY.LEGENDARY,
+		"id": HEROID.GRULMOK,
 	},
 ]
 
@@ -88,16 +113,15 @@ func setObtainedHeroes(newHero: Hero):
 	GlobalEventBus.newHeroObtained.emit()
 
 func getListOfHeroes():
-	testDatabase()
 	return GameState.obtainedHeroes
 
-func setCurrentHeroSelected(id: Hero.HEROID):
+func setCurrentHeroSelected(id: HEROID):
 	currentSelectedHero = getHero(id)
 
 func getCurrentHeroSelected():
 	return currentSelectedHero
 
-func getHero(id: Hero.HEROID):
+func getHero(id: HEROID):
 	for hero in GameState.obtainedHeroes:
 		if hero.uuid == id:
 			return hero
@@ -119,17 +143,3 @@ func saveObtainedHeroes():
 		pass
 	return obtainedHeroesData
 
-func testDatabase():
-	database.path = "res://database/hero.db"
-	database.open_db()
-	var table = {
-		"id": {"data_type": "TEXT", "primary_key": true, "not_null": true},
-		"name": {"data_type": "TEXT", "not_null": true},
-	}
-	# database.create_table("heroes", table)
-	var data = {
-		"id": uuid_util.v4(),
-		"name": "Seraphine Wildheart",
-	}
-	# database.insert_row("heroes", data)
-	print(database.select_rows("heroes", "", ["id", "name"]))

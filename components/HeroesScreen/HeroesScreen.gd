@@ -59,7 +59,6 @@ func _on_close_button_pressed():
 func updateHeroImage():
 	removeCurrentHeroSprite()
 	var currentHero = HeroManager.getCurrentHeroSelected()
-	print(currentHero.spritePath + "/animated_sprite.tscn")
 	var heroAnimatedSprite = load(currentHero.spritePath + "/animated_sprite.tscn").instantiate()
 	obtainedHeroesSprite.add_child(heroAnimatedSprite)
 

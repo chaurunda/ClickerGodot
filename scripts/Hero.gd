@@ -3,7 +3,7 @@ class_name Hero
 var heroName: String
 var level: int
 var baseStats: Stats
-var uuid: HEROID
+var uuid: HeroManager.HEROID
 var currentStats: Dictionary = {
 	"health": null,
 	"attack": null,
@@ -37,25 +37,7 @@ var heroId: Dictionary = {
 	15: "Grulmok",
 }
 
-enum HEROID {
-	SERAPHINE_WILDHEART = 1,
-	RODERIC_BLOODCLAW = 2,
-	SYLX_SHADOWCLOAK = 3,
-	ALARIC_GLOOMGAZER = 4,
-	VALARA_WINDWHISPER = 5,
-	LYRIANELM = 6,
-	AERIS_WINDWHISPER = 7,
-	TEYRION_LEAFWHISPER = 8,
-	NARIELIS = 9,
-	FINNIAN_STORMBORN = 10,
-	VAELEN_FROSTBANE = 11,
-	ALDRIC_STORMRAGE = 12,
-	DRAEKOS = 13,
-	ZEPHYRATH_DRAKEMOON = 14,
-	GRULMOK = 15,
-}
-
-func _init(id: HEROID, newLevel: int, newStats: Stats):
+func _init(id: HeroManager.HEROID, newLevel: int, newStats: Stats):
 	heroName = computeName(id)
 	level = newLevel
 	baseStats = newStats
@@ -70,7 +52,7 @@ func computeStats():
 	if item[Item.ITEMS.WEAPON] != null:
 		currentStats.attack += item[Item.ITEMS.WEAPON].stat.attack
 
-func computeName(heroID: HEROID):
+func computeName(heroID: HeroManager.HEROID):
 	return heroId[heroID]
 
 func equipItem(itemType: Item.ITEMS, newItem: Item):
