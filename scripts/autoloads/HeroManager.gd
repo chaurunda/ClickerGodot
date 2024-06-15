@@ -2,6 +2,9 @@ extends Node
 
 var currentSelectedHero: Hero = null
 
+var database = SQLite.new()
+const uuid_util = preload('res://addons/uuid.gd')
+
 const listOfHeroName = [
 	{
 		"name": "Seraphine Wildheart",
@@ -85,6 +88,7 @@ func setObtainedHeroes(newHero: Hero):
 	GlobalEventBus.newHeroObtained.emit()
 
 func getListOfHeroes():
+	testDatabase()
 	return GameState.obtainedHeroes
 
 func setCurrentHeroSelected(id: Hero.HEROID):
@@ -114,3 +118,18 @@ func saveObtainedHeroes():
 
 		pass
 	return obtainedHeroesData
+
+func testDatabase():
+	database.path = "res://database/hero.db"
+	database.open_db()
+	var table = {
+		"id": {"data_type": "TEXT", "primary_key": true, "not_null": true},
+		"name": {"data_type": "TEXT", "not_null": true},
+	}
+	# database.create_table("heroes", table)
+	var data = {
+		"id": uuid_util.v4(),
+		"name": "Seraphine Wildheart",
+	}
+	# database.insert_row("heroes", data)
+	print(database.select_rows("heroes", "", ["id", "name"]))

@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://me0q418u1d07"]
+
+[ext_resource type="Texture2D" uid="uid://j7uo31nuroc4" path="res://assets/Medieval King Pack 2/Sprites/Idle.png" id="1_j244g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88v54"]
+atlas = ExtResource("1_j244g")
+region = Rect2(0, 0, 160, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_brl2p"]
+atlas = ExtResource("1_j244g")
+region = Rect2(160, 0, 160, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u36ug"]
+atlas = ExtResource("1_j244g")
+region = Rect2(320, 0, 160, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wh86"]
+atlas = ExtResource("1_j244g")
+region = Rect2(480, 0, 160, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wa6n"]
+atlas = ExtResource("1_j244g")
+region = Rect2(640, 0, 160, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7e1vk"]
+atlas = ExtResource("1_j244g")
+region = Rect2(800, 0, 160, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nx1fh"]
+atlas = ExtResource("1_j244g")
+region = Rect2(960, 0, 160, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jj2hs"]
+atlas = ExtResource("1_j244g")
+region = Rect2(1120, 0, 160, 111)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3d0d7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88v54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_brl2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u36ug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wh86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wa6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7e1vk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nx1fh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jj2hs")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 8.0
+}]
+
+[node name="AnimatedSprite" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_3d0d7")
+animation = &"Idle"

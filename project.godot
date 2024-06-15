@@ -35,6 +35,10 @@ window/stretch/mode="canvas_items"
 
 project/assembly_name="Clicker"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-sqlite/plugin.cfg")
+
 [file_customization]
 
 folder_colors={

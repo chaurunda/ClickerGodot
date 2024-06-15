@@ -1,51 +1,51 @@
 [gd_scene load_steps=9 format=3 uid="uid://dgtv7wp2bbcq1"]
 
-[ext_resource type="Texture2D" uid="uid://8bvhdt6843lo" path="res://assets/WizardIdle.png" id="1_ssk2d"]
+[ext_resource type="Texture2D" uid="uid://ye4u10gc47jl" path="res://assets/Wizard Pack/Idle.png" id="1_2kjg6"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d64a0"]
-atlas = ExtResource("1_ssk2d")
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1w1c"]
+atlas = ExtResource("1_2kjg6")
 region = Rect2(0, 0, 231, 190)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mwvia"]
-atlas = ExtResource("1_ssk2d")
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvq4u"]
+atlas = ExtResource("1_2kjg6")
 region = Rect2(231, 0, 231, 190)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d7q5i"]
-atlas = ExtResource("1_ssk2d")
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxqpp"]
+atlas = ExtResource("1_2kjg6")
 region = Rect2(462, 0, 231, 190)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_eck61"]
-atlas = ExtResource("1_ssk2d")
+[sub_resource type="AtlasTexture" id="AtlasTexture_guspq"]
+atlas = ExtResource("1_2kjg6")
 region = Rect2(693, 0, 231, 190)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nuqmm"]
-atlas = ExtResource("1_ssk2d")
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8pu8"]
+atlas = ExtResource("1_2kjg6")
 region = Rect2(924, 0, 231, 190)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2up2y"]
-atlas = ExtResource("1_ssk2d")
+[sub_resource type="AtlasTexture" id="AtlasTexture_44d8p"]
+atlas = ExtResource("1_2kjg6")
 region = Rect2(1155, 0, 231, 190)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_4wkx3"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_oj2bq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_d64a0")
+"texture": SubResource("AtlasTexture_x1w1c")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mwvia")
+"texture": SubResource("AtlasTexture_fvq4u")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_d7q5i")
+"texture": SubResource("AtlasTexture_lxqpp")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_eck61")
+"texture": SubResource("AtlasTexture_guspq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nuqmm")
+"texture": SubResource("AtlasTexture_j8pu8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2up2y")
+"texture": SubResource("AtlasTexture_44d8p")
 }],
 "loop": true,
 "name": &"Idle",
@@ -55,7 +55,5 @@ animations = [{
 [node name="AlaricAnimatedSprite" type="AnimatedSprite2D"]
 texture_filter = 1
 scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_4wkx3")
+sprite_frames = SubResource("SpriteFrames_oj2bq")
 animation = &"Idle"
-autoplay = "Idle"
-frame_progress = 0.932517

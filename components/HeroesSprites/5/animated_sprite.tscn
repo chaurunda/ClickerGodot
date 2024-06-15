@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=3 uid="uid://da7wpl3g005nw"]
+
+[ext_resource type="Texture2D" uid="uid://c0v5qgvauhc1y" path="res://assets/Huntress 2/Sprites/Character/Idle.png" id="1_eailu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6j4nk"]
+atlas = ExtResource("1_eailu")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ou42j"]
+atlas = ExtResource("1_eailu")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7grf8"]
+atlas = ExtResource("1_eailu")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u87d3"]
+atlas = ExtResource("1_eailu")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlsam"]
+atlas = ExtResource("1_eailu")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3658"]
+atlas = ExtResource("1_eailu")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_te3pc"]
+atlas = ExtResource("1_eailu")
+region = Rect2(600, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ph6b5"]
+atlas = ExtResource("1_eailu")
+region = Rect2(700, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dl4l3"]
+atlas = ExtResource("1_eailu")
+region = Rect2(800, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqf8b"]
+atlas = ExtResource("1_eailu")
+region = Rect2(900, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fkf3t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6j4nk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ou42j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7grf8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u87d3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nlsam")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3658")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_te3pc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ph6b5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dl4l3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fqf8b")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[node name="AnimatedSprite" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_fkf3t")
+animation = &"Idle"

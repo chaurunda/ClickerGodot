@@ -10,3 +10,5 @@ var obtainedHeroes: Array[Hero]
 #####  ITEMS #####
 var obtainedItems: Array[Item]
 
+##### DATABASE #####
+var tableName = "Clicker"

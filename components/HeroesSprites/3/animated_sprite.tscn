@@ -1,37 +1,37 @@
 [gd_scene load_steps=7 format=3 uid="uid://bi7vailsedmqk"]
 
-[ext_resource type="Texture2D" uid="uid://dsdfodtwkiw5h" path="res://assets/MartialHeroIdle.png" id="1_njuc1"]
+[ext_resource type="Texture2D" uid="uid://chew8iuwo3gu0" path="res://assets/Martial Hero 2/Sprites/Idle.png" id="1_wfnah"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hknls"]
-atlas = ExtResource("1_njuc1")
+[sub_resource type="AtlasTexture" id="AtlasTexture_oub2w"]
+atlas = ExtResource("1_wfnah")
 region = Rect2(0, 0, 200, 200)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_au7ls"]
-atlas = ExtResource("1_njuc1")
+[sub_resource type="AtlasTexture" id="AtlasTexture_7b3cd"]
+atlas = ExtResource("1_wfnah")
 region = Rect2(200, 0, 200, 200)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_owa72"]
-atlas = ExtResource("1_njuc1")
+[sub_resource type="AtlasTexture" id="AtlasTexture_2biwg"]
+atlas = ExtResource("1_wfnah")
 region = Rect2(400, 0, 200, 200)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sl0g5"]
-atlas = ExtResource("1_njuc1")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ug35h"]
+atlas = ExtResource("1_wfnah")
 region = Rect2(600, 0, 200, 200)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_70yja"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_gvqy2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hknls")
+"texture": SubResource("AtlasTexture_oub2w")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_au7ls")
+"texture": SubResource("AtlasTexture_7b3cd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_owa72")
+"texture": SubResource("AtlasTexture_2biwg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sl0g5")
+"texture": SubResource("AtlasTexture_ug35h")
 }],
 "loop": true,
 "name": &"Idle",
@@ -41,7 +41,5 @@ animations = [{
 [node name="SylxAnimatedSprite" type="AnimatedSprite2D"]
 texture_filter = 1
 scale = Vector2(5, 5)
-sprite_frames = SubResource("SpriteFrames_70yja")
+sprite_frames = SubResource("SpriteFrames_gvqy2")
 animation = &"Idle"
-autoplay = "Idle"
-frame_progress = 0.684868

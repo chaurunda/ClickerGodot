@@ -1,65 +1,65 @@
 [gd_scene load_steps=11 format=3 uid="uid://b8lw18u2w7yjh"]
 
-[ext_resource type="Texture2D" uid="uid://wy66yrqyfytv" path="res://assets/HuntressIdle.png" id="1_s0gpf"]
+[ext_resource type="Texture2D" uid="uid://c604grs68flif" path="res://assets/Huntress/Sprites/Idle.png" id="1_fc3pq"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dbvuc"]
-atlas = ExtResource("1_s0gpf")
+[sub_resource type="AtlasTexture" id="AtlasTexture_wn4kv"]
+atlas = ExtResource("1_fc3pq")
 region = Rect2(0, 0, 150, 150)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mx0po"]
-atlas = ExtResource("1_s0gpf")
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxtxu"]
+atlas = ExtResource("1_fc3pq")
 region = Rect2(150, 0, 150, 150)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j3qaa"]
-atlas = ExtResource("1_s0gpf")
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rlxs"]
+atlas = ExtResource("1_fc3pq")
 region = Rect2(300, 0, 150, 150)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5e2bl"]
-atlas = ExtResource("1_s0gpf")
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lxps"]
+atlas = ExtResource("1_fc3pq")
 region = Rect2(450, 0, 150, 150)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u1afy"]
-atlas = ExtResource("1_s0gpf")
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3fnr"]
+atlas = ExtResource("1_fc3pq")
 region = Rect2(600, 0, 150, 150)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xrw84"]
-atlas = ExtResource("1_s0gpf")
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxfsu"]
+atlas = ExtResource("1_fc3pq")
 region = Rect2(750, 0, 150, 150)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fpnnl"]
-atlas = ExtResource("1_s0gpf")
+[sub_resource type="AtlasTexture" id="AtlasTexture_s36cq"]
+atlas = ExtResource("1_fc3pq")
 region = Rect2(900, 0, 150, 150)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sykr1"]
-atlas = ExtResource("1_s0gpf")
+[sub_resource type="AtlasTexture" id="AtlasTexture_hv15f"]
+atlas = ExtResource("1_fc3pq")
 region = Rect2(1050, 0, 150, 150)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_g81ms"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_indgg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dbvuc")
+"texture": SubResource("AtlasTexture_wn4kv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mx0po")
+"texture": SubResource("AtlasTexture_bxtxu")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_j3qaa")
+"texture": SubResource("AtlasTexture_7rlxs")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5e2bl")
+"texture": SubResource("AtlasTexture_0lxps")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_u1afy")
+"texture": SubResource("AtlasTexture_r3fnr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xrw84")
+"texture": SubResource("AtlasTexture_vxfsu")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fpnnl")
+"texture": SubResource("AtlasTexture_s36cq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sykr1")
+"texture": SubResource("AtlasTexture_hv15f")
 }],
 "loop": true,
 "name": &"Idle",
@@ -70,7 +70,5 @@ animations = [{
 texture_filter = 1
 position = Vector2(0, 1)
 scale = Vector2(5, 5)
-sprite_frames = SubResource("SpriteFrames_g81ms")
+sprite_frames = SubResource("SpriteFrames_indgg")
 animation = &"Idle"
-autoplay = "Idle"
-frame_progress = 0.737432

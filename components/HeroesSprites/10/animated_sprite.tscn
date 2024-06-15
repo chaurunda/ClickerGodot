@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=3 uid="uid://4ahx4jusskaf"]
+
+[ext_resource type="Texture2D" uid="uid://1kutovm4x074" path="res://assets/Evil Wizard 3/Sprites/Idle.png" id="1_md5xl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mj6sb"]
+atlas = ExtResource("1_md5xl")
+region = Rect2(0, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_om80u"]
+atlas = ExtResource("1_md5xl")
+region = Rect2(140, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpphy"]
+atlas = ExtResource("1_md5xl")
+region = Rect2(280, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vp5lw"]
+atlas = ExtResource("1_md5xl")
+region = Rect2(420, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5sb1"]
+atlas = ExtResource("1_md5xl")
+region = Rect2(560, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2th5"]
+atlas = ExtResource("1_md5xl")
+region = Rect2(700, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmihe"]
+atlas = ExtResource("1_md5xl")
+region = Rect2(840, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n04v7"]
+atlas = ExtResource("1_md5xl")
+region = Rect2(980, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3m55a"]
+atlas = ExtResource("1_md5xl")
+region = Rect2(1120, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifeu4"]
+atlas = ExtResource("1_md5xl")
+region = Rect2(1260, 0, 140, 140)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pbs50"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mj6sb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_om80u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpphy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vp5lw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5sb1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2th5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmihe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n04v7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3m55a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ifeu4")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[node name="AnimatedSprite" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_pbs50")
+animation = &"Idle"
