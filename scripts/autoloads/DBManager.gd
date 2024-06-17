@@ -5,7 +5,6 @@ func newGame():
   var database = SQLite.new()
   database.path = "res://database/{tableName}.db".format({"tableName": GameState.tableName})
   database.open_db()
-  print("res://database/{tableName}.db".format({"tableName": GameState.tableName}))
   database.drop_table("heroes")
   var heroTable = {
 		"id": {"data_type": "TEXT", "primary_key": true, "not_null": true},
