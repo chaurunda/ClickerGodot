@@ -14,9 +14,10 @@ script = ExtResource("1_bxhp4")
 heroButtonPackedScene = ExtResource("2_q6wh3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(6.04688, 3.25)
 texture = SubResource("GradientTexture2D_rq6l8")
+centered = false
 
 [node name="GridContainer" type="GridContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-columns = 5
+clip_contents = true
+columns = 2
