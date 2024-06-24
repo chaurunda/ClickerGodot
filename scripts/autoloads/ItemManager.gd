@@ -1,5 +1,7 @@
 extends Node
 
+var listOfItemName = []
+
 func getItems() :
 	return GameState.obtainedItems
 
