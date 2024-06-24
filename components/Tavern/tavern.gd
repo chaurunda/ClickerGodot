@@ -24,6 +24,7 @@ func _on_upgrade_button_pressed():
 	if hasUpgrade:
 		tavernUpgradeCost += tavernUpgradeCost
 		setUpgradeButtonLabel()
+		GlobalEventBus.tavernLevelUp.emit() # Emit event for modal to update
 
 
 func _on_close_button_pressed():

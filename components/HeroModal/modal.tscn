@@ -14,10 +14,18 @@ script = ExtResource("1_bxhp4")
 heroButtonPackedScene = ExtResource("2_q6wh3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(6.04688, 3.25)
+scale = Vector2(9, 4)
 texture = SubResource("GradientTexture2D_rq6l8")
 centered = false
 
 [node name="GridContainer" type="GridContainer" parent="."]
 clip_contents = true
 columns = 2
+
+[node name="CloseButton" type="Button" parent="."]
+offset_left = 560.0
+offset_right = 578.0
+offset_bottom = 31.0
+text = "X"
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]

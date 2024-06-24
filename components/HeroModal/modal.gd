@@ -1,11 +1,13 @@
 extends Node2D
 
+class_name HeroModal
+
 @export var heroButtonPackedScene: PackedScene
 @onready var grid = $GridContainer
 
-
 func _ready():
 	generateHero()
+	GlobalEventBus.connect("tavernLevelUp", resetGeneratedHero)
 
 func computePrice(rarity):
 	var price = 0
@@ -31,3 +33,12 @@ func generateHero():
 		heroButton.heroID = hero.id
 		grid.add_child(heroButton)
 		listOfHerosName.pop_at(entryNumber)
+
+func resetGeneratedHero():
+	for child in grid.get_children():
+		child.queue_free()
+	generateHero()
+
+
+func _on_close_button_pressed():
+	self.visible = false
