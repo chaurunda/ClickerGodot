@@ -31,6 +31,7 @@ func generateHero():
 		heroButton.heroCost = price
 		heroButton.text = "{hero} : {price} $".format({"hero": hero.name, "price": price})
 		heroButton.heroID = hero.id
+		heroButton.heroName = hero.name
 		grid.add_child(heroButton)
 		listOfHerosName.pop_at(entryNumber)
 

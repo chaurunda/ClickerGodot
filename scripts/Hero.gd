@@ -19,26 +19,8 @@ var item: Dictionary = {
 	Item.ITEMS.HELMET: null,
 }
 
-var heroId: Dictionary = {
-	1: "Seraphine Wildheart",
-	2: "Roderic Bloodclaw",
-	3: "Sylx Shadowcloak",
-	4: "Alaric Gloomgazer",
-	5: "Valara Windwhisper",
-	6: "Lyrianelm",
-	7: "Aeris Windwhisper",
-	8: "Teyrion Leafwhisper",
-	9: "Narielis",
-	10: "Finnian Stormborn",
-	11: "Vaelen Frostbane",
-	12: "Aldric Stormrage",
-	13: "Draekos",
-	14: "Zephyrath Drakemoon",
-	15: "Grulmok",
-}
-
-func _init(id: HeroManager.HEROID, newLevel: int, newStats: Stats):
-	heroName = computeName(id)
+func _init(id: HeroManager.HEROID, newLevel: int, newStats: Stats, name: String):
+	heroName = name
 	level = newLevel
 	baseStats = newStats
 	uuid = id
@@ -51,9 +33,6 @@ func computeStats():
 	currentStats.armor = baseStats.armor
 	if item[Item.ITEMS.WEAPON] != null:
 		currentStats.attack += item[Item.ITEMS.WEAPON].stat.attack
-
-func computeName(heroID: HeroManager.HEROID):
-	return heroId[heroID]
 
 func equipItem(itemType: Item.ITEMS, newItem: Item):
 	item[itemType] = newItem.id

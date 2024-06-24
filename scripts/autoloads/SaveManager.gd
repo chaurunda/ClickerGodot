@@ -48,7 +48,7 @@ func load():
 	## Load Obtained Heroes
 	if "obtainedHeroes" in node_data:
 		for heroData in node_data["obtainedHeroes"]:
-			var newHero = Hero.new(heroData.id, heroData.level, Stats.new(heroData.health, heroData.attack, heroData.armor))
+			var newHero = Hero.new(heroData.id, heroData.level, Stats.new(heroData.health, heroData.attack, heroData.armor), heroData.name)
 			newHero.create()
 			pass
 
