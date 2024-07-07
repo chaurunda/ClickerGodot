@@ -69,3 +69,4 @@ animations = [{
 [node name="AnimatedSprite" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_hweuu")
 animation = &"Idle"
+autoplay = "Idle"

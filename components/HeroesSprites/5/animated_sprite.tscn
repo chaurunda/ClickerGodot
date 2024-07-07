@@ -81,5 +81,7 @@ animations = [{
 }]
 
 [node name="AnimatedSprite" type="AnimatedSprite2D"]
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_fkf3t")
 animation = &"Idle"
+autoplay = "Idle"

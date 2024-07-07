@@ -57,3 +57,4 @@ texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_oj2bq")
 animation = &"Idle"
+autoplay = "Idle"

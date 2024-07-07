@@ -27,6 +27,7 @@ offset_bottom = -113.0
 text = "Manage"
 
 [node name="UI" type="Node2D" parent="."]
+visible = false
 position = Vector2(24, -10)
 
 [node name="Sprite2D" type="Sprite2D" parent="UI"]
@@ -59,7 +60,6 @@ layout_mode = 2
 text = "Get new Hero"
 
 [node name="CloseButton" type="Button" parent="UI"]
-visible = false
 offset_left = 90.0
 offset_top = -77.0
 offset_right = 107.0
@@ -67,7 +67,11 @@ offset_bottom = -46.0
 text = "x"
 
 [node name="Modal" parent="." instance=ExtResource("2_grum0")]
-position = Vector2(-165, -106)
+visible = false
+offset_left = -165.0
+offset_top = -106.0
+offset_right = 222.0
+offset_bottom = 102.0
 
 [connection signal="pressed" from="ManageButton" to="." method="_on_manage_button_pressed"]
 [connection signal="pressed" from="UI/GridContainer/UpgradeButton" to="." method="_on_upgrade_button_pressed"]

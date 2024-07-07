@@ -1,31 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwh5nrneuow1c"]
+[gd_scene load_steps=3 format=3 uid="uid://bwh5nrneuow1c"]
 
 [ext_resource type="Script" path="res://components/HeroModal/modal.gd" id="1_bxhp4"]
 [ext_resource type="PackedScene" uid="uid://741wlsb1lem4" path="res://components/NewHeroButton/newHeroButton.tscn" id="2_q6wh3"]
 
-[sub_resource type="Gradient" id="Gradient_sax4q"]
-colors = PackedColorArray(0.2, 0.117647, 0.105882, 1, 0.2, 0.117647, 0.105882, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_rq6l8"]
-gradient = SubResource("Gradient_sax4q")
-
-[node name="Modal" type="Node2D"]
+[node name="Modal" type="PanelContainer"]
+offset_right = 387.0
+offset_bottom = 208.0
 script = ExtResource("1_bxhp4")
 heroButtonPackedScene = ExtResource("2_q6wh3")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(9, 4)
-texture = SubResource("GradientTexture2D_rq6l8")
-centered = false
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 0
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer/MarginContainer"]
 clip_contents = true
+layout_mode = 2
 columns = 2
 
-[node name="CloseButton" type="Button" parent="."]
-offset_left = 560.0
-offset_right = 578.0
-offset_bottom = 31.0
+[node name="CloseButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
 text = "X"
 
-[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
