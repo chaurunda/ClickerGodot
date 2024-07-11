@@ -1,9 +1,9 @@
-extends PanelContainer
+extends Node2D
 
 class_name HeroModal
 
 @export var heroButtonPackedScene: PackedScene
-@onready var grid = $HBoxContainer/MarginContainer/GridContainer
+@onready var grid = $PanelContainer/HBoxContainer/MarginContainer/GridContainer
 
 func _ready():
 	generateHero()
