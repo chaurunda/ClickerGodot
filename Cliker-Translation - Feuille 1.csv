@@ -15,3 +15,5 @@ MANAGE,Manage,Gerer
 TAVERN,Tavern,Taverne
 HERO,Hero,Hero
 GET_NEW_HERO,Get new Hero,Obtenir un nouveau Hero
+HERO_STATS,Health: %s\nAttack: %s\nArmor: %s,Vie: %s\nAttaque: %s\nArmure: %s
+LEVEL_HERO_NAME,"%s level %s""",%s niveau %s

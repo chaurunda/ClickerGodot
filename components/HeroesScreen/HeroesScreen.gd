@@ -43,10 +43,10 @@ func displaySelectedHero():
 		updateHeroStatsLabel(currentHero)
 
 func updateHeroNameLabel(currentHero: Hero):
-	nameLabel.text = "%s level %s" % [currentHero.heroName, currentHero.level]
+	nameLabel.text = tr("LEVEL_HERO_NAME") % [currentHero.heroName, currentHero.level]
 
 func updateHeroStatsLabel(currentHero: Hero):
-	currentHeroStatsLabel.text = "Health: %s\nAttack: %s\nArmor: %s" % [currentHero.currentStats.health, currentHero.currentStats.attack, currentHero.currentStats.armor]
+	currentHeroStatsLabel.text = tr("HERO_STATS") % [currentHero.currentStats.health, currentHero.currentStats.attack, currentHero.currentStats.armor]
 
 func _on_close_button_pressed():
 	self.visible = false
