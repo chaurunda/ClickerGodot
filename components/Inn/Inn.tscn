@@ -30,7 +30,7 @@ offset_right = 134.0
 offset_bottom = -113.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "Upgrade"
+text = "UPGRADE"
 icon_alignment = 1
 
 [node name="AmountofGoldLabel" type="Label" parent="."]
@@ -54,7 +54,7 @@ offset_left = -24.0
 offset_top = -76.0
 offset_right = 21.0
 offset_bottom = -53.0
-text = "Timer"
+text = "TIMER"
 
 [node name="TimerUpgradeButton" type="Button" parent="UpgradeUI"]
 offset_left = -101.0
@@ -68,8 +68,7 @@ offset_left = -30.0
 offset_top = 4.0
 offset_right = 33.0
 offset_bottom = 27.0
-text = "Amount
-"
+text = "AMOUNT"
 
 [node name="AmountUpgradeButton" type="Button" parent="UpgradeUI"]
 offset_left = -102.0

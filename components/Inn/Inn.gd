@@ -55,10 +55,10 @@ func setAmountOfGoldLabel():
 	amountOfGoldLabel.text = str(amountOfGold)
 
 func setTimerButtonLabel():
-	timerUpgradeButton.text = "Level %d Upgrade %d " % [timerInnBuilding.buildingLevel + 1, timerInnBuilding.getCostPerLevel()]
+	timerUpgradeButton.text = tr("UPGRADE_WITH_COST") % [timerInnBuilding.buildingLevel + 1, timerInnBuilding.getCostPerLevel()]
 
 func setAmountButtonLabel():
-	amountUpgradeButton.text = "Level %d Upgrade %d " % [amountInnBuilding.buildingLevel, amountInnBuilding.getCostPerLevel()]
+	amountUpgradeButton.text = tr("UPGRADE_WITH_COST") % [amountInnBuilding.buildingLevel, amountInnBuilding.getCostPerLevel()]
 
 func setAmountOfGold():
 	amountOfGold = baseAmount * amountInnBuilding.buildingLevel

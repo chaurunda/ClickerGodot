@@ -3,7 +3,6 @@ extends Node
 var currentSelectedHero: Hero = null
 
 var database = SQLite.new()
-const uuid_util = preload('res://addons/uuid.gd')
 
 enum RARITY {
 	COMMON,

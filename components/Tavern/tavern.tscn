@@ -43,8 +43,7 @@ offset_bottom = 73.0
 
 [node name="Label" type="Label" parent="UI/GridContainer"]
 layout_mode = 2
-text = "Tavern
-"
+text = "TAVERN"
 
 [node name="UpgradeButton" type="Button" parent="UI/GridContainer"]
 layout_mode = 2
@@ -52,12 +51,11 @@ text = "Level 1 Upgrade $ 50"
 
 [node name="GetHeroLabel" type="Label" parent="UI/GridContainer"]
 layout_mode = 2
-text = "Hero
-"
+text = "HERO"
 
 [node name="GetNewHero" type="Button" parent="UI/GridContainer"]
 layout_mode = 2
-text = "Get new Hero"
+text = "GET_NEW_HERO"
 
 [node name="CloseButton" type="Button" parent="UI"]
 offset_left = 90.0

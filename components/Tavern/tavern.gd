@@ -31,7 +31,7 @@ func _on_close_button_pressed():
 	UINode.visible = false
 
 func setUpgradeButtonLabel():
-	upgradeButton.text = "Level %d Upgrade $ %d" % [tavernBuilding.buildingLevel, tavernUpgradeCost]
+	upgradeButton.text = tr("UPGRADE_WITH_COST") % [tavernBuilding.buildingLevel, tavernUpgradeCost]
 
 func getCostPerLevel():
 	return heroBaseCost * (growth ** GameState.obtainedHeroes.size())

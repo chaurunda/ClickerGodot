@@ -1,7 +1,5 @@
 class_name Item
 
-const uuid_util = preload("res://addons/uuid.gd")
-
 var stuffname: String
 var id: int
 var level: int

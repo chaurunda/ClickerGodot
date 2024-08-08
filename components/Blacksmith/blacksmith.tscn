@@ -20,7 +20,7 @@ offset_right = 111.0
 offset_bottom = -11.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "upgrade"
+text = "UPGRADE"
 metadata/_edit_use_anchors_ = true
 
 [node name="UIContainer" type="Control" parent="."]
@@ -60,23 +60,21 @@ layout_mode = 2
 
 [node name="GetItemLabel" type="Label" parent="UIContainer/CenterContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Get Items
-"
+text = "GET_ITEMS"
 horizontal_alignment = 1
 
 [node name="BuyItemButton" type="Button" parent="UIContainer/CenterContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Buy
-"
+text = "BUY"
 
 [node name="Label" type="Label" parent="UIContainer/CenterContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Upgrade"
+text = "UPGRADE"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="UIContainer/CenterContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Upgrade Button"
+text = "UPGRADE_BUTTON"
 
 [node name="ItemModal" parent="." instance=ExtResource("2_8egjb")]
 visible = false

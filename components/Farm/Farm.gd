@@ -32,7 +32,7 @@ func _on_upgrade_button_pressed():
 		updateButtonLabel()
 
 func updateButtonLabel():
-	upgradeButton.text = "Level %d Upgrade $ %d" % [farmBuilding.buildingLevel+1, farmBuilding.getCostPerLevel()]
+	upgradeButton.text = tr("UPGRADE_WITH_COST") % [farmBuilding.buildingLevel+1, farmBuilding.getCostPerLevel()]
 
 func _on_input_event(_viewport:Node, event:InputEvent, _shape_idx:int):
 	if event is InputEventMouseButton:
