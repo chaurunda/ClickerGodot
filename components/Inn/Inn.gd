@@ -4,7 +4,6 @@ extends Area2D
 @onready var timerUpgradeButton = $UpgradeUI/TimerUpgradeButton
 @onready var amountUpgradeButton = $UpgradeUI/AmountUpgradeButton
 @onready var upgradeUI = $UpgradeUI
-@onready var amountOfGoldLabel = $AmountofGoldLabel
 
 @export var baseAmount = 10
 
@@ -22,7 +21,6 @@ func _ready():
 	setTimerButtonLabel()
 	setAmountButtonLabel()
 	setTimer()
-	setAmountOfGold()
 	upgradeUI.visible = false
 
 func _on_timer_timeout():
@@ -40,7 +38,6 @@ func _on_amount_upgrade_button_pressed():
 	if hasUpgrade:
 		amountUpgradeCount += amountUpgradeCount
 		setAmountButtonLabel()
-		setAmountOfGold()
 
 func setTimer():
 	timer.wait_time = arrayOfWaitingTimes[timerInnBuilding.buildingLevel]
@@ -51,18 +48,11 @@ func _on_close_button_pressed():
 func _on_upgrade_button_pressed():
 	upgradeUI.visible = true
 
-func setAmountOfGoldLabel():
-	amountOfGoldLabel.text = str(amountOfGold)
-
 func setTimerButtonLabel():
 	timerUpgradeButton.text = tr("UPGRADE_WITH_COST") % [timerInnBuilding.buildingLevel + 1, timerInnBuilding.getCostPerLevel()]
 
 func setAmountButtonLabel():
 	amountUpgradeButton.text = tr("UPGRADE_WITH_COST") % [amountInnBuilding.buildingLevel, amountInnBuilding.getCostPerLevel()]
-
-func setAmountOfGold():
-	amountOfGold = baseAmount * amountInnBuilding.buildingLevel
-	setAmountOfGoldLabel()
 
 func save():
 	var saveData = {
