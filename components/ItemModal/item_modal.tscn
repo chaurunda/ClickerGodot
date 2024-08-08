@@ -1,8 +1,11 @@
-[gd_scene format=3 uid="uid://ci4gabtt5mcej"]
+[gd_scene load_steps=2 format=3 uid="uid://ci4gabtt5mcej"]
+
+[ext_resource type="Script" path="res://components/ItemModal/item_modal.gd" id="1_57guc"]
 
 [node name="ItemModal" type="PanelContainer"]
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_57guc")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -22,7 +25,7 @@ alignment = 1
 layout_mode = 2
 text = "Buy Items"
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="CloseButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "X"
 
@@ -45,3 +48,5 @@ text = "otere weasdfasdfas"
 [node name="Button4" type="Button" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 text = "otere weasdfasdfas"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

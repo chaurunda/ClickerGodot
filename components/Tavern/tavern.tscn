@@ -68,10 +68,6 @@ text = "x"
 
 [node name="Modal" parent="." instance=ExtResource("2_grum0")]
 visible = false
-offset_left = -165.0
-offset_top = -106.0
-offset_right = 222.0
-offset_bottom = 102.0
 
 [connection signal="pressed" from="ManageButton" to="." method="_on_manage_button_pressed"]
 [connection signal="pressed" from="UI/GridContainer/UpgradeButton" to="." method="_on_upgrade_button_pressed"]
