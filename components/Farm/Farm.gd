@@ -23,7 +23,7 @@ func _input_event(_viewport:Viewport, event:InputEvent, _shape_idx:int):
 		self.on_click()
 
 func on_click():
-	farmBuilding.increaseMoney(multiplier)
+	farmBuilding.increase_money(multiplier)
 
 func _on_upgrade_button_pressed():
 	var hasUpgrade = farmBuilding.upgradeBuilding()

@@ -5,7 +5,7 @@ const SAVE_PATH = "user://clicker.save"
 func save():
 	var save_game = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	var save_state = {
-		"money": MoneyHandler.getCurrentMoney(),
+		"money": MoneyHandler.get_current_money(),
 		"obtained_heroes": HeroManager.save_obtained_heroes(),
 		"buildings": []
 	}
@@ -38,7 +38,7 @@ func load():
 	var node_data = json.get_data()
 
 	if "money" in node_data:
-		MoneyHandler.setCurrentMoney(node_data["money"])
+		MoneyHandler.set_current_money(node_data["money"])
 
 	if "obtained_heroes" in node_data:
 		for heroData in node_data["obtained_heroes"]:

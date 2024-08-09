@@ -1,13 +1,13 @@
 extends Node
 
-func increaseMoney(value: int):
+func increase_money(value: int):
 	GameState.currentMoney += value
 
-func decreaseMoney(value: int):
+func decrease_money(value: int):
 	GameState.currentMoney -= value
 
-func getCurrentMoney():
+func get_current_money():
 	return GameState.currentMoney
 
-func setCurrentMoney(money: int):
+func set_current_money(money: int):
 	GameState.currentMoney = money

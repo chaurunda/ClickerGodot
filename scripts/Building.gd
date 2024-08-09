@@ -11,15 +11,15 @@ func _init(newName: String, level: int):
 
 func upgradeBuilding() -> bool:
 	var cost = getCostPerLevel()
-	var canUpgrade = MoneyHandler.getCurrentMoney() >= cost
+	var canUpgrade = MoneyHandler.get_current_money() >= cost
 	if canUpgrade:
-		MoneyHandler.decreaseMoney(cost)
+		MoneyHandler.decrease_money(cost)
 		buildingLevel += 1
 
 	return canUpgrade
 
-func increaseMoney(cost: int):
-	MoneyHandler.increaseMoney(cost)
+func increase_money(cost: int):
+	MoneyHandler.increase_money(cost)
 
 func getCostPerLevel():
 	return costBase * (growth ** buildingLevel)
