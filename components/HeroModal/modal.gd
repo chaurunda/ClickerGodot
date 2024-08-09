@@ -2,14 +2,14 @@ extends Node2D
 
 class_name HeroModal
 
-@export var heroButtonPackedScene: PackedScene
+@export var hero_button_packed_scene: PackedScene
 @onready var grid = $PanelContainer/HBoxContainer/MarginContainer/GridContainer
 
 func _ready():
-	generateHero()
-	GlobalEventBus.connect("tavern_level_up", resetGeneratedHero)
+	generate_hero()
+	GlobalEventBus.connect("tavern_level_up", reset_generated_hero)
 
-func computePrice(rarity):
+func compute_price(rarity):
 	var price = 0
 	if int(rarity) == 0:
 		price = 200
@@ -21,24 +21,24 @@ func computePrice(rarity):
 		price = 15000
 	return price
 
-func generateHero():
-	var listOfHerosName = DbManager.get_heros_list()
+func generate_hero():
+	var list_of_heros_name = DbManager.get_heros_list()
 	for i in 4:
-		var entryNumber = randi() % listOfHerosName.size()
-		var hero = listOfHerosName[entryNumber]
-		var heroButton = heroButtonPackedScene.instantiate()
-		var price = computePrice(hero.rarity)
-		heroButton.heroCost = price
-		heroButton.text = "{hero} : {price} $".format({"hero": hero.name, "price": price})
-		heroButton.heroID = hero.id
-		heroButton.hero_name = hero.name
-		grid.add_child(heroButton)
-		listOfHerosName.pop_at(entryNumber)
+		var entry_number = randi() % list_of_heros_name.size()
+		var hero = list_of_heros_name[entry_number]
+		var hero_button = hero_button_packed_scene.instantiate()
+		var price = compute_price(hero.rarity)
+		hero_button.hero_cost = price
+		hero_button.text = "{hero} : {price} $".format({"hero": hero.name, "price": price})
+		hero_button.hero_id = hero.id
+		hero_button.hero_name = hero.name
+		grid.add_child(hero_button)
+		list_of_heros_name.pop_at(entry_number)
 
-func resetGeneratedHero():
+func reset_generated_hero():
 	for child in grid.get_children():
 		child.queue_free()
-	generateHero()
+	generate_hero()
 
 
 func _on_close_button_pressed():
