@@ -9,7 +9,7 @@ var current_stats: Dictionary = {
 	"attack": null,
 	"armor": null
 }
-var thumbmailPath: String
+var thumbmail_path: String
 var sprite_path: String
 
 var item: Dictionary = {
