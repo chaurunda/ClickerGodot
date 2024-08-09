@@ -34,7 +34,7 @@ func setUpgradeButtonLabel():
 	upgradeButton.text = tr("UPGRADE_WITH_COST") % [tavernBuilding.buildingLevel, tavernUpgradeCost]
 
 func getCostPerLevel():
-	return heroBaseCost * (growth ** GameState.obtainedHeroes.size())
+	return heroBaseCost * (growth ** GameState.obtained_heroes.size())
 
 func save():
 	var saveData = {

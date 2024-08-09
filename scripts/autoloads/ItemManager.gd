@@ -3,7 +3,7 @@ extends Node
 var listOfItemName = []
 
 func getItems() :
-	return GameState.obtainedItems
+	return GameState.obtained_items
 
 func findAllItemByType(type: Item.ITEMS) -> Array[Item] :
 	var items = getItems()
@@ -14,7 +14,7 @@ func findAllItemByType(type: Item.ITEMS) -> Array[Item] :
 	return result
 
 func setObtainItem(item: Item) :
-	GameState.obtainedItems.push_back(item)
+	GameState.obtained_items.push_back(item)
 
 func generateNewItem():
 	pass

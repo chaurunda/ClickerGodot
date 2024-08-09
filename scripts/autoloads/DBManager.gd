@@ -3,20 +3,20 @@ extends Node
 
 func new_game():
   var database = SQLite.new()
-  database.path = "res://database/{tableName}.db".format({"tableName": GameState.tableName})
+  database.path = "res://database/{table_name}.db".format({"table_name": GameState.table_name})
   database.open_db()
   create_hero_table(database)
 
 func get_heros_list():
   var database = SQLite.new()
-  database.path = "res://database/{tableName}.db".format({"tableName": GameState.tableName})
+  database.path = "res://database/{table_name}.db".format({"table_name": GameState.table_name})
   database.open_db()
   var hero_list = database.select_rows("heroes", "", ["id", "name", "rarity"])
   return hero_list
 
 func get_hero(id):
   var database = SQLite.new()
-  database.path = "res://database/{tableName}.db".format({"tableName": GameState.tableName})
+  database.path = "res://database/{table_name}.db".format({"table_name": GameState.table_name})
   database.open_db()
   var hero = database.select_rows("heroes", "id = '{id}'".format({"id": id}), ["id", "name", "level", "rarity"])
   return hero

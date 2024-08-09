@@ -6,7 +6,7 @@ func save():
 	var save_game = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	var save_state = {
 		"money": MoneyHandler.getCurrentMoney(),
-		"obtainedHeroes": HeroManager.saveObtainedHeroes(),
+		"obtained_heroes": HeroManager.saveobtained_heroes(),
 		"buildings": []
 	}
 
@@ -40,8 +40,8 @@ func load():
 	if "money" in node_data:
 		MoneyHandler.setCurrentMoney(node_data["money"])
 
-	if "obtainedHeroes" in node_data:
-		for heroData in node_data["obtainedHeroes"]:
+	if "obtained_heroes" in node_data:
+		for heroData in node_data["obtained_heroes"]:
 			print(heroData)
 			var newHero = Hero.new(heroData.id, heroData.level, Stats.new(heroData.health, heroData.attack, heroData.armor), heroData.heroName)
 			newHero.create()

@@ -20,7 +20,7 @@ position = Vector2(960, 540)
 scale = Vector2(30, 16.875)
 texture = SubResource("GradientTexture2D_odenv")
 
-[node name="ObtainedHeroesSprite" type="Control" parent="."]
+[node name="obtained_heroesSprite" type="Control" parent="."]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 8

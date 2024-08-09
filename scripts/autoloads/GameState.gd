@@ -5,10 +5,10 @@ var currentMoney = 0
 
 
 ##### HEROES #####
-var obtainedHeroes: Array[Hero]
+var obtained_heroes: Array[Hero]
 
 #####  ITEMS #####
-var obtainedItems: Array[Item]
+var obtained_items: Array[Item]
 
 ##### DATABASE #####
-var tableName = "Clicker"
+var table_name = "Clicker"

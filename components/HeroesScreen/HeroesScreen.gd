@@ -3,7 +3,7 @@ extends Control
 @onready var nameLabel = $NameLabel
 @onready var currentHeroStatsLabel = $CurrentHeroStatLabel
 @onready var listOfHeroZone = $MarginContainer/ListOfHeroZone
-@onready var obtainedHeroesSprite = $ObtainedHeroesSprite
+@onready var obtained_heroesSprite = $obtained_heroesSprite
 @onready var heroes = HeroManager.getListOfHeroes()
 @export var heroButtonPackedScene: PackedScene
 
@@ -12,13 +12,13 @@ var margin = 10
 func _on_display_heroes_button_pressed():
 	self.visible = true
 
-	for hero in GameState.obtainedHeroes:
+	for hero in GameState.obtained_heroes:
 		var heroButton = heroButtonPackedScene.instantiate()
 		heroButton.currentHeroId = hero.uuid
 		heroButton.text = hero.heroName
 		listOfHeroZone.add_child(heroButton)
 
-	if GameState.obtainedHeroes.size() > 0:
+	if GameState.obtained_heroes.size() > 0:
 		updateHeroImage()
 
 
@@ -60,9 +60,9 @@ func updateHeroImage():
 	removeCurrentHeroSprite()
 	var currentHero = HeroManager.getCurrentHeroSelected()
 	var heroAnimatedSprite = load(currentHero.spritePath + "/animated_sprite.tscn").instantiate()
-	obtainedHeroesSprite.add_child(heroAnimatedSprite)
+	obtained_heroesSprite.add_child(heroAnimatedSprite)
 
 func removeCurrentHeroSprite():
-	for child in obtainedHeroesSprite.get_children():
+	for child in obtained_heroesSprite.get_children():
 		child.queue_free()
 

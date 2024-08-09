@@ -107,12 +107,12 @@ const listOfHeroName = [
 	},
 ]
 
-func setObtainedHeroes(newHero: Hero):
-	GameState.obtainedHeroes.push_back(newHero)
+func setobtained_heroes(newHero: Hero):
+	GameState.obtained_heroes.push_back(newHero)
 	GlobalEventBus.newHeroObtained.emit()
 
 func getListOfHeroes():
-	return GameState.obtainedHeroes
+	return GameState.obtained_heroes
 
 func setCurrentHeroSelected(id: HEROID):
 	currentSelectedHero = get_hero(id)
@@ -121,15 +121,15 @@ func getCurrentHeroSelected():
 	return currentSelectedHero
 
 func get_hero(id: HEROID):
-	for hero in GameState.obtainedHeroes:
+	for hero in GameState.obtained_heroes:
 		if hero.uuid == id:
 			return hero
 	return null
 
-func saveObtainedHeroes():
-	var obtainedHeroes = HeroManager.getListOfHeroes()
-	var obtainedHeroesData = []
-	for hero in obtainedHeroes:
+func saveobtained_heroes():
+	var obtained_heroes = HeroManager.getListOfHeroes()
+	var obtained_heroesData = []
+	for hero in obtained_heroes:
 		var heroData = {
 			"level": hero.level,
 			"id": hero.uuid,
@@ -138,8 +138,8 @@ func saveObtainedHeroes():
 			"armor": hero.currentStats.armor,
 			"heroName": hero.heroName,
 		}
-		obtainedHeroesData.append(heroData)
+		obtained_heroesData.append(heroData)
 
 		pass
-	return obtainedHeroesData
+	return obtained_heroesData
 
