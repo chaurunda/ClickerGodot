@@ -115,12 +115,12 @@ func getListOfHeroes():
 	return GameState.obtainedHeroes
 
 func setCurrentHeroSelected(id: HEROID):
-	currentSelectedHero = getHero(id)
+	currentSelectedHero = get_hero(id)
 
 func getCurrentHeroSelected():
 	return currentSelectedHero
 
-func getHero(id: HEROID):
+func get_hero(id: HEROID):
 	for hero in GameState.obtainedHeroes:
 		if hero.uuid == id:
 			return hero

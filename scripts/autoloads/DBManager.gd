@@ -1,62 +1,62 @@
 extends Node
 
 
-func newGame():
+func new_game():
   var database = SQLite.new()
   database.path = "res://database/{tableName}.db".format({"tableName": GameState.tableName})
   database.open_db()
-  createHeroTable(database)
+  create_hero_table(database)
 
-func getHerosList():
+func get_heros_list():
   var database = SQLite.new()
   database.path = "res://database/{tableName}.db".format({"tableName": GameState.tableName})
   database.open_db()
-  var heroList = database.select_rows("heroes", "", ["id", "name", "rarity"])
-  return heroList
+  var hero_list = database.select_rows("heroes", "", ["id", "name", "rarity"])
+  return hero_list
 
-func getHero(id):
+func get_hero(id):
   var database = SQLite.new()
   database.path = "res://database/{tableName}.db".format({"tableName": GameState.tableName})
   database.open_db()
   var hero = database.select_rows("heroes", "id = '{id}'".format({"id": id}), ["id", "name", "level", "rarity"])
   return hero
 
-func createHeroTable(database: SQLite):
+func create_hero_table(database: SQLite):
   database.drop_table("heroes")
-  var heroTable = {
+  var hero_table = {
 		"id": {"data_type": "TEXT", "primary_key": true, "not_null": true},
 		"name": {"data_type": "TEXT", "not_null": true},
 		"level": {"data_type": "INTEGER", "not_null": true},
 		"rarity": {"data_type": "TEXT", "not_null": true},
 	}
-  database.create_table("heroes", heroTable)
-  var listOfHerosName = HeroManager.listOfHeroName
-  for hero in listOfHerosName:
+  database.create_table("heroes", hero_table)
+  var list_of_heros_name = HeroManager.listOfHeroName
+  for hero in list_of_heros_name:
 
-    var heroDataDict = {
+    var hero_data_dict = {
       "id": hero.id,
       "name": hero.name,
       "level": 1,
       "rarity": hero.rarity
     }
-    database.insert_row("heroes", heroDataDict)
+    database.insert_row("heroes", hero_data_dict)
 
-func createItemTable(database: SQLite):
+func create_item_table(database: SQLite):
   database.drop_table("items")
-  var itemTable = {
+  var item_table = {
     "id": {"data_type": "TEXT", "primary_key": true, "not_null": true},
     "name": {"data_type": "TEXT", "not_null": true},
     "level": {"data_type": "INTEGER", "not_null": true},
     "rarity": {"data_type": "TEXT", "not_null": true},
   }
-  database.create_table("items", itemTable)
-  var listOfItemsName = ItemManager.listOfItemName
-  for item in listOfItemsName:
+  database.create_table("items", item_table)
+  var list_of_items_name = ItemManager.listOfItemName
+  for item in list_of_items_name:
 
-    var itemDataDict = {
+    var item_data_dict = {
       "id": item.id,
       "name": item.name,
       "level": 1,
       "rarity": item.rarity
     }
-    database.insert_row("items", itemDataDict)
+    database.insert_row("items", item_data_dict)

@@ -13,7 +13,7 @@ func _ready():
 func _on_new_game_button_pressed():
 	self.visible = false
 	isGameLaunched = true
-	DbManager.newGame()
+	DbManager.new_game()
 
 func _on_save_button_pressed():
 	SaveManager.save()

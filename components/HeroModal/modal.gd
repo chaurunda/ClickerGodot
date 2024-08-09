@@ -22,7 +22,7 @@ func computePrice(rarity):
 	return price
 
 func generateHero():
-	var listOfHerosName = DbManager.getHerosList()
+	var listOfHerosName = DbManager.get_heros_list()
 	for i in 4:
 		var entryNumber = randi() % listOfHerosName.size()
 		var hero = listOfHerosName[entryNumber]
