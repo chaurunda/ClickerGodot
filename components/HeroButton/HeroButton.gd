@@ -6,4 +6,4 @@ var currentHeroId: HeroManager.HEROID
 
 func _on_pressed():
 	HeroManager.setCurrentHeroSelected(currentHeroId)
-	GlobalEventBus.heroSelected.emit()
+	GlobalEventBus.hero_selected.emit()

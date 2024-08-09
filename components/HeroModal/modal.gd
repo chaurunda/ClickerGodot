@@ -7,7 +7,7 @@ class_name HeroModal
 
 func _ready():
 	generateHero()
-	GlobalEventBus.connect("tavernLevelUp", resetGeneratedHero)
+	GlobalEventBus.connect("tavern_level_up", resetGeneratedHero)
 
 func computePrice(rarity):
 	var price = 0

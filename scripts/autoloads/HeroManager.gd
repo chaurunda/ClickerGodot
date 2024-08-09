@@ -109,7 +109,7 @@ const listOfHeroName = [
 
 func setobtained_heroes(newHero: Hero):
 	GameState.obtained_heroes.push_back(newHero)
-	GlobalEventBus.newHeroObtained.emit()
+	GlobalEventBus.new_hero_obtained.emit()
 
 func getListOfHeroes():
 	return GameState.obtained_heroes

@@ -23,8 +23,8 @@ func _on_display_heroes_button_pressed():
 
 
 func _ready():
-	GlobalEventBus.connect("newHeroObtained", displayHeroes)
-	GlobalEventBus.connect("heroSelected", updateHeroImage)
+	GlobalEventBus.connect("new_hero_obtained", displayHeroes)
+	GlobalEventBus.connect("hero_selected", updateHeroImage)
 
 func _process(_delta):
 	displaySelectedHero()
