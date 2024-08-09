@@ -12,10 +12,10 @@ var timerInnBuilding = Building.new("InnTimer", 0)
 var amountInnBuilding = Building.new("InnAmout", 1)
 
 const arrayOfWaitingTimes = [10, 6, 2, 1, .5, .1]
-var timerUpgradeCount = timerInnBuilding.getCostPerLevel()
+var timerUpgradeCount = timerInnBuilding.get_cost_per_level()
 
 var amountOfGold = 0
-var amountUpgradeCount = amountInnBuilding.getCostPerLevel()
+var amountUpgradeCount = amountInnBuilding.get_cost_per_level()
 
 func _ready():
 	setTimerButtonLabel()
@@ -27,20 +27,20 @@ func _on_timer_timeout():
 	timerInnBuilding.increase_money(amountOfGold)
 
 func _on_timer_upgrade_button_pressed():
-	var hasUpgrade = timerInnBuilding.upgradeBuilding()
+	var hasUpgrade = timerInnBuilding.upgrade_building()
 	if hasUpgrade:
 		timerUpgradeCount += timerUpgradeCount
 		setTimer()
 		setTimerButtonLabel()
 
 func _on_amount_upgrade_button_pressed():
-	var hasUpgrade = amountInnBuilding.upgradeBuilding()
+	var hasUpgrade = amountInnBuilding.upgrade_building()
 	if hasUpgrade:
 		amountUpgradeCount += amountUpgradeCount
 		setAmountButtonLabel()
 
 func setTimer():
-	timer.wait_time = arrayOfWaitingTimes[timerInnBuilding.buildingLevel]
+	timer.wait_time = arrayOfWaitingTimes[timerInnBuilding.building_level]
 
 func _on_close_button_pressed():
 	upgradeUI.visible = false
@@ -49,15 +49,15 @@ func _on_upgrade_button_pressed():
 	upgradeUI.visible = true
 
 func setTimerButtonLabel():
-	timerUpgradeButton.text = tr("UPGRADE_WITH_COST") % [timerInnBuilding.buildingLevel + 1, timerInnBuilding.getCostPerLevel()]
+	timerUpgradeButton.text = tr("UPGRADE_WITH_COST") % [timerInnBuilding.building_level + 1, timerInnBuilding.get_cost_per_level()]
 
 func setAmountButtonLabel():
-	amountUpgradeButton.text = tr("UPGRADE_WITH_COST") % [amountInnBuilding.buildingLevel, amountInnBuilding.getCostPerLevel()]
+	amountUpgradeButton.text = tr("UPGRADE_WITH_COST") % [amountInnBuilding.building_level, amountInnBuilding.get_cost_per_level()]
 
 func save():
 	var saveData = {
-		"buildingLevel": timerInnBuilding.buildingLevel,
-		"amountInnBuildingLevel": amountInnBuilding.buildingLevel,
+		"building_level": timerInnBuilding.building_level,
+		"amountInnBuildingLevel": amountInnBuilding.building_level,
 		"filename" : get_scene_file_path(),
 		"parent" : get_parent().get_path(),
 	}

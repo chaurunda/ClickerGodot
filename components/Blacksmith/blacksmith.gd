@@ -13,7 +13,7 @@ func _on_button_pressed():
 
 func save():
 	var saveData = {
-		"buildingLevel": blacksmithBuilding.buildingLevel,
+		"building_level": blacksmithBuilding.building_level,
 		"filename" : get_scene_file_path(),
 		"parent" : get_parent().get_path(),
 	}

@@ -26,13 +26,13 @@ func on_click():
 	farmBuilding.increase_money(multiplier)
 
 func _on_upgrade_button_pressed():
-	var hasUpgrade = farmBuilding.upgradeBuilding()
+	var hasUpgrade = farmBuilding.upgrade_building()
 	if(hasUpgrade):
 		multiplier = 6
 		updateButtonLabel()
 
 func updateButtonLabel():
-	upgradeButton.text = tr("UPGRADE_WITH_COST") % [farmBuilding.buildingLevel+1, farmBuilding.getCostPerLevel()]
+	upgradeButton.text = tr("UPGRADE_WITH_COST") % [farmBuilding.building_level+1, farmBuilding.get_cost_per_level()]
 
 func _on_input_event(_viewport:Node, event:InputEvent, _shape_idx:int):
 	if event is InputEventMouseButton:
@@ -43,7 +43,7 @@ func _on_input_event(_viewport:Node, event:InputEvent, _shape_idx:int):
 
 func save():
 	var saveData = {
-		"buildingLevel": farmBuilding.buildingLevel,
+		"building_level": farmBuilding.building_level,
 		"filename" : get_scene_file_path(),
 		"parent" : get_parent().get_path(),
 	}

@@ -8,7 +8,7 @@ extends Area2D
 @export var growth := 1.07
 
 var tavernBuilding = Building.new("tavern", 1)
-var tavernUpgradeCost = tavernBuilding.getCostPerLevel()
+var tavernUpgradeCost = tavernBuilding.get_cost_per_level()
 
 func _ready():
 	setUpgradeButtonLabel()
@@ -20,7 +20,7 @@ func _on_manage_button_pressed():
 	UINode.visible = true
 
 func _on_upgrade_button_pressed():
-	var hasUpgrade = tavernBuilding.upgradeBuilding()
+	var hasUpgrade = tavernBuilding.upgrade_building()
 	if hasUpgrade:
 		tavernUpgradeCost += tavernUpgradeCost
 		setUpgradeButtonLabel()
@@ -31,14 +31,14 @@ func _on_close_button_pressed():
 	UINode.visible = false
 
 func setUpgradeButtonLabel():
-	upgradeButton.text = tr("UPGRADE_WITH_COST") % [tavernBuilding.buildingLevel, tavernUpgradeCost]
+	upgradeButton.text = tr("UPGRADE_WITH_COST") % [tavernBuilding.building_level, tavernUpgradeCost]
 
-func getCostPerLevel():
+func get_cost_per_level():
 	return heroBaseCost * (growth ** GameState.obtained_heroes.size())
 
 func save():
 	var saveData = {
-		"buildingLevel": tavernBuilding.buildingLevel,
+		"building_level": tavernBuilding.building_level,
 		"filename" : get_scene_file_path(),
 		"parent" : get_parent().get_path(),
 	}
