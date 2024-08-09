@@ -2,19 +2,19 @@ extends Area2D
 
 class_name Farm
 
-@onready var currentMultiplierLabel = $CurrentMultiplier
-@onready var upgradeButton = $UpgradeButton
+@onready var current_multiplier_label = $CurrentMultiplier
+@onready var upgrade_button = $UpgradeButton
 
-var farmBuilding = Building.new("farm", 1)
+var farm_building = Building.new("farm", 1)
 var multiplier = 300
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	updateButtonLabel()
+	update_button_label()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	currentMultiplierLabel.text = str(multiplier)
+	current_multiplier_label.text = str(multiplier)
 
 func _input_event(_viewport:Viewport, event:InputEvent, _shape_idx:int):
 	if event is InputEventMouseButton \
@@ -23,16 +23,16 @@ func _input_event(_viewport:Viewport, event:InputEvent, _shape_idx:int):
 		self.on_click()
 
 func on_click():
-	farmBuilding.increase_money(multiplier)
+	farm_building.increase_money(multiplier)
 
 func _on_upgrade_button_pressed():
-	var hasUpgrade = farmBuilding.upgrade_building()
-	if(hasUpgrade):
+	var has_upgrade = farm_building.upgrade_building()
+	if(has_upgrade):
 		multiplier = 6
-		updateButtonLabel()
+		update_button_label()
 
-func updateButtonLabel():
-	upgradeButton.text = tr("UPGRADE_WITH_COST") % [farmBuilding.building_level+1, farmBuilding.get_cost_per_level()]
+func update_button_label():
+	upgrade_button.text = tr("UPGRADE_WITH_COST") % [farm_building.building_level+1, farm_building.get_cost_per_level()]
 
 func _on_input_event(_viewport:Node, event:InputEvent, _shape_idx:int):
 	if event is InputEventMouseButton:
@@ -42,9 +42,9 @@ func _on_input_event(_viewport:Node, event:InputEvent, _shape_idx:int):
 			pass
 
 func save():
-	var saveData = {
-		"building_level": farmBuilding.building_level,
+	var save_data = {
+		"building_level": farm_building.building_level,
 		"filename" : get_scene_file_path(),
 		"parent" : get_parent().get_path(),
 	}
-	return saveData
+	return save_data
