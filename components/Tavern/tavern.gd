@@ -1,48 +1,48 @@
 extends Area2D
 
-@onready var UINode = $UI
-@onready var upgradeButton = $UI/GridContainer/UpgradeButton
-@onready var getNewHeroButton = $UI/GridContainer/GetNewHero
+@onready var ui_node = $UI
+@onready var upgrade_button = $UI/GridContainer/UpgradeButton
+@onready var get_new_hero_button = $UI/GridContainer/GetNewHero
 @onready var modal = $Modal
-@export var heroBaseCost := 200
+@export var hero_base_cost := 200
 @export var growth := 1.07
 
-var tavernBuilding = Building.new("tavern", 1)
-var tavernUpgradeCost = tavernBuilding.get_cost_per_level()
+var tavern_building = Building.new("tavern", 1)
+var tavern_upgrade_cost = tavern_building.get_cost_per_level()
 
 func _ready():
-	setUpgradeButtonLabel()
+	set_upgrade_button_label()
 
 func _process(_delta):
 	pass
 
 func _on_manage_button_pressed():
-	UINode.visible = true
+	ui_node.visible = true
 
 func _on_upgrade_button_pressed():
-	var hasUpgrade = tavernBuilding.upgrade_building()
-	if hasUpgrade:
-		tavernUpgradeCost += tavernUpgradeCost
-		setUpgradeButtonLabel()
+	var has_upgrade = tavern_building.upgrade_building()
+	if has_upgrade:
+		tavern_upgrade_cost += tavern_upgrade_cost
+		set_upgrade_button_label()
 		GlobalEventBus.tavern_level_up.emit() # Emit event for modal to update
 
 
 func _on_close_button_pressed():
-	UINode.visible = false
+	ui_node.visible = false
 
-func setUpgradeButtonLabel():
-	upgradeButton.text = tr("UPGRADE_WITH_COST") % [tavernBuilding.building_level, tavernUpgradeCost]
+func set_upgrade_button_label():
+	upgrade_button.text = tr("UPGRADE_WITH_COST") % [tavern_building.building_level, tavern_upgrade_cost]
 
 func get_cost_per_level():
-	return heroBaseCost * (growth ** GameState.obtained_heroes.size())
+	return hero_base_cost * (growth ** GameState.obtained_heroes.size())
 
 func save():
-	var saveData = {
-		"building_level": tavernBuilding.building_level,
+	var save_data = {
+		"building_level": tavern_building.building_level,
 		"filename" : get_scene_file_path(),
 		"parent" : get_parent().get_path(),
 	}
-	return saveData
+	return save_data
 
 func _on_get_new_hero_pressed():
 	modal.visible = true
