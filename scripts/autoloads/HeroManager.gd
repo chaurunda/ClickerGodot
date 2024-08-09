@@ -133,10 +133,10 @@ func save_obtained_heroes():
 		var hero_data = {
 			"level": hero.level,
 			"id": hero.uuid,
-			"health": hero.currentStats.health,
-			"attack": hero.currentStats.attack,
-			"armor": hero.currentStats.armor,
-			"heroName": hero.heroName,
+			"health": hero.current_stats.health,
+			"attack": hero.current_stats.attack,
+			"armor": hero.current_stats.armor,
+			"hero_name": hero.hero_name,
 		}
 		obtained_heroesData.append(hero_data)
 

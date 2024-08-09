@@ -1,16 +1,16 @@
 class_name Hero
 
-var heroName: String
+var hero_name: String
 var level: int
-var baseStats: Stats
+var base_stats: Stats
 var uuid: HeroManager.HEROID
-var currentStats: Dictionary = {
+var current_stats: Dictionary = {
 	"health": null,
 	"attack": null,
 	"armor": null
 }
 var thumbmailPath: String
-var spritePath: String
+var sprite_path: String
 
 var item: Dictionary = {
 	Item.ITEMS.WEAPON: null,
@@ -19,28 +19,28 @@ var item: Dictionary = {
 	Item.ITEMS.HELMET: null,
 }
 
-func _init(id: HeroManager.HEROID, newLevel: int, newStats: Stats, name: String):
-	heroName = name
-	level = newLevel
-	baseStats = newStats
+func _init(id: HeroManager.HEROID, new_level: int, new_stats: Stats, name: String):
+	hero_name = name
+	level = new_level
+	base_stats = new_stats
 	uuid = id
-	computeStats()
-	spritePath = 'res://components/HeroesSprites/' + str(id)
+	compute_stats()
+	sprite_path = 'res://components/HeroesSprites/' + str(id)
 
-func computeStats():
-	currentStats.health = baseStats.health
-	currentStats.attack = baseStats.attack
-	currentStats.armor = baseStats.armor
+func compute_stats():
+	current_stats.health = base_stats.health
+	current_stats.attack = base_stats.attack
+	current_stats.armor = base_stats.armor
 	if item[Item.ITEMS.WEAPON] != null:
-		currentStats.attack += item[Item.ITEMS.WEAPON].stat.attack
+		current_stats.attack += item[Item.ITEMS.WEAPON].stat.attack
 
-func equipItem(itemType: Item.ITEMS, newItem: Item):
+func equip_item(itemType: Item.ITEMS, newItem: Item):
 	item[itemType] = newItem.id
-	computeStats()
+	compute_stats()
 
-func unequipItem(itemType: String):
+func unequip_item(itemType: String):
 	item[itemType] = null
-	computeStats()
+	compute_stats()
 
 func create():
 	HeroManager.set_obtained_heroes(self)

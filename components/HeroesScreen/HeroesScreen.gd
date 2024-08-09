@@ -15,7 +15,7 @@ func _on_display_heroes_button_pressed():
 	for hero in GameState.obtained_heroes:
 		var heroButton = heroButtonPackedScene.instantiate()
 		heroButton.currentHeroId = hero.uuid
-		heroButton.text = hero.heroName
+		heroButton.text = hero.hero_name
 		listOfHeroZone.add_child(heroButton)
 
 	if GameState.obtained_heroes.size() > 0:
@@ -43,10 +43,10 @@ func displaySelectedHero():
 		updateHeroStatsLabel(currentHero)
 
 func updateHeroNameLabel(currentHero: Hero):
-	nameLabel.text = tr("LEVEL_HERO_NAME") % [currentHero.heroName, currentHero.level]
+	nameLabel.text = tr("LEVEL_HERO_NAME") % [currentHero.hero_name, currentHero.level]
 
 func updateHeroStatsLabel(currentHero: Hero):
-	currentHeroStatsLabel.text = tr("HERO_STATS") % [currentHero.currentStats.health, currentHero.currentStats.attack, currentHero.currentStats.armor]
+	currentHeroStatsLabel.text = tr("HERO_STATS") % [currentHero.current_stats.health, currentHero.current_stats.attack, currentHero.current_stats.armor]
 
 func _on_close_button_pressed():
 	self.visible = false
@@ -59,7 +59,7 @@ func _on_close_button_pressed():
 func updateHeroImage():
 	removeCurrentHeroSprite()
 	var currentHero = HeroManager.get_current_Hero_selected()
-	var heroAnimatedSprite = load(currentHero.spritePath + "/animated_sprite.tscn").instantiate()
+	var heroAnimatedSprite = load(currentHero.sprite_path + "/animated_sprite.tscn").instantiate()
 	obtained_heroesSprite.add_child(heroAnimatedSprite)
 
 func removeCurrentHeroSprite():
