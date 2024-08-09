@@ -2,10 +2,10 @@ extends Node
 
 class_name HUD
 
-@onready var moneyLabel = $MarginContainer/MoneyLabel
+@onready var money_label = $MarginContainer/MoneyLabel
 
 func _process(_delta):
 	updateDisplay()
 
 func updateDisplay():
-	moneyLabel.text = "$ %d" % MoneyHandler.get_current_money()
+	money_label.text = "$ %d" % MoneyHandler.get_current_money()
