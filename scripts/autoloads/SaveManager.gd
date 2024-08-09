@@ -30,8 +30,8 @@ func load():
 	var json_string = save_game.get_line()
 	var data = save_game.get_as_text()
 	var json = JSON.new()
-	var parsedData = json.parse(data)
-	if not parsedData == OK:
+	var parsed_data = json.parse(data)
+	if not parsed_data == OK:
 			print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
 			return
 
@@ -41,9 +41,8 @@ func load():
 		MoneyHandler.set_current_money(node_data["money"])
 
 	if "obtained_heroes" in node_data:
-		for heroData in node_data["obtained_heroes"]:
-			print(heroData)
-			var newHero = Hero.new(heroData.id, heroData.level, Stats.new(heroData.health, heroData.attack, heroData.armor), heroData.heroName)
+		for hero_data in node_data["obtained_heroes"]:
+			var newHero = Hero.new(hero_data.id, hero_data.level, Stats.new(hero_data.health, hero_data.attack, hero_data.armor), hero_data.heroName)
 			newHero.create()
 			pass
 
