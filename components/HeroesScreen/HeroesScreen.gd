@@ -4,7 +4,7 @@ extends Control
 @onready var currentHeroStatsLabel = $CurrentHeroStatLabel
 @onready var listOfHeroZone = $MarginContainer/ListOfHeroZone
 @onready var obtained_heroesSprite = $obtained_heroesSprite
-@onready var heroes = HeroManager.getListOfHeroes()
+@onready var heroes = HeroManager.get_list_of_heroes()
 @export var heroButtonPackedScene: PackedScene
 
 var margin = 10
@@ -30,14 +30,14 @@ func _process(_delta):
 	displaySelectedHero()
 
 func displayHeroes():
-	var listOfHeros = HeroManager.getListOfHeroes()
-	setCurrentHeroSelected(listOfHeros[0])
+	var listOfHeros = HeroManager.get_list_of_heroes()
+	set_current_hero_selected(listOfHeros[0])
 
-func setCurrentHeroSelected(hero: Hero):
-	HeroManager.setCurrentHeroSelected(hero.uuid)
+func set_current_hero_selected(hero: Hero):
+	HeroManager.set_current_hero_selected(hero.uuid)
 
 func displaySelectedHero():
-	var currentHero = HeroManager.getCurrentHeroSelected()
+	var currentHero = HeroManager.get_current_Hero_selected()
 	if currentHero:
 		updateHeroNameLabel(currentHero)
 		updateHeroStatsLabel(currentHero)
@@ -58,7 +58,7 @@ func _on_close_button_pressed():
 
 func updateHeroImage():
 	removeCurrentHeroSprite()
-	var currentHero = HeroManager.getCurrentHeroSelected()
+	var currentHero = HeroManager.get_current_Hero_selected()
 	var heroAnimatedSprite = load(currentHero.spritePath + "/animated_sprite.tscn").instantiate()
 	obtained_heroesSprite.add_child(heroAnimatedSprite)
 

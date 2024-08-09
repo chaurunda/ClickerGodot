@@ -6,7 +6,7 @@ func save():
 	var save_game = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	var save_state = {
 		"money": MoneyHandler.getCurrentMoney(),
-		"obtained_heroes": HeroManager.saveobtained_heroes(),
+		"obtained_heroes": HeroManager.save_obtained_heroes(),
 		"buildings": []
 	}
 

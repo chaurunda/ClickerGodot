@@ -1,6 +1,6 @@
 extends Node
 
-var currentSelectedHero: Hero = null
+var current_selected_hero: Hero = null
 
 var database = SQLite.new()
 
@@ -107,18 +107,18 @@ const listOfHeroName = [
 	},
 ]
 
-func setobtained_heroes(newHero: Hero):
+func set_obtained_heroes(newHero: Hero):
 	GameState.obtained_heroes.push_back(newHero)
 	GlobalEventBus.new_hero_obtained.emit()
 
-func getListOfHeroes():
+func get_list_of_heroes():
 	return GameState.obtained_heroes
 
-func setCurrentHeroSelected(id: HEROID):
-	currentSelectedHero = get_hero(id)
+func set_current_hero_selected(id: HEROID):
+	current_selected_hero = get_hero(id)
 
-func getCurrentHeroSelected():
-	return currentSelectedHero
+func get_current_Hero_selected():
+	return current_selected_hero
 
 func get_hero(id: HEROID):
 	for hero in GameState.obtained_heroes:
@@ -126,11 +126,11 @@ func get_hero(id: HEROID):
 			return hero
 	return null
 
-func saveobtained_heroes():
-	var obtained_heroes = HeroManager.getListOfHeroes()
+func save_obtained_heroes():
+	var obtained_heroes = HeroManager.get_list_of_heroes()
 	var obtained_heroesData = []
 	for hero in obtained_heroes:
-		var heroData = {
+		var hero_data = {
 			"level": hero.level,
 			"id": hero.uuid,
 			"health": hero.currentStats.health,
@@ -138,7 +138,7 @@ func saveobtained_heroes():
 			"armor": hero.currentStats.armor,
 			"heroName": hero.heroName,
 		}
-		obtained_heroesData.append(heroData)
+		obtained_heroesData.append(hero_data)
 
 		pass
 	return obtained_heroesData

@@ -43,4 +43,4 @@ func unequipItem(itemType: String):
 	computeStats()
 
 func create():
-	HeroManager.setobtained_heroes(self)
+	HeroManager.set_obtained_heroes(self)
