@@ -1,11 +1,11 @@
 extends Control
 
-@onready var nameLabel = $NameLabel
-@onready var currentHeroStatsLabel = $CurrentHeroStatLabel
-@onready var listOfHeroZone = $MarginContainer/ListOfHeroZone
-@onready var obtained_heroesSprite = $obtained_heroesSprite
+@onready var name_label = $NameLabel
+@onready var current_hero_stats_label = $CurrentHeroStatLabel
+@onready var list_of_hero_zone = $MarginContainer/ListOfHeroZone
+@onready var obtained_heroes_sprite = $ObtainedHeroesSprite
 @onready var heroes = HeroManager.get_list_of_heroes()
-@export var heroButtonPackedScene: PackedScene
+@export var hero_button_packed_sScene: PackedScene
 
 var margin = 10
 
@@ -13,56 +13,56 @@ func _on_display_heroes_button_pressed():
 	self.visible = true
 
 	for hero in GameState.obtained_heroes:
-		var heroButton = heroButtonPackedScene.instantiate()
-		heroButton.currentHeroId = hero.uuid
-		heroButton.text = hero.hero_name
-		listOfHeroZone.add_child(heroButton)
+		var hero_button = hero_button_packed_sScene.instantiate()
+		hero_button.currentHeroId = hero.uuid
+		hero_button.text = hero.hero_name
+		list_of_hero_zone.add_child(hero_button)
 
 	if GameState.obtained_heroes.size() > 0:
-		updateHeroImage()
+		update_hero_image()
 
 
 func _ready():
-	GlobalEventBus.connect("new_hero_obtained", displayHeroes)
-	GlobalEventBus.connect("hero_selected", updateHeroImage)
+	GlobalEventBus.connect("new_hero_obtained", display_heroes)
+	GlobalEventBus.connect("hero_selected", update_hero_image)
 
 func _process(_delta):
-	displaySelectedHero()
+	display_selected_hero()
 
-func displayHeroes():
-	var listOfHeros = HeroManager.get_list_of_heroes()
-	set_current_hero_selected(listOfHeros[0])
+func display_heroes():
+	var list_of_heros = HeroManager.get_list_of_heroes()
+	set_current_hero_selected(list_of_heros[0])
 
 func set_current_hero_selected(hero: Hero):
 	HeroManager.set_current_hero_selected(hero.uuid)
 
-func displaySelectedHero():
-	var currentHero = HeroManager.get_current_Hero_selected()
-	if currentHero:
-		updateHeroNameLabel(currentHero)
-		updateHeroStatsLabel(currentHero)
+func display_selected_hero():
+	var current_hero = HeroManager.get_current_Hero_selected()
+	if current_hero:
+		update_hero_name_label(current_hero)
+		update_hero_stats_label(current_hero)
 
-func updateHeroNameLabel(currentHero: Hero):
-	nameLabel.text = tr("LEVEL_HERO_NAME") % [currentHero.hero_name, currentHero.level]
+func update_hero_name_label(current_hero: Hero):
+	name_label.text = tr("LEVEL_HERO_NAME") % [current_hero.hero_name, current_hero.level]
 
-func updateHeroStatsLabel(currentHero: Hero):
-	currentHeroStatsLabel.text = tr("HERO_STATS") % [currentHero.current_stats.health, currentHero.current_stats.attack, currentHero.current_stats.armor]
+func update_hero_stats_label(current_hero: Hero):
+	current_hero_stats_label.text = tr("HERO_STATS") % [current_hero.current_stats.health, current_hero.current_stats.attack, current_hero.current_stats.armor]
 
 func _on_close_button_pressed():
 	self.visible = false
-	for child in listOfHeroZone.get_children():
+	for child in list_of_hero_zone.get_children():
 		if child is HeroButton:
 			child.queue_free()
 
-	removeCurrentHeroSprite()
+	remove_current_hero_sprite()
 
-func updateHeroImage():
-	removeCurrentHeroSprite()
-	var currentHero = HeroManager.get_current_Hero_selected()
-	var heroAnimatedSprite = load(currentHero.sprite_path + "/animated_sprite.tscn").instantiate()
-	obtained_heroesSprite.add_child(heroAnimatedSprite)
+func update_hero_image():
+	remove_current_hero_sprite()
+	var current_hero = HeroManager.get_current_Hero_selected()
+	var hero_animated_sprite = load(current_hero.sprite_path + "/animated_sprite.tscn").instantiate()
+	obtained_heroes_sprite.add_child(hero_animated_sprite)
 
-func removeCurrentHeroSprite():
-	for child in obtained_heroesSprite.get_children():
+func remove_current_hero_sprite():
+	for child in obtained_heroes_sprite.get_children():
 		child.queue_free()
 
