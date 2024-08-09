@@ -50,7 +50,7 @@ func create_item_table(database: SQLite):
     "rarity": {"data_type": "TEXT", "not_null": true},
   }
   database.create_table("items", item_table)
-  var list_of_items_name = ItemManager.listOfItemName
+  var list_of_items_name = ItemManager.list_of_item_name
   for item in list_of_items_name:
 
     var item_data_dict = {

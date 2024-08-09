@@ -1,21 +1,21 @@
 extends Node
 
-var listOfItemName = []
+var list_of_item_name = []
 
-func getItems() :
+func get_items() :
 	return GameState.obtained_items
 
-func findAllItemByType(type: Item.ITEMS) -> Array[Item] :
-	var items = getItems()
+func find_all_items_by_type(type: Item.ITEMS) -> Array[Item] :
+	var items = get_items()
 	var result = []
 	for item in items :
 		if item.type == type :
 			result.append(item)
 	return result
 
-func setObtainItem(item: Item) :
+func set_obtained_item(item: Item) :
 	GameState.obtained_items.push_back(item)
 
-func generateNewItem():
+func generate_new_item():
 	pass
 
