@@ -136,6 +136,7 @@ func saveObtainedHeroes():
 			"health": hero.currentStats.health,
 			"attack": hero.currentStats.attack,
 			"armor": hero.currentStats.armor,
+			"heroName": hero.heroName,
 		}
 		obtainedHeroesData.append(heroData)
 

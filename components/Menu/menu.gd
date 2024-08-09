@@ -7,7 +7,7 @@ var isGameLaunched = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if SaveManager.hasSave():
+	if SaveManager.has_save():
 		loadButton.disabled = false
 
 func _on_new_game_button_pressed():
