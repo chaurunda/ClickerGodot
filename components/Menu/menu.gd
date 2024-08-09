@@ -1,14 +1,14 @@
-extends Node2D
+extends Control
 
-@onready var loadButton = $GridContainer/LoadButton
-@onready var saveButton = $GridContainer/SaveButton
-@onready var newGameButton = $GridContainer/NewGameButton
+@onready var loadButton = %LoadButton
+@onready var saveButton = %SaveButton
+@onready var newGameButton = %NewGameButton
 var isGameLaunched = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if SaveManager.hasSave():
-		loadButton.visible = true
+		loadButton.disabled = false
 
 func _on_new_game_button_pressed():
 	self.visible = false
