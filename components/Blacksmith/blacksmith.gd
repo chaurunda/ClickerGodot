@@ -7,6 +7,10 @@ class_name Blacksmith
 
 var blacksmith_building = Building.new("blacksmith", 1)
 
+func _ready():
+	ui_container.visible = false
+	item_modal.visible = false
+
 func _on_button_pressed():
 	ui_container.visible = true
 
@@ -20,3 +24,7 @@ func save():
 
 func _on_buy_item_button_pressed():
 	item_modal.visible = true
+
+
+func _on_close_button_pressed():
+	ui_container.visible = false

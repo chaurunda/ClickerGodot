@@ -8,6 +8,7 @@ class_name HeroModal
 func _ready():
 	generate_hero()
 	GlobalEventBus.connect("tavern_level_up", reset_generated_hero)
+	self.visible = false
 
 func compute_price(rarity):
 	var price = 0
