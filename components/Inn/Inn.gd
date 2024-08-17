@@ -1,8 +1,8 @@
 extends Area2D
 
 @onready var timer = $Timer
-@onready var timer_upgrade_button = $UpgradeUI/TimerUpgradeButton
-@onready var amount_upgrade_button = $UpgradeUI/AmountUpgradeButton
+@onready var timer_upgrade_button = %TimerInnUpgradeButton
+@onready var amount_upgrade_button = %AmountInnUpgradeButton
 @onready var upgrade_ui = $UpgradeUI
 
 @export var base_amount = 10

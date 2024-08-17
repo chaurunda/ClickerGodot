@@ -33,50 +33,63 @@ size_flags_vertical = 4
 text = "UPGRADE"
 icon_alignment = 1
 
-[node name="UpgradeUI" type="Node2D" parent="."]
-position = Vector2(24, 0)
+[node name="UpgradeUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 24.0
+offset_right = 24.0
 
 [node name="Sprite2D" type="Sprite2D" parent="UpgradeUI"]
-scale = Vector2(3.46875, 2.53125)
+scale = Vector2(3.46875, 3.13125)
 texture = SubResource("GradientTexture2D_brmlc")
 
-[node name="TimerLabel" type="Label" parent="UpgradeUI"]
-offset_left = -24.0
-offset_top = -76.0
-offset_right = 21.0
-offset_bottom = -53.0
+[node name="VBoxContainer" type="VBoxContainer" parent="UpgradeUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.0
+offset_top = -89.0
+offset_right = 78.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UpgradeUI/VBoxContainer"]
+layout_mode = 2
+
+[node name="TimerLabel" type="Label" parent="UpgradeUI/VBoxContainer/VBoxContainer"]
+layout_mode = 2
 text = "TIMER"
+horizontal_alignment = 1
 
-[node name="TimerUpgradeButton" type="Button" parent="UpgradeUI"]
-offset_left = -101.0
-offset_top = -49.0
-offset_right = 101.0
-offset_bottom = -18.0
+[node name="TimerInnUpgradeButton" type="Button" parent="UpgradeUI/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
 text = "Level 1 Upgrade 50"
 
-[node name="AmountLabel" type="Label" parent="UpgradeUI"]
-offset_left = -30.0
-offset_top = 4.0
-offset_right = 33.0
-offset_bottom = 27.0
+[node name="VBoxContainer2" type="VBoxContainer" parent="UpgradeUI/VBoxContainer"]
+layout_mode = 2
+
+[node name="AmountLabel" type="Label" parent="UpgradeUI/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
 text = "AMOUNT"
+horizontal_alignment = 1
 
-[node name="AmountUpgradeButton" type="Button" parent="UpgradeUI"]
-offset_left = -102.0
-offset_top = 29.0
-offset_right = 101.0
-offset_bottom = 60.0
+[node name="AmountInnUpgradeButton" type="Button" parent="UpgradeUI/VBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
 text = "Level 1 Upgrade 50"
 
-[node name="CloseButton" type="Button" parent="UpgradeUI"]
-offset_left = 93.0
-offset_top = -81.0
-offset_right = 111.0
-offset_bottom = -50.0
-text = "X"
+[node name="CloseButton" type="Button" parent="UpgradeUI/VBoxContainer"]
+layout_mode = 2
+text = "CLOSE"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="UpgradeButton" to="." method="_on_upgrade_button_pressed"]
-[connection signal="pressed" from="UpgradeUI/TimerUpgradeButton" to="." method="_on_timer_upgrade_button_pressed"]
-[connection signal="pressed" from="UpgradeUI/AmountUpgradeButton" to="." method="_on_amount_upgrade_button_pressed"]
-[connection signal="pressed" from="UpgradeUI/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="UpgradeUI/VBoxContainer/VBoxContainer/TimerInnUpgradeButton" to="." method="_on_timer_upgrade_button_pressed"]
+[connection signal="pressed" from="UpgradeUI/VBoxContainer/VBoxContainer2/AmountInnUpgradeButton" to="." method="_on_amount_upgrade_button_pressed"]
+[connection signal="pressed" from="UpgradeUI/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
