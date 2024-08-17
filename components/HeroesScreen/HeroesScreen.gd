@@ -5,7 +5,7 @@ extends Control
 @onready var list_of_hero_zone = $MarginContainer/ListOfHeroZone
 @onready var obtained_heroes_sprite = $ObtainedHeroesSprite
 @onready var heroes = HeroManager.get_list_of_heroes()
-@export var hero_button_packed_sScene: PackedScene
+@export var hero_button_packed_scene: PackedScene
 
 var margin = 10
 
@@ -13,8 +13,8 @@ func _on_display_heroes_button_pressed():
 	self.visible = true
 
 	for hero in GameState.obtained_heroes:
-		var hero_button = hero_button_packed_sScene.instantiate()
-		hero_button.currentHeroId = hero.uuid
+		var hero_button = hero_button_packed_scene.instantiate()
+		hero_button.current_hero_id = hero.uuid
 		hero_button.text = hero.hero_name
 		list_of_hero_zone.add_child(hero_button)
 
