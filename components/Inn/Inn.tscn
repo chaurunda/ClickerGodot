@@ -1,15 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bweh7y0m744yq"]
+[gd_scene load_steps=3 format=3 uid="uid://bweh7y0m744yq"]
 
 [ext_resource type="Script" path="res://components/Inn/Inn.gd" id="1_rr6sd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33ije"]
 size = Vector2(160, 177)
-
-[sub_resource type="Gradient" id="Gradient_i0stv"]
-colors = PackedColorArray(0.462745, 0.462745, 0.462745, 1, 0.462745, 0.462745, 0.462745, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_brmlc"]
-gradient = SubResource("Gradient_i0stv")
 
 [node name="Inn" type="Area2D"]
 position = Vector2(-16, 80)
@@ -39,57 +33,63 @@ anchors_preset = 0
 offset_left = 24.0
 offset_right = 24.0
 
-[node name="Sprite2D" type="Sprite2D" parent="UpgradeUI"]
-scale = Vector2(3.46875, 3.13125)
-texture = SubResource("GradientTexture2D_brmlc")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UpgradeUI"]
+[node name="PanelContainer" type="PanelContainer" parent="UpgradeUI"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -77.0
-offset_top = -89.0
-offset_right = 78.0
-offset_bottom = 90.0
+offset_left = -77.5
+offset_top = -89.5
+offset_right = 77.5
+offset_bottom = 89.5
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UpgradeUI/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UpgradeUI/PanelContainer/MarginContainer"]
+layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UpgradeUI/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UpgradeUI/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="TimerLabel" type="Label" parent="UpgradeUI/VBoxContainer/VBoxContainer"]
+[node name="TimerLabel" type="Label" parent="UpgradeUI/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "TIMER"
 horizontal_alignment = 1
 
-[node name="TimerInnUpgradeButton" type="Button" parent="UpgradeUI/VBoxContainer/VBoxContainer"]
+[node name="TimerInnUpgradeButton" type="Button" parent="UpgradeUI/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Level 1 Upgrade 50"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="UpgradeUI/VBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="UpgradeUI/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="AmountLabel" type="Label" parent="UpgradeUI/VBoxContainer/VBoxContainer2"]
+[node name="AmountLabel" type="Label" parent="UpgradeUI/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 text = "AMOUNT"
 horizontal_alignment = 1
 
-[node name="AmountInnUpgradeButton" type="Button" parent="UpgradeUI/VBoxContainer/VBoxContainer2"]
+[node name="AmountInnUpgradeButton" type="Button" parent="UpgradeUI/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Level 1 Upgrade 50"
 
-[node name="CloseButton" type="Button" parent="UpgradeUI/VBoxContainer"]
+[node name="CloseButton" type="Button" parent="UpgradeUI/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "CLOSE"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="UpgradeButton" to="." method="_on_upgrade_button_pressed"]
-[connection signal="pressed" from="UpgradeUI/VBoxContainer/VBoxContainer/TimerInnUpgradeButton" to="." method="_on_timer_upgrade_button_pressed"]
-[connection signal="pressed" from="UpgradeUI/VBoxContainer/VBoxContainer2/AmountInnUpgradeButton" to="." method="_on_amount_upgrade_button_pressed"]
-[connection signal="pressed" from="UpgradeUI/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="UpgradeUI/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/TimerInnUpgradeButton" to="." method="_on_timer_upgrade_button_pressed"]
+[connection signal="pressed" from="UpgradeUI/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer2/AmountInnUpgradeButton" to="." method="_on_amount_upgrade_button_pressed"]
+[connection signal="pressed" from="UpgradeUI/PanelContainer/MarginContainer/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
