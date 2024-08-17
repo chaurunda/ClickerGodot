@@ -24,7 +24,6 @@ text = "UPGRADE"
 metadata/_edit_use_anchors_ = true
 
 [node name="UIContainer" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -109.0
@@ -78,7 +77,6 @@ layout_mode = 2
 text = "UPGRADE_BUTTON"
 
 [node name="ItemModal" parent="." instance=ExtResource("2_8egjb")]
-visible = false
 offset_left = 136.0
 offset_right = 176.0
 

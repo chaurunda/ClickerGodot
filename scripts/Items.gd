@@ -6,3 +6,6 @@ var list_of_wooden_items: Array[Item]= [
   Item.new('Wooden Legs', 1, Stats.new(1, 0, 1), Item.ITEMS.LEGS, 3),
   Item.new('Wooden Chest', 1, Stats.new(1, 0, 1), Item.ITEMS.CHEST, 4)
 ]
+
+func available_items():
+  return list_of_wooden_items
