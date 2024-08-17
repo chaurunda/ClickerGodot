@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://bwh5nrneuow1c"]
 
 [ext_resource type="Script" path="res://components/HeroModal/modal.gd" id="1_bxhp4"]
-[ext_resource type="PackedScene" uid="uid://741wlsb1lem4" path="res://components/NewHeroButton/newHeroButton.tscn" id="2_q6wh3"]
+[ext_resource type="PackedScene" uid="uid://741wlsb1lem4" path="res://components/NewHeroButton/newHeroButton.tscn" id="2_srg78"]
 
 [node name="Modal" type="Node2D"]
 script = ExtResource("1_bxhp4")
-heroButtonPackedScene = ExtResource("2_q6wh3")
+new_hero_button_packed_scene = ExtResource("2_srg78")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 anchors_preset = 1

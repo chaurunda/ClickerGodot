@@ -2,7 +2,7 @@ extends Node2D
 
 class_name HeroModal
 
-@export var hero_button_packed_scene: PackedScene
+@export var new_hero_button_packed_scene: PackedScene
 @onready var grid = $PanelContainer/HBoxContainer/MarginContainer/GridContainer
 
 func _ready():
@@ -26,7 +26,7 @@ func generate_hero():
 	for i in 4:
 		var entry_number = randi() % list_of_heros_name.size()
 		var hero = list_of_heros_name[entry_number]
-		var hero_button = hero_button_packed_scene.instantiate()
+		var hero_button = new_hero_button_packed_scene.instantiate()
 		var price = compute_price(hero.rarity)
 		hero_button.hero_cost = price
 		hero_button.text = "{hero} : {price} $".format({"hero": hero.name, "price": price})
