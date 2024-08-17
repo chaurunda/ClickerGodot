@@ -12,6 +12,7 @@ var tavern_upgrade_cost = tavern_building.get_cost_per_level()
 
 func _ready():
 	set_upgrade_button_label()
+	ui_node.visible = false
 
 func _process(_delta):
 	pass
