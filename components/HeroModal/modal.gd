@@ -3,7 +3,7 @@ extends Node2D
 class_name HeroModal
 
 @export var new_hero_button_packed_scene: PackedScene
-@onready var grid = $PanelContainer/HBoxContainer/MarginContainer/GridContainer
+@onready var grid = $PanelContainer/MarginContainer/HBoxContainer/GridContainer
 
 func _ready():
 	generate_hero()

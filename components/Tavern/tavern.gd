@@ -1,8 +1,8 @@
 extends Area2D
 
 @onready var ui_node = $UI
-@onready var upgrade_button = $UI/GridContainer/UpgradeButton
-@onready var get_new_hero_button = $UI/GridContainer/GetNewHero
+@onready var upgrade_button = %UpgradeHeroButton
+@onready var get_new_hero_button = %GetNewHeroButton
 @onready var modal = $Modal
 @export var hero_base_cost := 200
 @export var growth := 1.07

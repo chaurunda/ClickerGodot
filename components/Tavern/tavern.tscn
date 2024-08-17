@@ -1,16 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2k34445t2qkx"]
+[gd_scene load_steps=4 format=3 uid="uid://c2k34445t2qkx"]
 
 [ext_resource type="Script" path="res://components/Tavern/tavern.gd" id="1_8hpd2"]
 [ext_resource type="PackedScene" uid="uid://bwh5nrneuow1c" path="res://components/HeroModal/modal.tscn" id="2_grum0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bc4gl"]
 size = Vector2(208, 178)
-
-[sub_resource type="Gradient" id="Gradient_ogrkd"]
-colors = PackedColorArray(0.4, 0.4, 0.4, 1, 0.4, 0.4, 0.4, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_nk3dj"]
-gradient = SubResource("Gradient_ogrkd")
 
 [node name="Tavern" type="Area2D"]
 script = ExtResource("1_8hpd2")
@@ -26,48 +20,71 @@ offset_right = 136.0
 offset_bottom = -113.0
 text = "Manage"
 
-[node name="UI" type="Node2D" parent="."]
-visible = false
-position = Vector2(24, -10)
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 24.0
+offset_top = -10.0
+offset_right = 24.0
+offset_bottom = -10.0
 
-[node name="Sprite2D" type="Sprite2D" parent="UI"]
-position = Vector2(-0.499999, 1)
-scale = Vector2(3.48438, 2.5625)
-texture = SubResource("GradientTexture2D_nk3dj")
-
-[node name="GridContainer" type="GridContainer" parent="UI"]
+[node name="PanelContainer" type="PanelContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -84.0
-offset_top = -47.0
+offset_top = -89.5
 offset_right = 84.0
-offset_bottom = 73.0
+offset_bottom = 89.5
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Label" type="Label" parent="UI/GridContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="UI/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="UI/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 text = "TAVERN"
 
-[node name="UpgradeButton" type="Button" parent="UI/GridContainer"]
+[node name="UpgradeHeroButton" type="Button" parent="UI/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Level 1 Upgrade $ 50"
 
-[node name="GetHeroLabel" type="Label" parent="UI/GridContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="GetHeroLabel" type="Label" parent="UI/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "HERO"
 
-[node name="GetNewHero" type="Button" parent="UI/GridContainer"]
+[node name="GetNewHeroButton" type="Button" parent="UI/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "GET_NEW_HERO"
 
-[node name="CloseButton" type="Button" parent="UI"]
-offset_left = 90.0
-offset_top = -77.0
-offset_right = 107.0
-offset_bottom = -46.0
-text = "x"
+[node name="CloseButton" type="Button" parent="UI/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "CLOSE"
 
 [node name="Modal" parent="." instance=ExtResource("2_grum0")]
 visible = false
 
 [connection signal="pressed" from="ManageButton" to="." method="_on_manage_button_pressed"]
-[connection signal="pressed" from="UI/GridContainer/UpgradeButton" to="." method="_on_upgrade_button_pressed"]
-[connection signal="pressed" from="UI/GridContainer/GetNewHero" to="." method="_on_get_new_hero_pressed"]
-[connection signal="pressed" from="UI/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="UI/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer2/UpgradeHeroButton" to="." method="_on_upgrade_button_pressed"]
+[connection signal="pressed" from="UI/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/GetNewHeroButton" to="." method="_on_get_new_hero_pressed"]
+[connection signal="pressed" from="UI/PanelContainer/MarginContainer/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
