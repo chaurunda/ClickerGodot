@@ -6,6 +6,9 @@ var level: int
 var stats: Stats
 var thumbmail_path: String
 var type: ITEMS
+var rarity: int
+var cost: int = 0
+
 
 enum ITEMS {
   WEAPON,
@@ -20,3 +23,8 @@ func _init(new_name: String, new_level: int, new_stats: Stats, new_type: ITEMS, 
   stats = new_stats
   id = new_id
   type = new_type
+  rarity = 1
+  cost = compute_price()
+
+func compute_price():
+  return 1

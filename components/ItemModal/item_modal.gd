@@ -10,9 +10,9 @@ func _ready():
 	self.visible = false
 	for item in items.available_items() :
 		var item_button = new_item_button_packed_scene.instantiate()
-		item_button.name = item.name
-		item_button.hero_cost = item.level
-		item_button.text = "{item} : {cost} $".format({"item": item.name, "cost": item.stats.health})
+		item_button.item_name = item.name
+		item_button.item_cost = item.cost
+		item_button.text = "{item} : {cost} $".format({"item": item.name, "cost": item.cost})
 		grid.add_child(item_button)
 
 

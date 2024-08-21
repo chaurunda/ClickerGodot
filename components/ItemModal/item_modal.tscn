@@ -1,13 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://ci4gabtt5mcej"]
 
 [ext_resource type="Script" path="res://components/ItemModal/item_modal.gd" id="1_57guc"]
-[ext_resource type="PackedScene" uid="uid://741wlsb1lem4" path="res://components/Button/Button.tscn" id="2_edvw8"]
+[ext_resource type="PackedScene" uid="uid://bmmtm6temqqb4" path="res://components/GetNewItemButton/GetNewItemButton.tscn" id="2_x6h35"]
 
 [node name="ItemModal" type="PanelContainer"]
 offset_right = 40.0
 offset_bottom = 40.0
+scale = Vector2(1, 0.99845)
 script = ExtResource("1_57guc")
-new_item_button_packed_scene = ExtResource("2_edvw8")
+new_item_button_packed_scene = ExtResource("2_x6h35")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2

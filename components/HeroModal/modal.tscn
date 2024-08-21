@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bwh5nrneuow1c"]
 
 [ext_resource type="Script" path="res://components/HeroModal/modal.gd" id="1_bxhp4"]
-[ext_resource type="PackedScene" uid="uid://741wlsb1lem4" path="res://components/Button/Button.tscn" id="2_55kob"]
+[ext_resource type="PackedScene" uid="uid://741wlsb1lem4" path="res://components/GetNewHeroButton/GetNewHeroButton.tscn" id="2_55kob"]
 
 [node name="Modal" type="Node2D"]
 script = ExtResource("1_bxhp4")
