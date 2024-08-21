@@ -6,13 +6,17 @@ class_name Blacksmith
 @onready var ui_container = $UIContainer
 
 var blacksmith_building = Building.new("blacksmith", 1)
+var is_ui_displayed = false
 
 func _ready():
-	ui_container.visible = false
+	is_ui_displayed = false
 	item_modal.visible = false
 
+func _process(_delta):
+	ui_container.visible = is_ui_displayed
+
 func _on_button_pressed():
-	ui_container.visible = true
+	is_ui_displayed = !is_ui_displayed
 
 func save():
 	var saveData = {
@@ -25,6 +29,5 @@ func save():
 func _on_buy_item_button_pressed():
 	item_modal.visible = true
 
-
 func _on_close_button_pressed():
-	ui_container.visible = false
+	is_ui_displayed = false

@@ -9,16 +9,16 @@ extends Area2D
 
 var tavern_building = Building.new("tavern", 1)
 var tavern_upgrade_cost = tavern_building.get_cost_per_level()
+var is_ui_displayed = false
 
 func _ready():
 	set_upgrade_button_label()
-	ui_node.visible = false
 
 func _process(_delta):
-	pass
+	ui_node.visible = is_ui_displayed
 
 func _on_manage_button_pressed():
-	ui_node.visible = true
+	is_ui_displayed = !is_ui_displayed
 
 func _on_upgrade_button_pressed():
 	var has_upgrade = tavern_building.upgrade_building()
@@ -29,7 +29,7 @@ func _on_upgrade_button_pressed():
 
 
 func _on_close_button_pressed():
-	ui_node.visible = false
+	is_ui_displayed = false
 
 func set_upgrade_button_label():
 	upgrade_button.text = tr("UPGRADE_WITH_COST") % [tavern_building.building_level, tavern_upgrade_cost]

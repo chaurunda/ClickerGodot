@@ -16,12 +16,15 @@ var timer_upgrade_count = timer_inn_building.get_cost_per_level()
 
 var amount_of_gold = 0
 var amount_upgrade_count = amount_inn_building.get_cost_per_level()
+var is_modal_displayed = false
 
 func _ready():
 	set_timer_button_label()
 	set_amount_button_label()
 	set_timer()
-	upgrade_ui.visible = false
+
+func _process(_delta):
+	upgrade_ui.visible = is_modal_displayed
 
 func _on_timer_timeout():
 	timer_inn_building.increase_money(amount_of_gold)
@@ -43,10 +46,10 @@ func set_timer():
 	timer.wait_time = array_of_waiting_times[timer_inn_building.building_level]
 
 func _on_close_button_pressed():
-	upgrade_ui.visible = false
+	is_modal_displayed = false
 
 func _on_upgrade_button_pressed():
-	upgrade_ui.visible = true
+	is_modal_displayed = !is_modal_displayed
 
 func set_timer_button_label():
 	timer_upgrade_button.text = tr("UPGRADE_WITH_COST") % [timer_inn_building.building_level + 1, timer_inn_building.get_cost_per_level()]
