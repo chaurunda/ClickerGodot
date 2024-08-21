@@ -1,9 +1,9 @@
 extends Control
 
-@onready var name_label = $NameLabel
-@onready var current_hero_stats_label = $CurrentHeroStatLabel
-@onready var list_of_hero_zone = $MarginContainer/ListOfHeroZone
-@onready var obtained_heroes_sprite = $ObtainedHeroesSprite
+@onready var name_label = %NameLabel
+@onready var current_hero_stats_label = %CurrentHeroStatLabel
+@onready var list_of_hero_zone = %ListOfHeroZone
+@onready var obtained_heroes_sprite = %ObtainedHeroesSprite
 @onready var heroes = HeroManager.get_list_of_heroes()
 @export var hero_button_packed_scene: PackedScene
 
