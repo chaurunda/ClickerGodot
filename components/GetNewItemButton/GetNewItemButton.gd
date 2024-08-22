@@ -15,4 +15,7 @@ func _process(_delta):
 
 
 func _on_pressed():
-	self.queue_free()
+	if MoneyHandler.get_current_money() >= item_cost:
+		MoneyHandler.decrease_money(item_cost)
+		ItemManager.set_obtained_item(item_id)
+		self.queue_free()

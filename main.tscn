@@ -799,7 +799,8 @@ layer_3/tile_data = PackedInt32Array(1048609, 458752, 11, 983046, 393216, 11, 26
 position = Vector2(505, 514)
 sprite_frames = SubResource("SpriteFrames_kso1e")
 autoplay = "default"
-frame_progress = 0.160145
+frame = 1
+frame_progress = 0.702072
 
 [node name="HUD" parent="." instance=ExtResource("1_tlptr")]
 unique_name_in_owner = true
