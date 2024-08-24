@@ -81,6 +81,7 @@ animations = [{
 }]
 
 [node name="AnimatedSprite" type="AnimatedSprite2D"]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_qi2hm")
 animation = &"Idle"
 autoplay = "Idle"
