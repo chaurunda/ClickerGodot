@@ -1,8 +1,5 @@
 extends Node
 
-func increase_money(value: int):
-	GameState.currentMoney += value
-
 func decrease_money(value: int):
 	GameState.currentMoney -= value
 

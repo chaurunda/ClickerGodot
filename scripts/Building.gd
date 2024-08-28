@@ -19,8 +19,8 @@ func upgrade_building() -> bool:
 	return can_upgrade
 
 func increase_money(cost: int):
-	MoneyHandler.increase_money(cost)
+	MoneyHandler.set_current_money(cost)
 
 func get_cost_per_level():
-	return cost_base * (growth ** building_level)
+	return round(cost_base * (growth ** building_level))
 
