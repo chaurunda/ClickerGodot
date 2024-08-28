@@ -1,8 +1,5 @@
 extends GutTest
 
-# Mock de MoneyHandler
-
-# Variables de test
 var building: Building
 
 func test_upgrade_building():

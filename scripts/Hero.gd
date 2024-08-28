@@ -32,13 +32,14 @@ func compute_stats():
 	current_stats.attack = base_stats.attack
 	current_stats.armor = base_stats.armor
 	if item[Item.ITEMS.WEAPON] != null:
-		current_stats.attack += item[Item.ITEMS.WEAPON].stat.attack
+		print(item[Item.ITEMS.WEAPON].stats.attack)
+		current_stats.attack += item[Item.ITEMS.WEAPON].stats.attack
 
 func equip_item(itemType: Item.ITEMS, newItem: Item):
-	item[itemType] = newItem.id
+	item[itemType] = newItem
 	compute_stats()
 
-func unequip_item(itemType: String):
+func unequip_item(itemType: Item.ITEMS):
 	item[itemType] = null
 	compute_stats()
 
