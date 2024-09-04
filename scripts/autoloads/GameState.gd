@@ -1,8 +1,7 @@
 extends Node
 
 #####  MONEY #####
-var currentMoney = 0
-
+var current_money = 0
 
 ##### HEROES #####
 var obtained_heroes: Array[Hero]

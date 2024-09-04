@@ -1,7 +1,7 @@
 extends GutTest
 
 func before_each():
-  GameState.currentMoney = 100
+  GameState.current_money = 100
 
 func test_decrease_money():
   # Arrange
@@ -10,7 +10,7 @@ func test_decrease_money():
   MoneyHandler.decrease_money(50)
 
   # Assert
-  assert_eq(GameState.currentMoney, 50)
+  assert_eq(GameState.current_money, 50)
 
 func test_get_current_money():
   # Arrange
@@ -28,4 +28,4 @@ func test_set_current_money():
   MoneyHandler.set_current_money(6185)
 
   # Assert
-  assert_eq(GameState.currentMoney, 6185)
+  assert_eq(GameState.current_money, 6185)

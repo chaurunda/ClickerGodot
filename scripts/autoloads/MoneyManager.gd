@@ -1,10 +1,10 @@
 extends Node
 
 func decrease_money(value: int):
-	GameState.currentMoney -= value
+	GameState.current_money -= value
 
 func get_current_money():
-	return GameState.currentMoney
+	return GameState.current_money
 
 func set_current_money(money: int):
-	GameState.currentMoney = money
+	GameState.current_money = money
