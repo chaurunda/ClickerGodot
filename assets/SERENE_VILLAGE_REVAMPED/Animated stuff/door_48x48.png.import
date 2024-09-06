@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cux82u4h4ec5t"
-path="res://.godot/imported/FantasyWarriorIdle.png-a49d8bd7d058af56ed6e805ebe21088b.ctex"
+uid="uid://dhnruvaxa678"
+path="res://.godot/imported/door_48x48.png-c47b126cbaa755bcac94e49bcc3e811b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/FantasyWarriorIdle.png"
-dest_files=["res://.godot/imported/FantasyWarriorIdle.png-a49d8bd7d058af56ed6e805ebe21088b.ctex"]
+source_file="res://assets/SERENE_VILLAGE_REVAMPED/Animated stuff/door_48x48.png"
+dest_files=["res://.godot/imported/door_48x48.png-c47b126cbaa755bcac94e49bcc3e811b.ctex"]
 
 [params]
 

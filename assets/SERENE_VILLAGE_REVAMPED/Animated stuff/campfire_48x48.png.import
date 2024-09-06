@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b24ies8hy6kbe"
-path="res://.godot/imported/camp1.png-086efba9da64e295f04adc9da1731102.ctex"
+uid="uid://c1rx201mg1tb0"
+path="res://.godot/imported/campfire_48x48.png-7dccef143459c4132c7423c6383a2f18.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/camp1.png"
-dest_files=["res://.godot/imported/camp1.png-086efba9da64e295f04adc9da1731102.ctex"]
+source_file="res://assets/SERENE_VILLAGE_REVAMPED/Animated stuff/campfire_48x48.png"
+dest_files=["res://.godot/imported/campfire_48x48.png-7dccef143459c4132c7423c6383a2f18.ctex"]
 
 [params]
 

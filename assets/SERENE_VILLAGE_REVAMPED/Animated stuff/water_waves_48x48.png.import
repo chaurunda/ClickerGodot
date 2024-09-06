@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsdfodtwkiw5h"
-path="res://.godot/imported/MartialHeroIdle.png-fab9d07d32a4d871b29d98385138a74a.ctex"
+uid="uid://cxx20mp26f8qs"
+path="res://.godot/imported/water_waves_48x48.png-890ad8cb266a556302554440c055f17b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/MartialHeroIdle.png"
-dest_files=["res://.godot/imported/MartialHeroIdle.png-fab9d07d32a4d871b29d98385138a74a.ctex"]
+source_file="res://assets/SERENE_VILLAGE_REVAMPED/Animated stuff/water_waves_48x48.png"
+dest_files=["res://.godot/imported/water_waves_48x48.png-890ad8cb266a556302554440c055f17b.ctex"]
 
 [params]
 

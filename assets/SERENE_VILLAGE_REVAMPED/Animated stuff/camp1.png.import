@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb7t3qafieb8t"
-path="res://.godot/imported/MartialHero3Idle.png-8acdf147320b64676e83fbe485c545d3.ctex"
+uid="uid://b24ies8hy6kbe"
+path="res://.godot/imported/camp1.png-b3508a5eee0996630efd91872c86f3c4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/MartialHero3Idle.png"
-dest_files=["res://.godot/imported/MartialHero3Idle.png-8acdf147320b64676e83fbe485c545d3.ctex"]
+source_file="res://assets/SERENE_VILLAGE_REVAMPED/Animated stuff/camp1.png"
+dest_files=["res://.godot/imported/camp1.png-b3508a5eee0996630efd91872c86f3c4.ctex"]
 
 [params]
 

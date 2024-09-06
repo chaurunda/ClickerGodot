@@ -8,18 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "d3247679c2d028a4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Welcome.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "a770053bd77e4afb",
             "type": "leaf",
             "state": {
@@ -29,8 +17,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -96,7 +83,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Excalidraw/Dependency Map.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +99,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Excalidraw/Dependency Map.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -136,7 +121,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Excalidraw/Dependency Map.md"
+                "file": "Welcome.md"
               }
             }
           }
@@ -158,10 +143,10 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "a770053bd77e4afb",
+  "active": "a389e9089dc69f43",
   "lastOpenFiles": [
-    "Welcome.md",
     "Excalidraw/Dependency Map.md",
+    "Welcome.md",
     "Untitled.md",
     "Excalidraw",
     "create a link.md",

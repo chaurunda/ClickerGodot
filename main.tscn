@@ -1,15 +1,15 @@
 [gd_scene load_steps=17 format=4 uid="uid://c7bptkit42fmh"]
 
-[ext_resource type="Texture2D" uid="uid://btffgb772lte" path="res://assets/Serene_Village_48x48.png" id="1_dq5rb"]
+[ext_resource type="Texture2D" uid="uid://btffgb772lte" path="res://assets/SERENE_VILLAGE_REVAMPED/Serene_Village_48x48.png" id="1_dq5rb"]
 [ext_resource type="PackedScene" uid="uid://mpjb207mcr1l" path="res://components/HUD/HUD.tscn" id="1_tlptr"]
 [ext_resource type="PackedScene" uid="uid://dgg84yc4fwguy" path="res://components/Farm/farm.tscn" id="2_gidqr"]
-[ext_resource type="Texture2D" uid="uid://b24ies8hy6kbe" path="res://assets/camp1.png" id="2_kp37m"]
-[ext_resource type="Texture2D" uid="uid://1yxwehadr2gy" path="res://assets/camp2.png" id="3_gnxjw"]
+[ext_resource type="Texture2D" uid="uid://b24ies8hy6kbe" path="res://assets/SERENE_VILLAGE_REVAMPED/Animated stuff/camp1.png" id="2_kp37m"]
+[ext_resource type="Texture2D" uid="uid://1yxwehadr2gy" path="res://assets/SERENE_VILLAGE_REVAMPED/Animated stuff/camp2.png" id="3_gnxjw"]
 [ext_resource type="PackedScene" uid="uid://bweh7y0m744yq" path="res://components/Inn/Inn.tscn" id="3_to1qg"]
-[ext_resource type="Texture2D" uid="uid://c0gk3p1sdjxad" path="res://assets/camp3.png" id="4_auetp"]
+[ext_resource type="Texture2D" uid="uid://c0gk3p1sdjxad" path="res://assets/SERENE_VILLAGE_REVAMPED/Animated stuff/camp3.png" id="4_auetp"]
 [ext_resource type="PackedScene" uid="uid://c2k34445t2qkx" path="res://components/Tavern/tavern.tscn" id="4_dcpi4"]
 [ext_resource type="PackedScene" uid="uid://dy0q1jcldfc2u" path="res://components/HeroesScreen/HeroesScreen.tscn" id="5_8ge2w"]
-[ext_resource type="Texture2D" uid="uid://bk0plxst8mbbj" path="res://assets/camp4.png" id="5_gj54a"]
+[ext_resource type="Texture2D" uid="uid://bk0plxst8mbbj" path="res://assets/SERENE_VILLAGE_REVAMPED/Animated stuff/camp4.png" id="5_gj54a"]
 [ext_resource type="Texture2D" uid="uid://d33lt5xhhxfxv" path="res://assets/head-48x48.png" id="6_1lwwe"]
 [ext_resource type="PackedScene" uid="uid://cfumev4iwfdn" path="res://components/Blacksmith/blacksmith.tscn" id="12_kq423"]
 [ext_resource type="PackedScene" uid="uid://b5tmfg2fcnxj2" path="res://components/Menu/menu.tscn" id="13_rcbuu"]
@@ -840,5 +840,9 @@ visible = false
 
 [node name="Menu" parent="." instance=ExtResource("13_rcbuu")]
 visible = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(780, 540)
+limit_left = 0
 
 [connection signal="pressed" from="DisplayHeroesButton" to="Heroes" method="_on_display_heroes_button_pressed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk0plxst8mbbj"
-path="res://.godot/imported/camp4.png-af87692391095e8301fc8377d0318737.ctex"
+uid="uid://1yxwehadr2gy"
+path="res://.godot/imported/camp2.png-ff53df35ff65c982cbfd399b05bd0232.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/camp4.png"
-dest_files=["res://.godot/imported/camp4.png-af87692391095e8301fc8377d0318737.ctex"]
+source_file="res://assets/SERENE_VILLAGE_REVAMPED/Animated stuff/camp2.png"
+dest_files=["res://.godot/imported/camp2.png-ff53df35ff65c982cbfd399b05bd0232.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8bvhdt6843lo"
-path="res://.godot/imported/WizardIdle.png-90422d0c9cdbc91ece40c3e77e5d24b4.ctex"
+uid="uid://c0gk3p1sdjxad"
+path="res://.godot/imported/camp3.png-e468cf1d07a64e518b374d1de9bcd1ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/WizardIdle.png"
-dest_files=["res://.godot/imported/WizardIdle.png-90422d0c9cdbc91ece40c3e77e5d24b4.ctex"]
+source_file="res://assets/SERENE_VILLAGE_REVAMPED/Animated stuff/camp3.png"
+dest_files=["res://.godot/imported/camp3.png-e468cf1d07a64e518b374d1de9bcd1ba.ctex"]
 
 [params]
 

@@ -68,4 +68,5 @@ animations = [{
 
 [node name="AnimatedSprite" type="AnimatedSprite2D"]
 texture_filter = 1
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_064sb")
