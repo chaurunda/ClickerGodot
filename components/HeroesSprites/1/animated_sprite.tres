@@ -1,0 +1,67 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://b43kq68ms2egi"]
+
+[ext_resource type="Texture2D" uid="uid://c604grs68flif" path="res://assets/Huntress/Sprites/Idle.png" id="1_1lw3d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wn4kv"]
+atlas = ExtResource("1_1lw3d")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxtxu"]
+atlas = ExtResource("1_1lw3d")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rlxs"]
+atlas = ExtResource("1_1lw3d")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lxps"]
+atlas = ExtResource("1_1lw3d")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3fnr"]
+atlas = ExtResource("1_1lw3d")
+region = Rect2(600, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxfsu"]
+atlas = ExtResource("1_1lw3d")
+region = Rect2(750, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s36cq"]
+atlas = ExtResource("1_1lw3d")
+region = Rect2(900, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hv15f"]
+atlas = ExtResource("1_1lw3d")
+region = Rect2(1050, 0, 150, 150)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wn4kv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxtxu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rlxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0lxps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3fnr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxfsu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s36cq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hv15f")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 8.0
+}]

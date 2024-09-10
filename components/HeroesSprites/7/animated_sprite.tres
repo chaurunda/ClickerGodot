@@ -1,0 +1,67 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://cnns48nqwnkrj"]
+
+[ext_resource type="Texture2D" uid="uid://dld2snya41ifw" path="res://assets/Evil Wizard/Sprites/Idle.png" id="1_fjscp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23wn6"]
+atlas = ExtResource("1_fjscp")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sceut"]
+atlas = ExtResource("1_fjscp")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cacc3"]
+atlas = ExtResource("1_fjscp")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rt52b"]
+atlas = ExtResource("1_fjscp")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tt1s"]
+atlas = ExtResource("1_fjscp")
+region = Rect2(600, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5orxb"]
+atlas = ExtResource("1_fjscp")
+region = Rect2(750, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxqjx"]
+atlas = ExtResource("1_fjscp")
+region = Rect2(900, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qa54a"]
+atlas = ExtResource("1_fjscp")
+region = Rect2(1050, 0, 150, 150)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23wn6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sceut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cacc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rt52b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5tt1s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5orxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxqjx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qa54a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

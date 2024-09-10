@@ -1,0 +1,67 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://04d8wgbspawp"]
+
+[ext_resource type="Texture2D" uid="uid://6giwpslun1if" path="res://assets/Medieval Warrior Pack 2/Sprites/Idle.png" id="1_eqthk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4m7b"]
+atlas = ExtResource("1_eqthk")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r47wd"]
+atlas = ExtResource("1_eqthk")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsu45"]
+atlas = ExtResource("1_eqthk")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtbbn"]
+atlas = ExtResource("1_eqthk")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ic14w"]
+atlas = ExtResource("1_eqthk")
+region = Rect2(600, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owtc7"]
+atlas = ExtResource("1_eqthk")
+region = Rect2(750, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5spfi"]
+atlas = ExtResource("1_eqthk")
+region = Rect2(900, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gs04y"]
+atlas = ExtResource("1_eqthk")
+region = Rect2(1050, 0, 150, 150)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4m7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r47wd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nsu45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtbbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ic14w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_owtc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5spfi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gs04y")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 8.0
+}]

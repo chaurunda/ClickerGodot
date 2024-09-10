@@ -1,0 +1,53 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://ccp03e14cc4si"]
+
+[ext_resource type="Texture2D" uid="uid://c3iqvvqoh23k4" path="res://assets/Medieval King Pack/Medieval King Pack/Idle.png" id="1_43jvr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jdeh"]
+atlas = ExtResource("1_43jvr")
+region = Rect2(0, 0, 155, 155)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vmqw"]
+atlas = ExtResource("1_43jvr")
+region = Rect2(155, 0, 155, 155)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2uxxs"]
+atlas = ExtResource("1_43jvr")
+region = Rect2(310, 0, 155, 155)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kfxx7"]
+atlas = ExtResource("1_43jvr")
+region = Rect2(465, 0, 155, 155)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cped0"]
+atlas = ExtResource("1_43jvr")
+region = Rect2(620, 0, 155, 155)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8her"]
+atlas = ExtResource("1_43jvr")
+region = Rect2(775, 0, 155, 155)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3jdeh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1vmqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2uxxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kfxx7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cped0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8her")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 6.0
+}]

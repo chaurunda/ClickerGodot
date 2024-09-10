@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://di63s7driko6q"]
+
+[ext_resource type="Texture2D" uid="uid://chew8iuwo3gu0" path="res://assets/Martial Hero 2/Sprites/Idle.png" id="1_hbl6d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oub2w"]
+atlas = ExtResource("1_hbl6d")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7b3cd"]
+atlas = ExtResource("1_hbl6d")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2biwg"]
+atlas = ExtResource("1_hbl6d")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ug35h"]
+atlas = ExtResource("1_hbl6d")
+region = Rect2(600, 0, 200, 200)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oub2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7b3cd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2biwg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ug35h")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 4.0
+}]

@@ -18,3 +18,5 @@ GET_NEW_HERO,Get new Hero,Obtenir un nouveau Hero
 HERO_STATS,Health: %s\nAttack: %s\nArmor: %s,Vie: %s\nAttaque: %s\nArmure: %s
 LEVEL_HERO_NAME,%s level %s,%s niveau %s
 CLOSE,Close,Fermer
+GO_TO_FIGHT,Go to fight,Partir au combat
+BACK_TO_VILLAGE,Back to village,Retourner au village
