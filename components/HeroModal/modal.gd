@@ -24,17 +24,18 @@ func compute_price(rarity):
 
 func generate_hero():
 	var list_of_heros_name = DbManager.get_heros_list()
-	for i in 4:
-		var entry_number = randi() % list_of_heros_name.size()
-		var hero = list_of_heros_name[entry_number]
-		var hero_button = new_hero_button_packed_scene.instantiate()
-		var price = compute_price(hero.rarity)
-		hero_button.hero_cost = price
-		hero_button.text = "{hero} : {price} $".format({"hero": hero.name, "price": price})
-		hero_button.hero_id = hero.id
-		hero_button.hero_name = hero.name
-		grid.add_child(hero_button)
-		list_of_heros_name.pop_at(entry_number)
+	if list_of_heros_name.size() > 0 :
+		for i in 4:
+			var entry_number = randi() % list_of_heros_name.size()
+			var hero = list_of_heros_name[entry_number]
+			var hero_button = new_hero_button_packed_scene.instantiate()
+			var price = compute_price(hero.rarity)
+			hero_button.hero_cost = price
+			hero_button.text = "{hero} : {price} $".format({"hero": hero.name, "price": price})
+			hero_button.hero_id = hero.id
+			hero_button.hero_name = hero.name
+			grid.add_child(hero_button)
+			list_of_heros_name.pop_at(entry_number)
 
 func reset_generated_hero():
 	for child in grid.get_children():

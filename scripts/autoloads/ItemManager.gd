@@ -1,8 +1,7 @@
 extends Node
 
-var list_of_item_name = []
-
 var items = Items.new()
+var list_of_item_name = items.available_items()
 
 func get_obtained_items() :
 	return GameState.obtained_items

@@ -32,7 +32,6 @@ func create_hero_table(database: SQLite):
   database.create_table("heroes", hero_table)
   var list_of_heros_name = HeroManager.listOfHeroName
   for hero in list_of_heros_name:
-
     var hero_data_dict = {
       "id": hero.id,
       "name": hero.name,
