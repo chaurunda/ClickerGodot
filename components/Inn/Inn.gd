@@ -14,7 +14,7 @@ var amount_inn_building = Building.new("InnAmout", 1)
 const array_of_waiting_times = [10, 6, 2, 1, .5, .1]
 var timer_upgrade_count = timer_inn_building.get_cost_per_level()
 
-var amount_of_gold = 0
+var amount_of_gold = 30
 var amount_upgrade_count = amount_inn_building.get_cost_per_level()
 var is_modal_displayed = false
 

@@ -1,9 +1,10 @@
+extends AnimatedSprite2D
 class_name Hero
 
 var hero_name: String
 var level: int
 var base_stats: Stats
-var uuid: HeroManager.HEROID
+var uuid: HeroManager.HEROID = HeroManager.HEROID.JOHN_DOE
 var current_stats: Dictionary = {
 	"health": null,
 	"attack": null,
@@ -19,8 +20,8 @@ var item: Dictionary = {
 	Item.ITEMS.HELMET: null,
 }
 
-func _init(id: HeroManager.HEROID, new_level: int, new_stats: Stats, name: String):
-	hero_name = name
+func _init(id: HeroManager.HEROID, new_level: int, new_stats: Stats, new_name: String):
+	hero_name = new_name
 	level = new_level
 	base_stats = new_stats
 	uuid = id

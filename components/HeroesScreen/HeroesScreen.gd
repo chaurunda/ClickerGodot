@@ -5,6 +5,7 @@ extends Control
 @onready var list_of_hero_zone = %ListOfHeroZone
 @onready var obtained_heroes_sprite = %ObtainedHeroesSprite
 @onready var heroes = HeroManager.get_list_of_heroes()
+@onready var hero_scene = load("res://components/Hero/hero.tscn")
 @export var hero_button_packed_scene: PackedScene
 
 var margin = 10
@@ -59,8 +60,11 @@ func _on_close_button_pressed():
 func update_hero_image():
 	remove_current_hero_sprite()
 	var current_hero = HeroManager.get_current_Hero_selected()
-	var hero_animated_sprite = load(current_hero.sprite_path + "/animated_sprite.tscn").instantiate()
-	obtained_heroes_sprite.add_child(hero_animated_sprite)
+	var new_hero_sprite = load(current_hero.sprite_path + "/animated_sprite.tres")
+	var new_hero_animated_sprite = hero_scene.instantiate()
+	new_hero_animated_sprite.sprite_frames = new_hero_sprite
+	obtained_heroes_sprite.add_child(new_hero_animated_sprite)
+	new_hero_animated_sprite.play()
 
 func remove_current_hero_sprite():
 	for child in obtained_heroes_sprite.get_children():
