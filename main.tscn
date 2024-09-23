@@ -842,6 +842,7 @@ position = Vector2(564, 86)
 visible = false
 
 [node name="Menu" parent="." instance=ExtResource("13_rcbuu")]
+visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 539)

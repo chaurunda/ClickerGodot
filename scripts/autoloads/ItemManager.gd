@@ -14,8 +14,8 @@ func find_item_by_id(id: int) -> Item:
 	return
 
 func find_all_obtained_items_by_type(type: Item.ITEMS) -> Array[Item] :
-	var obtained_items = get_obtained_items()
-	var result = []
+	var obtained_items = get_obtained_items() as Array[Item]
+	var result = [] as Array[Item]
 	for item in obtained_items :
 		if item.type == type :
 			result.append(item)
@@ -32,4 +32,3 @@ func generate_new_item():
 
 func get_available_items():
 	return items.available_items()
-

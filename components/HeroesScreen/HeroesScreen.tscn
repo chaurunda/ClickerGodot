@@ -71,6 +71,38 @@ unique_name_in_owner = true
 texture_filter = 1
 layout_mode = 2
 
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="HelmetOptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+selected = 0
+item_count = 1
+popup/item_0/text = "Helmet"
+
+[node name="ChestOptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+selected = 0
+item_count = 1
+popup/item_0/text = "Chest"
+popup/item_0/id = 1
+
+[node name="LegsOptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+selected = 0
+item_count = 1
+popup/item_0/text = "Legs"
+
+[node name="WeaponOptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+selected = 0
+item_count = 1
+popup/item_0/text = "Weapon"
+
 [node name="ListOfHeroZone" type="GridContainer" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
