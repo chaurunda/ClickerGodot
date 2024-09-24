@@ -6,10 +6,8 @@ extends Control
 @onready var obtained_heroes_sprite = %ObtainedHeroesSprite
 @onready var heroes = HeroManager.get_list_of_heroes()
 @onready var hero_scene = load("res://components/Hero/hero.tscn")
-@onready var HelmetOptionButton = %HelmetOptionButton as OptionButton
-@onready var ChestOptionButton = %ChestOptionButton as OptionButton
-@onready var LegsOptionButton = %LegsOptionButton as OptionButton
-@onready var WeaponOptionButton = %WeaponOptionButton as OptionButton
+@onready var loot_option_buttons = load("res://components/LootOptionButtons/loot_option_buttons.tscn")
+@onready var main_container = %MainContainer
 @export var hero_button_packed_scene: PackedScene
 
 var margin = 10
@@ -26,6 +24,8 @@ func _on_display_heroes_button_pressed():
 	if GameState.obtained_heroes.size() > 0:
 		update_hero_image()
 
+	var loot_option_buttons_instance = loot_option_buttons.instantiate()
+	main_container.add_child(loot_option_buttons_instance)
 
 func _ready():
 	GlobalEventBus.connect("new_hero_obtained", display_heroes)
@@ -34,7 +34,6 @@ func _ready():
 
 func _process(_delta):
 	display_selected_hero()
-	fill_option_buttons()
 
 func display_heroes():
 	var list_of_heros = HeroManager.get_list_of_heroes()
@@ -61,6 +60,10 @@ func _on_close_button_pressed():
 		if child is HeroButton:
 			child.queue_free()
 
+	for child in main_container.get_children():
+		if child is LootOptionButtons:
+			child.queue_free()
+
 	remove_current_hero_sprite()
 
 func update_hero_image():
@@ -76,12 +79,3 @@ func remove_current_hero_sprite():
 	for child in obtained_heroes_sprite.get_children():
 		child.queue_free()
 
-func fill_option_buttons():
-	set_option_value(HelmetOptionButton, ItemManager.find_all_obtained_items_by_type(Item.ITEMS.HELMET))
-	set_option_value(ChestOptionButton, ItemManager.find_all_obtained_items_by_type(Item.ITEMS.CHEST))
-	set_option_value(LegsOptionButton, ItemManager.find_all_obtained_items_by_type(Item.ITEMS.LEGS))
-	set_option_value(WeaponOptionButton, ItemManager.find_all_obtained_items_by_type(Item.ITEMS.WEAPON))
-
-func set_option_value(option_button: OptionButton, items: Array[Item]):
-	for item in items:
-		option_button.add_item(item.name, item.id)

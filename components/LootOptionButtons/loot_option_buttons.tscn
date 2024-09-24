@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://bofj8mugrn4cx"]
+
+[ext_resource type="Script" path="res://components/LootOptionButtons/loot_option_buttons.gd" id="1_d7ccl"]
+
+[node name="LootOptionButtons" type="GridContainer"]
+script = ExtResource("1_d7ccl")
+
+[node name="HelmetOptionButton" type="OptionButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+selected = 0
+item_count = 1
+popup/item_0/text = "Helmet"
+
+[node name="ChestOptionButton" type="OptionButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+selected = 0
+item_count = 1
+popup/item_0/text = "Chest"
+popup/item_0/id = 1
+
+[node name="LegsOptionButton" type="OptionButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+selected = 0
+item_count = 1
+popup/item_0/text = "Legs"
+
+[node name="WeaponOptionButton" type="OptionButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+selected = 0
+item_count = 1
+popup/item_0/text = "Weapon"
+
+[connection signal="item_selected" from="HelmetOptionButton" to="." method="_on_helmet_option_button_item_selected"]
