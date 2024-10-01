@@ -10,4 +10,7 @@ var obtained_heroes: Array[Hero]
 var obtained_items: Array[Item]
 
 ##### DATABASE #####
-var table_name = "Clicker"
+var DATABASE_NAME = "Clicker"
+var HERO_TABLE_NAME = "heroes"
+var ITEMS_TABLE_NAME = "items"
+var OBTAINED_ITEMS_TABLE_NAME = "obtained_items"

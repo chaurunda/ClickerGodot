@@ -11,11 +11,6 @@ func _ready():
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
 func _on_test_button_pressed():
 	var tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_LINEAR)
 	tween.tween_property(camera, "position", camera_initial_position + Vector2(0, 1200), 1.0)

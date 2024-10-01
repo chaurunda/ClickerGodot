@@ -23,6 +23,8 @@ GameState="*res://scripts/autoloads/GameState.gd"
 HeroManager="*res://scripts/autoloads/HeroManager.gd"
 ItemManager="*res://scripts/autoloads/ItemManager.gd"
 SaveManager="*res://scripts/autoloads/SaveManager.gd"
+ItemDbManager="*res://scripts/autoloads/database/ItemDBManager.gd"
+HeroDbManager="*res://scripts/autoloads/database/HeroDBManager.gd"
 DbManager="*res://scripts/autoloads/DBManager.gd"
 
 [display]
