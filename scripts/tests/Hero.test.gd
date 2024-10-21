@@ -16,7 +16,7 @@ func test_compute_stats():
   assert_eq(hero.current_stats.health, 10)
   assert_eq(hero.current_stats.attack, 20)
   assert_eq(hero.current_stats.armor, 30)
-  var item = Item.new("Sword", 1, Stats.new(10, 20, 30), Item.ITEMS.WEAPON, Item.RARITY.COMMON)
+  var item = Item.new("Sword", 1, Stats.new(10, 20, 30), Item.ITEMS.WEAPON, Item.RARITY.COMMON, 1)
   hero.equip_item(Item.ITEMS.WEAPON, item)
   assert_eq(hero.current_stats.health, 10)
   assert_eq(hero.current_stats.attack, 40)

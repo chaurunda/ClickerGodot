@@ -23,13 +23,14 @@ enum RARITY {
   LEGENDARY
 }
 
-func _init(new_name: String, new_level: int, new_stats: Stats, new_type: ITEMS, new_rarity: RARITY):
+func _init(new_name: String, new_level: int, new_stats: Stats, new_type: ITEMS, new_rarity: RARITY, new_id: int):
   name = new_name
   level = new_level
   stats = new_stats
   type = new_type
   rarity = new_rarity
   cost = compute_price(new_rarity)
+  id = new_id
 
 func compute_price(new_rarity: RARITY):
   var price: int

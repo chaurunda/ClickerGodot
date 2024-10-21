@@ -1,30 +1,43 @@
 class_name Items
 
-var list_of_wooden_items: Array[Item] = [
-  Item.new('Wooden Sword', 1, Stats.new(0, 10, 0), Item.ITEMS.WEAPON, Item.RARITY.COMMON),
-  Item.new('Wooden Helmet', 1, Stats.new(1, 0, 1), Item.ITEMS.HELMET, Item.RARITY.COMMON),
-  Item.new('Wooden Legs', 1, Stats.new(1, 0, 1), Item.ITEMS.LEGS, Item.RARITY.COMMON),
-  Item.new('Wooden Chest', 1, Stats.new(1, 0, 1), Item.ITEMS.CHEST, Item.RARITY.COMMON)
+func item_to_json(item_name: String, level: int, health: int, attack: int, armor: int, type: Item.ITEMS, rarity: Item.RARITY):
+  return {
+    "name": item_name,
+    "level": level,
+    "stats": {
+      "health": health,
+      "attack": attack,
+      "armor": armor
+    },
+    "type": type,
+    "rarity": rarity
+  }
+
+var list_of_wooden_items = [
+  item_to_json('Wooden Sword', 1, 0, 10, 0, Item.ITEMS.WEAPON, Item.RARITY.COMMON),
+  item_to_json('Wooden Helmet', 1, 1, 0, 1, Item.ITEMS.HELMET, Item.RARITY.COMMON),
+  item_to_json('Wooden Legs', 1, 1, 0, 1, Item.ITEMS.LEGS, Item.RARITY.COMMON),
+  item_to_json('Wooden Chest', 1, 1, 0, 1, Item.ITEMS.CHEST, Item.RARITY.COMMON)
 ]
 
-var list_of_iron_items: Array[Item] = [
-  Item.new('Iron Sword', 1, Stats.new(0, 20, 0), Item.ITEMS.WEAPON, Item.RARITY.UNCOMMON),
-  Item.new('Iron Helmet', 1, Stats.new(2, 0, 2), Item.ITEMS.HELMET, Item.RARITY.UNCOMMON),
-  Item.new('Iron Legs', 1, Stats.new(2, 0, 2), Item.ITEMS.LEGS, Item.RARITY.UNCOMMON),
-  Item.new('Iron Chest', 1, Stats.new(2, 0, 2), Item.ITEMS.CHEST, Item.RARITY.UNCOMMON)
+var list_of_iron_items = [
+  item_to_json('Iron Sword', 1, 0, 20, 0, Item.ITEMS.WEAPON, Item.RARITY.UNCOMMON),
+  item_to_json('Iron Helmet', 1, 2, 0, 2, Item.ITEMS.HELMET, Item.RARITY.UNCOMMON),
+  item_to_json('Iron Legs', 1, 2, 0, 2, Item.ITEMS.LEGS, Item.RARITY.UNCOMMON),
+  item_to_json('Iron Chest', 1, 2, 0, 2, Item.ITEMS.CHEST, Item.RARITY.UNCOMMON)
 ]
 
-var list_of_gold_items: Array[Item] = [
-  Item.new('Golden Sword', 1, Stats.new(0, 30, 0), Item.ITEMS.WEAPON, Item.RARITY.RARE),
-  Item.new('Golden Helmet', 1, Stats.new(3, 0, 3), Item.ITEMS.HELMET, Item.RARITY.RARE),
-  Item.new('Golden Legs', 1, Stats.new(3, 0, 3), Item.ITEMS.LEGS, Item.RARITY.RARE),
-  Item.new('Golden Chest', 1, Stats.new(3, 0, 3), Item.ITEMS.CHEST, Item.RARITY.RARE)
+var list_of_gold_items = [
+  item_to_json('Golden Sword', 1, 0, 30, 0, Item.ITEMS.WEAPON, Item.RARITY.RARE),
+  item_to_json('Golden Helmet', 1, 3, 0, 3, Item.ITEMS.HELMET, Item.RARITY.RARE),
+  item_to_json('Golden Legs', 1, 3, 0, 3, Item.ITEMS.LEGS, Item.RARITY.RARE),
+  item_to_json('Golden Chest', 1, 3, 0, 3, Item.ITEMS.CHEST, Item.RARITY.RARE)
 ]
-var list_of_diamond_items: Array[Item] = [
-  Item.new('Diamond Sword', 1, Stats.new(0, 40, 0), Item.ITEMS.WEAPON, Item.RARITY.LEGENDARY),
-  Item.new('Diamond Helmet', 1, Stats.new(4, 0, 4), Item.ITEMS.HELMET, Item.RARITY.LEGENDARY),
-  Item.new('Diamond Legs', 1, Stats.new(4, 0, 4), Item.ITEMS.LEGS, Item.RARITY.LEGENDARY),
-  Item.new('Diamond Chest', 1, Stats.new(4, 0, 4), Item.ITEMS.CHEST, Item.RARITY.LEGENDARY)
+var list_of_diamond_items = [
+  item_to_json('Diamond Sword', 1, 0, 40, 0, Item.ITEMS.WEAPON, Item.RARITY.LEGENDARY),
+  item_to_json('Diamond Helmet', 1, 4, 0, 4, Item.ITEMS.HELMET, Item.RARITY.LEGENDARY),
+  item_to_json('Diamond Legs', 1, 4, 0, 4, Item.ITEMS.LEGS, Item.RARITY.LEGENDARY),
+  item_to_json('Diamond Chest', 1, 4, 0, 4, Item.ITEMS.CHEST, Item.RARITY.LEGENDARY)
 ]
 
 func available_items() -> Array:

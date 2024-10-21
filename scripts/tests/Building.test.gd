@@ -31,7 +31,7 @@ func test_upgrade_building_not_enough_money():
 func test_get_cost_per_level():
   building = Building.new("Test", 1)
   # Arrange
-  var expected = round(4 * (1.07 ** 1))
+  var expected = int(round(4 * (1.07 ** 1)))
   # Act
   var result = building.get_cost_per_level()
   # Assert
