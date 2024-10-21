@@ -3,6 +3,7 @@ extends Node
 func new_game():
   var database = connect_to_database()
   HeroDbManager.create_hero_table(database)
+  HeroDbManager.create_hero_obtained_table(database)
   ItemDbManager.create_item_table(database)
   ItemDbManager.create_obtainable_item(database)
 

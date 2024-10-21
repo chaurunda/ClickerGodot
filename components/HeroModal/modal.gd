@@ -12,13 +12,13 @@ func _ready():
 
 func compute_price(rarity):
 	var price = 0
-	if int(rarity) == HeroManager.RARITY.COMMON:
+	if int(rarity) == Heroes.RARITY.COMMON:
 		price = 200
-	elif int(rarity) == HeroManager.RARITY.UNCOMMON:
+	elif int(rarity) == Heroes.RARITY.UNCOMMON:
 		price = 1000
-	elif int(rarity) == HeroManager.RARITY.RARE:
+	elif int(rarity) == Heroes.RARITY.RARE:
 		price = 5000
-	elif int(rarity) == HeroManager.RARITY.LEGENDARY:
+	elif int(rarity) == Heroes.RARITY.LEGENDARY:
 		price = 15000
 	return price
 

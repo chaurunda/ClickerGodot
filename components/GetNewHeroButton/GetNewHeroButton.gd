@@ -1,7 +1,7 @@
 extends Button
 
 var hero_cost: int
-var hero_id: HeroManager.HEROID
+var hero_id: Heroes.HEROID
 var hero_name: String
 
 func _on_pressed():

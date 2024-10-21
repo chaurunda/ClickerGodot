@@ -13,9 +13,9 @@ func get_hero(id):
 func create_hero_table(database: SQLite):
   database.drop_table(GameState.HERO_TABLE_NAME)
   var hero_table = {
-		"id": {"data_type": "TEXT", "primary_key": true, "not_null": true},
+		"id": {"data_type": "int", "primary_key": true, "not_null": true},
 		"name": {"data_type": "TEXT", "not_null": true},
-		"level": {"data_type": "INTEGER", "not_null": true},
+		"level": {"data_type": "int", "not_null": true},
 		"rarity": {"data_type": "TEXT", "not_null": true},
 	}
   database.create_table(GameState.HERO_TABLE_NAME, hero_table)
@@ -28,6 +28,13 @@ func create_hero_table(database: SQLite):
       "rarity": hero.rarity
     }
     database.insert_row(GameState.HERO_TABLE_NAME, hero_data_dict)
+
+func create_hero_obtained_table(database: SQLite):
+  database.drop_table(GameState.OBTAINED_HERO_TABLE_NAME)
+  var hero_obtained_table = {
+    "hero_id": {"data_type": "int", "not_null": true}
+  }
+  database.create_table(GameState.OBTAINED_HERO_TABLE_NAME, hero_obtained_table)
 
 func add_hero(hero: Hero):
   var database = DbManager.connect_to_database()

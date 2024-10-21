@@ -1,10 +1,12 @@
 extends Control
 
+var heroes = Heroes.new()
+
 @onready var name_label = %NameLabel
 @onready var current_hero_stats_label = %CurrentHeroStatLabel
 @onready var list_of_hero_zone = %ListOfHeroZone
 @onready var obtained_heroes_sprite = %ObtainedHeroesSprite
-@onready var heroes = HeroManager.get_list_of_heroes()
+@onready var list_of_heroes = heroes.get_list_of_heroes()
 @onready var hero_scene = load("res://components/Hero/hero.tscn")
 @onready var loot_option_buttons = load("res://components/LootOptionButtons/loot_option_buttons.tscn")
 @onready var main_container = %MainContainer
@@ -36,14 +38,14 @@ func _process(_delta):
 	display_selected_hero()
 
 func display_heroes():
-	var list_of_heros = HeroManager.get_list_of_heroes()
+	var list_of_heros = heroes.get_list_of_heroes()
 	set_current_hero_selected(list_of_heros[0])
 
 func set_current_hero_selected(hero: Hero):
-	HeroManager.set_current_hero_selected(hero.uuid)
+	heroes.set_current_hero_selected(hero.uuid)
 
 func display_selected_hero():
-	var current_hero = HeroManager.get_current_Hero_selected()
+	var current_hero = heroes.get_current_Hero_selected()
 	if current_hero:
 		update_hero_name_label(current_hero)
 		update_hero_stats_label(current_hero)
@@ -68,7 +70,7 @@ func _on_close_button_pressed():
 
 func update_hero_image():
 	remove_current_hero_sprite()
-	var current_hero = HeroManager.get_current_Hero_selected()
+	var current_hero = heroes.get_current_Hero_selected()
 	var new_hero_sprite = load(current_hero.sprite_path + "/animated_sprite.tres")
 	var new_hero_animated_sprite = hero_scene.instantiate()
 	new_hero_animated_sprite.sprite_frames = new_hero_sprite
