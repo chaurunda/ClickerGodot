@@ -29,7 +29,7 @@ func _on_add_item_submit_button_pressed():
 	if (name_input.text == "" || health_input.text == "" || attack_input.text == "" || armor_input.text == ""):
 		print("Please fill all the fields")
 		return
-	var add_item = Item.new(name_input.text, 1, Stats.new(health_input.text.to_int(), attack_input.text.to_int(), armor_input.text.to_int()), item_type_option_button.get_selected(), rarity_option_button.get_selected())
+	var add_item = Item.new(name_input.text, 1, Stats.new(health_input.text.to_int(), attack_input.text.to_int(), armor_input.text.to_int()), item_type_option_button.get_selected(), rarity_option_button.get_selected(), 1)
 	DbManager.add_item(add_item)
 	clean_item_input()
 

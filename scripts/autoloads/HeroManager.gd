@@ -1,8 +1,10 @@
 extends Node
 
 var heroes = Heroes.new()
+
 func set_obtained_heroes(newHero: Hero):
 	GameState.obtained_heroes.push_back(newHero)
+	HeroDbManager.set_obtained_hero_by_id(newHero.uuid)
 	GlobalEventBus.new_hero_obtained.emit()
 
 func save_obtained_heroes():

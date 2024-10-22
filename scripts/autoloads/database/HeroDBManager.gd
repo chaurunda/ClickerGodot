@@ -19,7 +19,7 @@ func create_hero_table(database: SQLite):
 		"rarity": {"data_type": "TEXT", "not_null": true},
 	}
   database.create_table(GameState.HERO_TABLE_NAME, hero_table)
-  var list_of_heros_name = HeroManager.listOfHeroName
+  var list_of_heros_name = Heroes.listOfHeroName
   for hero in list_of_heros_name:
     var hero_data_dict = {
       "id": hero.id,
@@ -28,6 +28,7 @@ func create_hero_table(database: SQLite):
       "rarity": hero.rarity
     }
     database.insert_row(GameState.HERO_TABLE_NAME, hero_data_dict)
+    database.close_db()
 
 func create_hero_obtained_table(database: SQLite):
   database.drop_table(GameState.OBTAINED_HERO_TABLE_NAME)
@@ -35,6 +36,7 @@ func create_hero_obtained_table(database: SQLite):
     "hero_id": {"data_type": "int", "not_null": true}
   }
   database.create_table(GameState.OBTAINED_HERO_TABLE_NAME, hero_obtained_table)
+  database.close_db()
 
 func add_hero(hero: Hero):
   var database = DbManager.connect_to_database()
@@ -45,7 +47,7 @@ func add_hero(hero: Hero):
     "rarity": hero.rarity
   }
   database.insert_row(GameState.HERO_TABLE_NAME, hero_data_dict)
-
+  database.close_db()
 
 func update_hero(hero: Hero):
   var database = DbManager.connect_to_database()
@@ -56,3 +58,12 @@ func update_hero(hero: Hero):
     "rarity": hero.rarity
   }
   database.update_row(GameState.HERO_TABLE_NAME, hero_data_dict, "id = '{id}'".format({"id": hero.id}))
+  database.close_db()
+
+func set_obtained_hero_by_id(hero_id: int):
+  var database = DbManager.connect_to_database()
+  var data = {
+    "hero_id": hero_id
+  }
+  database.insert_row(GameState.OBTAINED_HERO_TABLE_NAME, data)
+  database.close_db()

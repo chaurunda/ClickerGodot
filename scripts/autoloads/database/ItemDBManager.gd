@@ -15,6 +15,7 @@ func create_item_table(database: SQLite):
   var list_of_items_name: Array = items.available_items()
   for item in list_of_items_name:
     add_item(item)
+  database.close_db()
 
 func create_obtainable_item(database):
   database.drop_table(GameState.OBTAINED_ITEMS_TABLE_NAME)
@@ -22,6 +23,7 @@ func create_obtainable_item(database):
     "item_id": {"data_type": "int", "not_null": true}
   }
   database.create_table(GameState.OBTAINED_ITEMS_TABLE_NAME, obtained_items_table)
+  database.close_db()
 
 func add_item(item):
   var database = DbManager.connect_to_database()
@@ -38,6 +40,7 @@ func add_item(item):
     "type": item.type
   }
   database.insert_row(GameState.ITEMS_TABLE_NAME, item_data_dict)
+  database.close_db()
 
 func update_item(item: Item):
   var database = DbManager.connect_to_database()
@@ -54,19 +57,23 @@ func update_item(item: Item):
     "type": item.type
   }
   database.update_row(GameState.ITEMS_TABLE_NAME, item_data_dict, "id = '{id}'".format({"id": item.id}))
+  database.close_db()
 
 func add_obtained_item(id):
   var database = DbManager.connect_to_database()
   database.insert_row(GameState.OBTAINED_ITEMS_TABLE_NAME, {"item_id": id})
+  database.close_db()
 
 func get_items_list():
   var database = DbManager.connect_to_database()
   var item_list = database.select_rows(GameState.ITEMS_TABLE_NAME, "", ["id", "name", "rarity", "level", "stats", "type"])
+  database.close_db()
   return item_list
 
 func find_item_by_id_and_return_item(id: int) -> Item:
   var database = DbManager.connect_to_database()
   var item = database.select_rows(GameState.ITEMS_TABLE_NAME, "id = '{id}'".format({"id": id}), ["id", "name", "rarity", "level", "stats", "type"])
+  database.close_db()
   if item.size() > 0:
     var item_data = item[0]
     var json = JSON.new()

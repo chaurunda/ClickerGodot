@@ -19,3 +19,4 @@ func reset():
   database.drop_table(GameState.HERO_TABLE_NAME)
   database.drop_table(GameState.ITEMS_TABLE_NAME)
   database.drop_table(GameState.OBTAINED_ITEMS_TABLE_NAME)
+  database.close_db()
