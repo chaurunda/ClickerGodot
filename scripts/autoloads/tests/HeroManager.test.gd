@@ -86,7 +86,7 @@ func test_save_obtained_hero():
   var hero = Hero.new(heroes.HEROID.AERIS_WINDWHISPER, 1, Stats.new(1,1,1), "")
   HeroManager.set_obtained_heroes(hero)
   var save_mock = [
-    {
+	{
 			"level": 1,
 			"id": 7,
 			"health": 1,
@@ -101,5 +101,3 @@ func test_save_obtained_hero():
 
   # Assert
   assert_eq(save_data, save_mock)
-
-

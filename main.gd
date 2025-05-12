@@ -14,8 +14,10 @@ func _ready():
 func _on_test_button_pressed():
 	var tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_LINEAR)
 	tween.tween_property(camera, "position", camera_initial_position + Vector2(0, 1200), 1.0)
+	GlobalEventBus.emit_signal("go_to_battle_zone")
 
 
 func _on_back_button_pressed():
 	var tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_LINEAR)
 	tween.tween_property(camera, "position", camera_initial_position, 1.0)
+	GlobalEventBus.emit_signal("back_to_village")

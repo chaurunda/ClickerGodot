@@ -24,8 +24,9 @@ func compute_price(rarity):
 
 func generate_hero():
 	var list_of_heros_name = HeroDbManager.get_heros_list()
-	if list_of_heros_name.size() > 0:
-		for i in 4:
+	if !list_of_heros_name.is_empty():
+		var numberOfHeroes =  list_of_heros_name.size() if list_of_heros_name.size() < 4 else 4
+		for i in numberOfHeroes:
 			var entry_number = randi() % list_of_heros_name.size()
 			var hero = list_of_heros_name[entry_number]
 			var hero_button = new_hero_button_packed_scene.instantiate()

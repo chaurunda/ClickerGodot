@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bmmtm6temqqb4"]
 
-[ext_resource type="Script" path="res://components/GetNewItemButton/GetNewItemButton.gd" id="1_u5u41"]
+[ext_resource type="Script" uid="uid://bbtdov6vnrvb2" path="res://components/GetNewItemButton/GetNewItemButton.gd" id="1_u5u41"]
 
 [node name="GetNewItemButton" type="Button"]
 script = ExtResource("1_u5u41")

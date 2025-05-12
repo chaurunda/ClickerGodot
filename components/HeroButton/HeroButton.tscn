@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ci3arpucf8bhi"]
 
-[ext_resource type="Script" path="res://components/HeroButton/HeroButton.gd" id="1_0pbdj"]
+[ext_resource type="Script" uid="uid://dmy62wn68vfuo" path="res://components/HeroButton/HeroButton.gd" id="1_0pbdj"]
 
 [node name="HeroButton" type="Button"]
 offset_right = 8.0

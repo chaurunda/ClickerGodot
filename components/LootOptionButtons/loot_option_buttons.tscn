@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bofj8mugrn4cx"]
 
-[ext_resource type="Script" path="res://components/LootOptionButtons/loot_option_buttons.gd" id="1_d7ccl"]
+[ext_resource type="Script" uid="uid://dqp5xo6cbkosx" path="res://components/LootOptionButtons/loot_option_buttons.gd" id="1_d7ccl"]
 
 [node name="LootOptionButtons" type="GridContainer"]
 script = ExtResource("1_d7ccl")

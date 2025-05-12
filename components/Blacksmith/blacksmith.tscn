@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cfumev4iwfdn"]
 
-[ext_resource type="Script" path="res://components/Blacksmith/blacksmith.gd" id="1_bwl0m"]
+[ext_resource type="Script" uid="uid://bwi5nj2ed6euk" path="res://components/Blacksmith/blacksmith.gd" id="1_bwl0m"]
 [ext_resource type="PackedScene" uid="uid://ci4gabtt5mcej" path="res://components/ItemModal/item_modal.tscn" id="2_8egjb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s88h7"]

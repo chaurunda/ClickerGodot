@@ -80,4 +80,3 @@ func update_hero_image():
 func remove_current_hero_sprite():
 	for child in obtained_heroes_sprite.get_children():
 		child.queue_free()
-

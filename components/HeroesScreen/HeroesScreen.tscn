@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dy0q1jcldfc2u"]
 
-[ext_resource type="Script" path="res://components/HeroesScreen/HeroesScreen.gd" id="1_n2tcv"]
+[ext_resource type="Script" uid="uid://t5wt530c4wtl" path="res://components/HeroesScreen/HeroesScreen.gd" id="1_n2tcv"]
 [ext_resource type="PackedScene" uid="uid://ci3arpucf8bhi" path="res://components/HeroButton/HeroButton.tscn" id="2_ldtpp"]
 
 [sub_resource type="Gradient" id="Gradient_ho6t5"]

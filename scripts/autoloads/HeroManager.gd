@@ -23,4 +23,3 @@ func save_obtained_heroes():
 
 		pass
 	return obtained_heroesData
-

@@ -40,7 +40,6 @@ func add_item(item):
     "type": item.type
   }
   database.insert_row(GameState.ITEMS_TABLE_NAME, item_data_dict)
-  database.close_db()
 
 func update_item(item: Item):
   var database = DbManager.connect_to_database()

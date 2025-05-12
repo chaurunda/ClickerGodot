@@ -5,9 +5,17 @@ func get_heros_list():
   var hero_list = database.select_rows(GameState.HERO_TABLE_NAME, "", ["id", "name", "rarity"])
   return hero_list
 
+func get_obtained_heroes():
+  var database = DbManager.connect_to_database()
+  var heroes = []
+  var obtained_heroes = database.select_rows(GameState.OBTAINED_HERO_TABLE_NAME, "", ["hero_id"]) as Array
+  for hero in obtained_heroes:
+    heroes.push_back(get_hero(hero.hero_id))
+  return heroes
+
 func get_hero(id):
   var database = DbManager.connect_to_database()
-  var hero = database.select_rows(GameState.HERO_TABLE_NAME, "id = '{id}'".format({"id": id}), ["id", "name", "level", "rarity"])
+  var hero = database.select_rows(GameState.HERO_TABLE_NAME, "id = '{id}'".format({"id": id}), ["*"])
   return hero
 
 func create_hero_table(database: SQLite):
@@ -17,6 +25,7 @@ func create_hero_table(database: SQLite):
 		"name": {"data_type": "TEXT", "not_null": true},
 		"level": {"data_type": "int", "not_null": true},
 		"rarity": {"data_type": "TEXT", "not_null": true},
+    "stats" : {"data_type": "TEXT", "not_null": true}
 	}
   database.create_table(GameState.HERO_TABLE_NAME, hero_table)
   var list_of_heros_name = Heroes.listOfHeroName
@@ -25,7 +34,8 @@ func create_hero_table(database: SQLite):
       "id": hero.id,
       "name": hero.name,
       "level": 1,
-      "rarity": hero.rarity
+      "rarity": hero.rarity,
+      "stats": JSON.stringify(hero.stats)
     }
     database.insert_row(GameState.HERO_TABLE_NAME, hero_data_dict)
     database.close_db()

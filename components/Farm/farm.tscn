@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dgg84yc4fwguy"]
 
-[ext_resource type="Script" path="res://components/Farm/Farm.gd" id="1_hnx63"]
+[ext_resource type="Script" uid="uid://cgxcwiph8gf11" path="res://components/Farm/Farm.gd" id="1_hnx63"]
 [ext_resource type="Texture2D" uid="uid://btffgb772lte" path="res://assets/SERENE_VILLAGE_REVAMPED/Serene_Village_48x48.png" id="2_yywe3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_42l1t"]

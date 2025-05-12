@@ -1,7 +1,7 @@
-[gd_scene load_steps=18 format=4 uid="uid://c7bptkit42fmh"]
+[gd_scene load_steps=19 format=4 uid="uid://c7bptkit42fmh"]
 
 [ext_resource type="Texture2D" uid="uid://btffgb772lte" path="res://assets/SERENE_VILLAGE_REVAMPED/Serene_Village_48x48.png" id="1_dq5rb"]
-[ext_resource type="Script" path="res://main.gd" id="1_sdd36"]
+[ext_resource type="Script" uid="uid://b1414d2rc3v8h" path="res://main.gd" id="1_sdd36"]
 [ext_resource type="PackedScene" uid="uid://mpjb207mcr1l" path="res://components/HUD/HUD.tscn" id="1_tlptr"]
 [ext_resource type="PackedScene" uid="uid://dgg84yc4fwguy" path="res://components/Farm/farm.tscn" id="2_gidqr"]
 [ext_resource type="Texture2D" uid="uid://b24ies8hy6kbe" path="res://assets/SERENE_VILLAGE_REVAMPED/Animated stuff/camp1.png" id="2_kp37m"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://d33lt5xhhxfxv" path="res://assets/head-48x48.png" id="6_1lwwe"]
 [ext_resource type="PackedScene" uid="uid://cfumev4iwfdn" path="res://components/Blacksmith/blacksmith.tscn" id="12_kq423"]
 [ext_resource type="PackedScene" uid="uid://b5tmfg2fcnxj2" path="res://components/Menu/menu.tscn" id="13_rcbuu"]
+[ext_resource type="PackedScene" uid="uid://dmogn6u5y8v42" path="res://components/Battleground/battleground.tscn" id="15_bqyo5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sy5h1"]
 texture = ExtResource("1_dq5rb")
@@ -782,8 +783,8 @@ animations = [{
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_sdd36")
-metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="Base" type="TileMapLayer" parent="."]
 use_parent_material = true
@@ -838,12 +839,6 @@ icon = ExtResource("6_1lwwe")
 [node name="Blacksmith" parent="." instance=ExtResource("12_kq423")]
 position = Vector2(564, 86)
 
-[node name="Heroes" parent="." instance=ExtResource("5_8ge2w")]
-visible = false
-
-[node name="Menu" parent="." instance=ExtResource("13_rcbuu")]
-visible = false
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 539)
 limit_left = 0
@@ -865,8 +860,14 @@ offset_right = 318.0
 offset_bottom = 1172.0
 text = "BACK_TO_VILLAGE"
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(0, 1080)
+[node name="Heroes" parent="." instance=ExtResource("5_8ge2w")]
+visible = false
+
+[node name="Menu" parent="." instance=ExtResource("13_rcbuu")]
+visible = false
+
+[node name="Batteground" parent="." instance=ExtResource("15_bqyo5")]
+position = Vector2(357, 1414)
 
 [connection signal="pressed" from="DisplayHeroesButton" to="Heroes" method="_on_display_heroes_button_pressed"]
 [connection signal="pressed" from="GoToBattleButton" to="." method="_on_test_button_pressed"]

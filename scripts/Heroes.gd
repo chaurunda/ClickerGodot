@@ -33,76 +33,151 @@ const listOfHeroName = [
 		"name": "Seraphine Wildheart",
 		"rarity": RARITY.COMMON,
 		"id": HEROID.SERAPHINE_WILDHEART,
+		"stats": {
+			"attack": 0,
+			"health": 0,
+			"armor": 0,
+		},
 	},
 	{
 		"name": "Roderic Bloodclaw",
 		"rarity": RARITY.COMMON,
 		"id": HEROID.RODERIC_BLOODCLAW,
+		"stats": {
+			"attack": 0,
+			"health": 0,
+			"armor": 0,
+		},
 	},
 	{
 		"name": "Sylx Shadowcloak",
 		"rarity": RARITY.COMMON,
 		"id": HEROID.SYLX_SHADOWCLOAK,
+		"stats": {
+			"attack": 0,
+			"health": 0,
+			"armor": 0,
+		}
 	},
 	{
 		"name":"Alaric Gloomgazer",
 		"rarity": RARITY.COMMON,
 		"id": HEROID.ALARIC_GLOOMGAZER,
+		"stats": {
+			"attack": 0,
+			"health": 0,
+			"armor": 0,
+		}
 	},
 	{
 		"name":"Valara Windwhisper",
 		"rarity": RARITY.COMMON,
 		"id": HEROID.VALARA_WINDWHISPER,
+		"stats": {
+			"attack": 0,
+			"health": 0,
+			"armor": 0,
+		}
 	},
 	{
 		"name":"Lyrianelm",
 		"rarity": RARITY.COMMON,
 		"id": HEROID.LYRIANELM,
+		"stats": {
+			"attack": 0,
+			"health": 0,
+			"armor": 0,
+		}
 	},
 	{
 		"name":"Aeris Windwhisper",
 		"rarity": RARITY.COMMON,
 		"id": HEROID.AERIS_WINDWHISPER,
+		"stats": {
+			"attack": 0,
+			"health": 0,
+			"armor": 0,
+		}
 	},
 	{
 		"name":"Teyrion Leafwhisper",
 		"rarity": RARITY.COMMON,
 		"id": HEROID.TEYRION_LEAFWHISPER,
+		"stats": {
+			"attack": 0,
+			"health": 0,
+			"armor": 0,
+		}
 	},
 	{
 		"name":"Narielis",
 		"rarity": RARITY.UNCOMMON,
 		"id": HEROID.NARIELIS,
+		"stats": {
+			"attack": 0,
+			"health": 0,
+			"armor": 0,
+		}
 	},
 	{
 		"name":"Finnian Stormborn",
 		"rarity": RARITY.UNCOMMON,
 		"id": HEROID.FINNIAN_STORMBORN,
+		"stats": {
+			"attack": 0,
+			"health": 0,
+			"armor": 0,
+		}
 	},
 	{
 		"name":"Vaelen Frostbane",
 		"rarity": RARITY.UNCOMMON,
 		"id": HEROID.VAELEN_FROSTBANE,
+		"stats": {
+			"attack": 0,
+			"health": 0,
+			"armor": 0,
+		}
 	},
 	{
 		"name":"Aldric Stormrage",
 		"rarity": RARITY.UNCOMMON,
 		"id": HEROID.ALDRIC_STORMRAGE,
+		"stats": {
+			"attack": 0,
+			"health": 0,
+			"armor": 0,
+		}
 	},
 	{
 		"name":"Draekos",
 		"rarity": RARITY.RARE,
 		"id": HEROID.DRAEKOS,
+		"stats": {
+			"attack": 0,
+			"health": 0,
+			"armor": 0,
+		}
 	},
 	{
 		"name":"Zephyrath Drakemoon",
 		"rarity": RARITY.RARE,
 		"id": HEROID.ZEPHYRATH_DRAKEMOON,
+		"stats": {
+			"attack": 0,
+			"health": 0,
+			"armor": 0,
+		}
 	},
 	{
 		"name":"Grulmok",
 		"rarity": RARITY.LEGENDARY,
 		"id": HEROID.GRULMOK,
+		"stats": {
+			"attack": 0,
+			"health": 0,
+			"armor": 0,
+		}
 	},
 ]
 
